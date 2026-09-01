@@ -502,5 +502,41 @@
         "additionalProperties": false
       }
     }
+  ],
+  "prompts": [
+    {
+      "name": "seo-audit",
+      "title": "Full SEO audit",
+      "description": "Run a complete, data-grounded SEO audit of the connected site and rank the fixes by impact.",
+      "arguments": []
+    },
+    {
+      "name": "striking-distance",
+      "title": "Quick wins near page 1",
+      "description": "Find the keywords the connected site is one push away from ranking on page 1 for.",
+      "arguments": []
+    },
+    {
+      "name": "traffic-drop",
+      "title": "Diagnose a traffic drop",
+      "description": "Work out why organic traffic dropped, who took the clicks, and what to fix first.",
+      "arguments": []
+    }
+  ],
+  "resources": [
+    {
+      "uri": "seomatic://guides/connect",
+      "name": "connect-guide",
+      "title": "Connecting SEOmatic data sources",
+      "description": "How to connect Google Search Console, Analytics, Ads, Business Profile and a CMS to the SEOmatic workspace, and what each unlocks.",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "seomatic://guides/audit-method",
+      "name": "audit-method",
+      "title": "The SEOmatic audit method",
+      "description": "The audit sequence the SEO tools are designed around: baseline, quick wins, decay, indexation, on-page, authority, AI visibility, business-weighted report.",
+      "mimeType": "text/markdown"
+    }
   ]
 }
