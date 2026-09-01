@@ -71,6 +71,26 @@ The free tier includes the insight tools with a monthly question quota shared
 with SEOmatic chat. Acting tools (staging tasks, campaigns, articles) need a
 paid plan and always keep the human-approval gate.
 
+## The SEO Audit skill
+
+`skills/seomatic-seo-audit/` is an Agent Skill that turns the connector into
+a guided, senior-SEO-grade audit: baseline, CTR mismatches, striking-distance
+keywords, decay diagnosis with competitors, indexation, backlinks, AI
+visibility, and a verdict-first report ranked by business impact. Every claim
+comes from your data; acting is always approval-gated.
+
+**Install in Claude Code:**
+
+```bash
+git clone https://github.com/Minh42/seomatic-mcp.git
+mkdir -p ~/.claude/skills
+cp -r seomatic-mcp/skills/seomatic-seo-audit ~/.claude/skills/
+```
+
+Then in any session with the SEOmatic connector active, just ask:
+"Run a full SEO audit of my site." The skill is also on
+[Smithery](https://smithery.ai/skills).
+
 ## Support
 
 - Docs: https://seomatic.ai/developers/mcp
