@@ -1,0 +1,506 @@
+{
+  "identifier": "minh42-seomatic-mcp",
+  "name": "SEOmatic",
+  "version": "1.0.0",
+  "description": "SEO agent for your own site: real Search Console, keyword, backlink and AI-visibility data in your AI assistant, plus approval-gated fixes, articles and campaigns. OAuth, free to connect.",
+  "author": "SEOmatic",
+  "authorUrl": "https://seomatic.ai",
+  "homepage": "https://github.com/Minh42/seomatic-mcp",
+  "cloudEndpoint": "https://app.seomatic.ai/api/mcp",
+  "icon": "https://seomatic.ai/logos/seomatic-icon-400.png",
+  "tags": [
+    "seo",
+    "search-console",
+    "keywords",
+    "backlinks",
+    "ai-visibility",
+    "marketing",
+    "google-analytics",
+    "google-ads"
+  ],
+  "tools": [
+    {
+      "name": "keyword_research",
+      "description": "Research keyword demand: search volume, difficulty, CPC, and intent, plus keyword ideas, Google Trends interest and related queries, and Google Ads keyword performance. Use for what to target and how much demand exists; for who ranks today use serp_competitors. Already scoped to the connected workspace and its site; call directly, no domain or site parameter is needed.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "metrics",
+              "suggestions",
+              "compare_trends",
+              "trend",
+              "related"
+            ],
+            "description": "Which operation to run. metrics (volume/difficulty/CPC/intent); suggestions (keyword ideas from seeds); compare_trends (Trends interest, keywords side by side); trend (Trends interest over time for one keyword); related (Trends related queries)."
+          },
+          "keywords": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "metrics/suggestions/compare_trends: the seed or target keywords."
+          },
+          "keyword": {
+            "type": "string",
+            "description": "trend/related: the single keyword to analyze."
+          },
+          "limit": {
+            "type": "number",
+            "description": "suggestions/ads_performance: max results."
+          }
+        },
+        "required": [
+          "action"
+        ]
+      }
+    },
+    {
+      "name": "keyword_clusters",
+      "description": "The agent's cached keyword-cluster map built from the workspace's GSC query universe (pillar, cannibalization, gap, and covered clusters). Already scoped to the connected workspace and its site; call directly, no domain or site parameter is needed.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "list"
+            ],
+            "description": "Which operation to run. list."
+          }
+        },
+        "required": [
+          "action"
+        ]
+      }
+    },
+    {
+      "name": "backlink_profile",
+      "description": "Read the backlink profile of your own site or any competitor: referring domains, anchor-text distribution, link velocity, and link-prospect intersects. Use for authority and link questions; for rankings use serp_competitors. Already scoped to the connected workspace and its site; call directly, no domain or site parameter is needed.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "summary",
+              "anchors",
+              "velocity",
+              "referring_domains",
+              "link_prospects"
+            ],
+            "description": "Which operation to run. summary (totals, referring domains, rank/spam); anchors (anchor-text distribution); velocity (monthly new vs lost referring domains); referring_domains (top linking domains); link_prospects (link intersect: linking to competitors but not to us)."
+          },
+          "domain": {
+            "type": "string",
+            "description": "The domain to analyze, e.g. \"example.com\". Omit it to analyze the connected workspace's own site (the server fills it in); pass it only to analyze a competitor."
+          },
+          "limit": {
+            "type": "number",
+            "description": "anchors (default 25) and referring_domains (default 50)."
+          },
+          "months": {
+            "type": "number",
+            "description": "velocity only: months back (default 6)."
+          },
+          "competitors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "link_prospects only: 1-3 competitor domains to intersect against."
+          }
+        },
+        "required": [
+          "action"
+        ]
+      }
+    },
+    {
+      "name": "serp_competitors",
+      "description": "Inspect the live search landscape: which SERP features (AI Overview, snippet, PAA, local pack, video) appear for a keyword, plus domain-level top rankings, visibility distribution, and competitor domains. Use for who ranks and why; for keyword demand use keyword_research. Already scoped to the connected workspace and its site; call directly, no domain or site parameter is needed.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "features",
+              "domain_rankings",
+              "domain_overview",
+              "domain_competitors"
+            ],
+            "description": "Which operation to run. features (which SERP features appear for a keyword); domain_rankings (top keywords a domain ranks for); domain_overview (organic visibility distribution); domain_competitors (domains ranking for similar keywords)."
+          },
+          "keywords": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "features only: the keyword(s) to inspect."
+          },
+          "domain": {
+            "type": "string",
+            "description": "domain_rankings/domain_overview/domain_competitors: the domain. Omit for the connected workspace's own site (the server fills it in); pass only for a competitor."
+          },
+          "limit": {
+            "type": "number",
+            "description": "max results where applicable."
+          }
+        },
+        "required": [
+          "action"
+        ]
+      }
+    },
+    {
+      "name": "local_presence",
+      "description": "Read the local search presence of the connected business: Business Profile locations, local ranking for money keywords, and review ratings. Available actions depend on what is connected for this workspace. Use for local and map-pack questions; for national rankings use serp_competitors. Already scoped to the connected workspace and its site; call directly, no domain or site parameter is needed.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "visibility"
+            ],
+            "description": "Which operation to run. visibility (local organic position for keywords)."
+          },
+          "keywords": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "visibility only: the money keywords to measure."
+          }
+        },
+        "required": [
+          "action"
+        ]
+      }
+    },
+    {
+      "name": "site_pages",
+      "description": "Analyze pages: on-page SEO score and critical issues for a URL, raw crawl metadata (title, meta, headings, links), and the page inventory of the site. Use for page-level diagnosis; for search performance of those pages use gsc_performance. Already scoped to the connected workspace and its site; call directly, no domain or site parameter is needed.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "analyze",
+              "crawl",
+              "inventory"
+            ],
+            "description": "Which operation to run. analyze (SEO score + critical issues); crawl (title/meta/headings/links); inventory (the user's real synced pages)."
+          },
+          "url": {
+            "type": "string",
+            "description": "analyze/crawl: the URL to inspect."
+          },
+          "limit": {
+            "type": "integer",
+            "description": "inventory only: max pages to return."
+          }
+        },
+        "required": [
+          "action"
+        ]
+      }
+    },
+    {
+      "name": "dataset_library",
+      "description": "The dataset library and page templates that power programmatic pages: list datasets, sample rows, list templates, and read one template. Already scoped to the connected workspace and its site; call directly, no domain or site parameter is needed.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "list_datasets",
+              "dataset_rows",
+              "list_templates",
+              "get_template"
+            ],
+            "description": "Which operation to run. list_datasets (available datasets); dataset_rows (sample rows from one dataset); list_templates (built-in page templates); get_template (one template in full)."
+          },
+          "datasetId": {
+            "type": "string",
+            "description": "dataset_rows only: the dataset to sample."
+          },
+          "templateId": {
+            "type": "string",
+            "description": "get_template only: the template to read."
+          },
+          "limit": {
+            "type": "integer",
+            "description": "dataset_rows only: how many rows to sample."
+          }
+        },
+        "required": [
+          "action"
+        ]
+      }
+    },
+    {
+      "name": "strategy_insights",
+      "description": "The agent's cached diagnosis for this workspace: a compact snapshot, the current strategy, one raw signal in full, and AI-search content scores. Already scoped to the connected workspace and its site; call directly, no domain or site parameter is needed.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "snapshot",
+              "strategy",
+              "signal",
+              "content_scores"
+            ],
+            "description": "Which operation to run. snapshot (compact brief of cached signals); strategy (themes + ranked big plays); signal (one cached signal in full); content_scores (AI-search scores for generated articles)."
+          },
+          "signal": {
+            "type": "string",
+            "description": "signal only: which cached signal to read (e.g. index_coverage, backlink_profile)."
+          }
+        },
+        "required": [
+          "action"
+        ]
+      }
+    },
+    {
+      "name": "task_manage",
+      "description": "Read the agent's plan board and stage new SEO task proposals. Proposals NEVER execute: each is an approval-gated card the user reviews. Already scoped to the connected workspace and its site; call directly, no domain or site parameter is needed.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "list",
+              "get",
+              "create",
+              "decide"
+            ],
+            "description": "Which operation to run. list (the plan board (filterable)); get (one task in full detail); create (stage up to 5 task proposals); decide (approve or dismiss a staged proposal (the approval loop))."
+          },
+          "status": {
+            "type": "string",
+            "description": "list only: filter by task status (proposed, approved, ...)."
+          },
+          "type": {
+            "type": "string",
+            "description": "list only: filter by task type."
+          },
+          "taskId": {
+            "type": "string",
+            "description": "get/decide: the task to read or decide."
+          },
+          "decision": {
+            "type": "string",
+            "enum": [
+              "approve",
+              "dismiss"
+            ],
+            "description": "decide only: approve releases the task to the gated pipeline; dismiss archives it. Indexation-destructive types are refused over the API."
+          },
+          "tasks": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "description": "create only: up to 5 task objects to stage as proposals (see the SEOmatic docs for the task shape)."
+          }
+        },
+        "required": [
+          "action"
+        ]
+      }
+    },
+    {
+      "name": "campaign_manage",
+      "description": "Read campaigns and stage page-scale, content-sweep, or bulk-edit campaigns and blog articles. All staging is proposal-based and approval-gated; nothing publishes without the user. Already scoped to the connected workspace and its site; call directly, no domain or site parameter is needed.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "list",
+              "manage",
+              "propose_page_scale",
+              "propose_content_sweep",
+              "propose_bulk_edit",
+              "write_articles"
+            ],
+            "description": "Which operation to run. list (campaigns with status + task counts); manage (pause/resume/abandon/update a campaign); propose_page_scale (programmatic landing pages at scale); propose_content_sweep (N distinct blog articles as a campaign); propose_bulk_edit (one instruction across many pages); write_articles (direct N-article staging)."
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "proposed",
+              "approved",
+              "active",
+              "paused",
+              "done",
+              "abandoned"
+            ],
+            "description": "list only: filter campaigns by status."
+          },
+          "campaignId": {
+            "type": "string",
+            "description": "manage only: the campaign to act on."
+          },
+          "manageAction": {
+            "type": "string",
+            "enum": [
+              "pause",
+              "resume",
+              "abandon",
+              "update_brief"
+            ],
+            "description": "manage only: what to do to the campaign."
+          },
+          "confirm": {
+            "type": "boolean",
+            "description": "manage + abandon only: must be true to confirm the irreversible action."
+          },
+          "brief": {
+            "type": "string",
+            "description": "manage+update_brief: replacement brief. Also propose_page_scale (template brief) and propose_content_sweep (shared direction)."
+          },
+          "title": {
+            "type": "string",
+            "description": "propose_page_scale (required), propose_content_sweep (required), propose_bulk_edit (optional)."
+          },
+          "kind": {
+            "type": "string",
+            "description": "propose_page_scale only (required): page kind, e.g. \"location pages\"."
+          },
+          "rowSourceKind": {
+            "type": "string",
+            "enum": [
+              "ai",
+              "user",
+              "library",
+              "gbp_locations"
+            ],
+            "description": "propose_page_scale only (required): where page rows come from."
+          },
+          "rowPrompt": {
+            "type": "string",
+            "description": "propose_page_scale, rowSourceKind=ai: dataset to generate."
+          },
+          "rows": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "description": "propose_page_scale, rowSourceKind=user: one object per page."
+          },
+          "libraryDatasetId": {
+            "type": "string",
+            "description": "propose_page_scale, rowSourceKind=library: dataset id to attach."
+          },
+          "rowTarget": {
+            "type": "integer",
+            "description": "propose_page_scale only: target number of rows/pages."
+          },
+          "allowGenText": {
+            "type": "boolean",
+            "description": "propose_page_scale only: allow per-row AI text (costs credits)."
+          },
+          "publishAsDraft": {
+            "type": "boolean",
+            "description": "propose_page_scale only: publish pages as drafts."
+          },
+          "pageTemplate": {
+            "type": "string",
+            "description": "propose_page_scale only: built-in template id."
+          },
+          "topics": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "propose_content_sweep (required, up to 50) and write_articles (required, 2-50). One distinct article per topic."
+          },
+          "taskType": {
+            "type": "string",
+            "description": "propose_bulk_edit only (required): the sweep type, e.g. ctr_fix, schema, content_refresh."
+          },
+          "instruction": {
+            "type": "string",
+            "description": "propose_bulk_edit only: shared per-page brief."
+          },
+          "selectorKind": {
+            "type": "string",
+            "enum": [
+              "urls",
+              "path_prefix",
+              "all_pages"
+            ],
+            "description": "propose_bulk_edit only: how to select pages."
+          },
+          "urls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "propose_bulk_edit, selectorKind=urls: the pages."
+          },
+          "pathPrefix": {
+            "type": "string",
+            "description": "propose_bulk_edit, selectorKind=path_prefix: the prefix."
+          },
+          "segments": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "description": "propose_bulk_edit: advanced mixed-template selectors (overrides selectorKind/instruction)."
+          },
+          "maxPages": {
+            "type": "integer",
+            "description": "propose_bulk_edit only: cap the sweep size."
+          },
+          "autoPublish": {
+            "type": "boolean",
+            "description": "write_articles only: default false (stage as drafts)."
+          }
+        },
+        "required": [
+          "action"
+        ]
+      }
+    },
+    {
+      "name": "show_approval_cards",
+      "description": "Render inline Approve/Dismiss cards for EXISTING proposed tasks and campaigns (get ids from list_seo_tasks / list_seo_campaigns first). Call this whenever the user wants to see, review, or act on proposals that already exist — the cards appear directly in your reply. NEVER send the user to the dashboard to approve something; this brings the approval to the conversation.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "taskIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "maxItems": 20
+          },
+          "campaignIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "maxItems": 10
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  ]
+}
