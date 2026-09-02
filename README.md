@@ -64,7 +64,7 @@ https://seomatic.ai/developers/mcp
   URL `https://app.seomatic.ai/api/mcp` (OAuth, no key needed)
 - **Claude Code:** `claude mcp add --transport http seomatic https://app.seomatic.ai/api/mcp`
 - **Cursor:** add `{"mcpServers": {"seomatic": {"url": "https://app.seomatic.ai/api/mcp"}}}` to `mcp.json`
-- **Grok Bot (x.ai/bot):** always-on SEO teammate with weekly routines — full
+- **Grok Bot (x.ai/bot):** always-on SEO teammate with weekly routines - full
   template in [grok-bot/](./grok-bot/)
 
 ## Free vs paid

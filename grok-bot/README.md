@@ -1,4 +1,4 @@
-# SEOmatic SEO Teammate — Grok Bot template
+# SEOmatic SEO Teammate - Grok Bot template
 
 An always-on SEO teammate for [Grok Bot](https://x.ai/bot): it watches your
 Google Search Console data through [SEOmatic](https://seomatic.ai), reports
@@ -25,14 +25,14 @@ stages fixes to your CMS for your approval.
 3. Connect the SEOmatic MCP server per [SETUP.md](./SETUP.md) (free
    account, OAuth, ~2 minutes).
 4. Add the skill and the three routines from the table above.
-5. Ask it: *"Which of my pages are closest to page 1?"* — first answer
+5. Ask it: *"Which of my pages are closest to page 1?"* - first answer
    should cite your real Search Console numbers.
 
 ## Share it as a template
 
 Once your Bot works: Bot settings → **Share as template** → review the
 draft pack (identity, instructions, skills, routines travel; your MCP
-login does NOT — installers authenticate themselves via SETUP.md) →
+login does NOT - installers authenticate themselves via SETUP.md) →
 publish, and share the x.ai link.
 
 ## Why an always-on bot beats a chat window for SEO
