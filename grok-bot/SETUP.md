@@ -25,6 +25,13 @@ yourself. Otherwise, give me the exact steps for this client.
    workspace you want the Bot to work on.
 3. Done. Ask: "Which of my pages are closest to page 1?" to confirm it works.
 
+## If your Grok Bot only accepts a token (no OAuth screen)
+
+The server also speaks plain Bearer auth:
+1. In SEOmatic: Dashboard > Settings > API Keys > create a key.
+2. Add the MCP server with URL `https://app.seomatic.ai/api/mcp` and your
+   key as the Bearer token.
+
 ## What's free vs paid
 
 - Free (no card): connecting, and every analysis question over your own
