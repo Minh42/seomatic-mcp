@@ -1,0 +1,14 @@
+{
+    "baseUrl": "https://app.seomatic.ai/api/v1",
+    "headers": {
+        "authorization": "Bearer {{connection.apiKey}}"
+    },
+    "response": {
+        "error": {
+            "message": "[{{statusCode}}] {{body.error}}"
+        }
+    },
+    "log": {
+        "sanitize": ["request.headers.authorization"]
+    }
+}

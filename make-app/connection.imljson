@@ -1,0 +1,24 @@
+{
+    "url": "/me",
+    "headers": {
+        "authorization": "Bearer {{parameters.apiKey}}"
+    },
+    "response": {
+        "error": {
+            "message": "Invalid API key. Create one in SEOmatic under Settings > Integrations > API Keys."
+        },
+        "metadata": {
+            "type": "text",
+            "value": "{{body.workspace.name}}"
+        }
+    },
+    "parameters": [
+        {
+            "name": "apiKey",
+            "type": "text",
+            "label": "SEOmatic API Key",
+            "required": true,
+            "help": "Starts with smk_. Create one at app.seomatic.ai under Settings > Integrations > API Keys."
+        }
+    ]
+}

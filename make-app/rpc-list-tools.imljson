@@ -1,0 +1,11 @@
+{
+    "url": "/tools",
+    "method": "GET",
+    "response": {
+        "iterate": "{{body.tools}}",
+        "output": {
+            "label": "{{item.name}}",
+            "value": "{{item.name}}"
+        }
+    }
+}

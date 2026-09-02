@@ -1,0 +1,27 @@
+{
+    "url": "/tools/{{parameters.tool}}",
+    "method": "POST",
+    "body": "{{parameters.args}}",
+    "response": {
+        "output": "{{body}}"
+    },
+    "parameters": [],
+    "expect": [
+        {
+            "name": "tool",
+            "type": "select",
+            "label": "Tool",
+            "required": true,
+            "options": {
+                "store": "rpc://listTools"
+            }
+        },
+        {
+            "name": "args",
+            "type": "collection",
+            "label": "Arguments",
+            "spec": [],
+            "help": "Tool arguments (e.g. days, limit). Parameter reference: https://seomatic.ai/developers/api"
+        }
+    ]
+}
