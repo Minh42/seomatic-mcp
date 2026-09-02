@@ -25,7 +25,7 @@ approves it in SEOmatic, and every change shows before-and-after results.
 
 ## Tools
 
-13 consolidated tools, each annotated (read-only vs staging) and scoped to the
+14 consolidated tools, each annotated (read-only vs staging) and scoped to the
 connected workspace: `gsc_performance`, `gsc_indexing`, `keyword_research`,
 `keyword_clusters`, `backlink_profile`, `serp_competitors`,
 `traffic_analytics`, `local_presence`, `site_pages`, `dataset_library`,

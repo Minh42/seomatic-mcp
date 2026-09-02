@@ -20,6 +20,18 @@
   ],
   "tools": [
     {
+      "name": "gsc_performance",
+      "description": "Read Google Search Console performance (clicks, impressions, CTR, position) by query, page, dimension, or period comparison, on your own connected property."
+    },
+    {
+      "name": "gsc_indexing",
+      "description": "Check Google index status and coverage diagnostics for one URL or a batch (coverage state, crawl status, robots/canonical issues)."
+    },
+    {
+      "name": "gsc_insights",
+      "description": "Derived Search Console analyses: keyword cannibalization, brand vs non-brand split, CTR outliers, rich-result appearance, 16-month seasonality verdicts, and sitemap health."
+    },
+    {
       "name": "keyword_research",
       "description": "Research keyword demand: search volume, difficulty, CPC, and intent, plus keyword ideas, Google Trends interest and related queries, and Google Ads keyword performance. Use for what to target and how much demand exists; for who ranks today use serp_competitors. Already scoped to the connected workspace and its site; call directly, no domain or site parameter is needed.",
       "inputSchema": {
