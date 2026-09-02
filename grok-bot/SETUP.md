@@ -32,6 +32,18 @@ The server also speaks plain Bearer auth:
 2. Add the MCP server with URL `https://app.seomatic.ai/api/mcp` and your
    key as the Bearer token.
 
+## Three field-tested gotchas
+
+1. Add SEOmatic as your ONLY new custom server, then verify, then add others.
+   A known beta bug lets one hung custom server break tool discovery for
+   every connector (DeadlineExceeded errors).
+2. After connecting, ask the Bot: "What tools do you have from this server?"
+   You should see the SEOmatic tools listed. Most setup failures are caught
+   right here.
+3. Run one job manually before enabling routines: ask "Which of my pages are
+   closest to page 1?" and check the answer cites your real Search Console
+   numbers.
+
 ## What's free vs paid
 
 - Free (no card): connecting, and every analysis question over your own
