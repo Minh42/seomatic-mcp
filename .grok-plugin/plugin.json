@@ -1,0 +1,14 @@
+{
+  "name": "seomatic",
+  "version": "1.0.0",
+  "description": "AI SEO agents over your real Google Search Console data. Find striking-distance keywords, diagnose traffic drops, audit sites, and (on paid plans) stage approval-gated fixes to your CMS.",
+  "author": {
+    "name": "SEOmatic",
+    "url": "https://seomatic.ai"
+  },
+  "homepage": "https://seomatic.ai/developers/mcp",
+  "repository": "https://github.com/Minh42/seomatic-mcp",
+  "license": "MIT",
+  "keywords": ["seo", "search console", "keywords", "audit", "mcp", "webflow", "wordpress"],
+  "logo": "logo.png"
+}
