@@ -26,8 +26,8 @@ approves it in SEOmatic, and every change shows before-and-after results.
 ## Tools
 
 14 consolidated tools, each annotated (read-only vs staging) and scoped to the
-connected workspace: `gsc_performance`, `gsc_indexing`, `keyword_research`,
-`keyword_clusters`, `backlink_profile`, `serp_competitors`,
+connected workspace: `gsc_performance`, `gsc_insights`, `gsc_indexing`,
+`keyword_research`, `keyword_clusters`, `backlink_profile`, `serp_competitors`,
 `traffic_analytics`, `local_presence`, `site_pages`, `dataset_library`,
 `strategy_insights`, `task_manage`, `campaign_manage`. The roster you see
 depends on your plan and connected data sources. Full reference:
