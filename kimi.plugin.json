@@ -1,0 +1,16 @@
+{
+  "name": "seomatic",
+  "version": "1.1.0",
+  "description": "SEO agent for your own site: real Google Search Console answers, site audits, AI visibility and citations, keyword and backlink research, and staged fixes you approve before they go live in WordPress, Shopify, Webflow, Wix and more.",
+  "keywords": ["seo", "search-console", "keyword-research", "ai-visibility", "mcp"],
+  "author": "SEOmatic",
+  "homepage": "https://seomatic.ai/developers/mcp",
+  "license": "MIT",
+  "skills": "./skills",
+  "mcpServers": {
+    "seomatic": {
+      "url": "https://app.seomatic.ai/api/mcp"
+    }
+  },
+  "skillInstructions": "SEOmatic tools are scoped to the user's connected workspace. State only numbers that come from a tool result, quote the exact date range, and never say a change is live: staged work waits for the user's approval in SEOmatic."
+}

@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "seomatic": {
+      "url": "https://app.seomatic.ai/api/mcp"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "seomatic",
+  "description": "SEOmatic for Grok Build: the hosted SEOmatic MCP server plus SEO skills.",
+  "owner": {
+    "name": "SEOmatic",
+    "email": "contact@seomatic.ai"
+  },
+  "plugins": [
+    {
+      "name": "seomatic",
+      "description": "SEO agent for your own site: real Google Search Console answers, site audits, AI visibility and citations, keyword and backlink research, and staged fixes you approve before they go live in WordPress, Shopify, Webflow, Wix and more.",
+      "category": "marketing",
+      "source": { "type": "local", "path": "./" },
+      "homepage": "https://seomatic.ai/developers/mcp",
+      "keywords": ["seo", "search console", "keyword research", "ai visibility", "site audit"],
+      "domains": ["seomatic.ai", "app.seomatic.ai"]
+    }
+  ]
+}

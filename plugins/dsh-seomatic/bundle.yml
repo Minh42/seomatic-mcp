@@ -1,0 +1,22 @@
+# dsh-seomatic profile layer.
+#
+# Two rows:
+#   seomatic-guide  this package; adds the `seomatic` skill to ctx.skills.
+#   seomatic-mcp    DeepSeek's own MCP client, pointed at the hosted SEOmatic
+#                   server. Tools show up as mcp__seomatic__<tool>.
+#
+# The API key comes from SEOMATIC_API_KEY when the profile boots. With no key
+# the client sends no Authorization header, the server refuses the
+# connection, and because failOnStartupError is false the profile still
+# starts, just without SEOmatic tools.
+- insert:
+    - id: seomatic-guide
+      name: dsh-seomatic
+    - id: seomatic-mcp
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: seomatic
+        transport: streamable-http
+        url: https://app.seomatic.ai/api/mcp
+        headers: !!js "process.env.SEOMATIC_API_KEY ? { Authorization: 'Bearer ' + process.env.SEOMATIC_API_KEY.trim() } : {}"
+        failOnStartupError: false

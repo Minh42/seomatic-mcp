@@ -1,0 +1,25 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "ai.seomatic/seomatic",
+  "title": "SEOmatic",
+  "description": "SEO agent: GSC, keyword, backlink and AI-visibility insights, plus approval-gated site actions",
+  "version": "1.0.2",
+  "websiteUrl": "https://seomatic.ai/developers/mcp",
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/Minh42/seomatic-mcp/main/logo.png",
+      "mimeType": "image/png"
+    }
+  ],
+  "repository": {
+    "url": "https://github.com/Minh42/seomatic-mcp",
+    "source": "github",
+    "id": "1353372113"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://app.seomatic.ai/api/mcp"
+    }
+  ]
+}

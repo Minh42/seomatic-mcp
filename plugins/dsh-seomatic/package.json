@@ -1,0 +1,51 @@
+{
+  "name": "dsh-seomatic",
+  "version": "0.2.0",
+  "description": "SEOmatic for DeepSeek Harness: the hosted SEOmatic MCP server (Search Console, audits, AI visibility, keyword and backlink research) plus a routing skill.",
+  "type": "module",
+  "main": "./src/plugin.js",
+  "exports": {
+    ".": "./src/plugin.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src/",
+    "guide/",
+    "bundle.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./bundle.yml"
+    }
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-bundle",
+    "seomatic",
+    "mcp",
+    "seo",
+    "google-search-console",
+    "ai-visibility"
+  ],
+  "author": "SEOmatic <contact@seomatic.ai> (https://seomatic.ai)",
+  "homepage": "https://github.com/Minh42/seomatic-mcp/tree/main/plugins/dsh-seomatic#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Minh42/seomatic-mcp.git",
+    "directory": "plugins/dsh-seomatic"
+  },
+  "bugs": "https://github.com/Minh42/seomatic-mcp/issues",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}

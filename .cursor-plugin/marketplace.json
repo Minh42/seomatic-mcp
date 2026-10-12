@@ -1,0 +1,29 @@
+{
+  "name": "seomatic",
+  "owner": {
+    "name": "SEOmatic",
+    "email": "contact@seomatic.ai"
+  },
+  "metadata": {
+    "description": "SEOmatic for Cursor: the hosted SEOmatic MCP server plus SEO skills."
+  },
+  "plugins": [
+    {
+      "name": "seomatic",
+      "source": "./",
+      "version": "1.1.0",
+      "description": "SEO agent for your own site: real Google Search Console answers, site audits, AI visibility and citations, keyword and backlink research, and staged fixes you approve before they go live in WordPress, Shopify, Webflow, Wix and more.",
+      "author": {
+        "name": "SEOmatic",
+        "email": "contact@seomatic.ai"
+      },
+      "homepage": "https://seomatic.ai/developers/mcp",
+      "repository": "https://github.com/Minh42/seomatic-mcp",
+      "license": "MIT",
+      "logo": "logo.png",
+      "category": "marketing",
+      "tags": ["seo", "search-console", "ai-visibility", "marketing"],
+      "keywords": ["seo", "search-console", "keyword-research", "backlinks", "ai-visibility", "mcp"]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "seomatic",
+  "version": "1.1.0",
+  "description": "SEO agent for your own site: real Google Search Console answers, site audits, AI visibility and citations, keyword and backlink research, and staged fixes you approve before they go live in WordPress, Shopify, Webflow, Wix and more.",
+  "author": {
+    "name": "SEOmatic",
+    "email": "contact@seomatic.ai",
+    "url": "https://seomatic.ai"
+  },
+  "homepage": "https://seomatic.ai/developers/mcp",
+  "repository": "https://github.com/Minh42/seomatic-mcp",
+  "license": "MIT",
+  "keywords": ["seo", "search-console", "keyword-research", "backlinks", "ai-visibility", "mcp"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "SEOmatic",
+        "shortDescription": "Your Search Console, audits and AI visibility, with fixes you approve",
+        "longDescription": "Ask about your own site's SEO with real data: Google Search Console queries and pages, striking-distance keywords, traffic drops, backlinks, SERP competitors, and how ChatGPT, Claude, Perplexity and Google AI Overviews describe you. SEOmatic can stage fixes for your pages; nothing goes live until you approve it in SEOmatic.",
+        "developerName": "SEOmatic",
+        "category": "Productivity",
+        "capabilities": ["Read", "Write"],
+        "websiteURL": "https://seomatic.ai",
+        "privacyPolicyURL": "https://seomatic.ai/privacy",
+        "termsOfServiceURL": "https://seomatic.ai/terms",
+        "defaultPrompt": [
+          "Use SEOmatic to find my keywords closest to page 1.",
+          "Use SEOmatic to explain why my traffic dropped this month.",
+          "Use SEOmatic to run a full SEO audit of my site."
+        ],
+        "brandColor": "#603CED",
+        "composerIcon": "./logo.png",
+        "logo": "./logo.png"
+      }
+    }
+  }
+}

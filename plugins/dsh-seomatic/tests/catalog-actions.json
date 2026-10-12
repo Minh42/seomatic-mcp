@@ -1,0 +1,140 @@
+{
+  "gsc_performance": [
+    "top_queries",
+    "top_pages",
+    "dimension_breakdown",
+    "query_page_matrix",
+    "query_pages",
+    "compare_periods",
+    "trend",
+    "discover_news",
+    "folder_rollup",
+    "fresh"
+  ],
+  "gsc_indexing": [
+    "inspect",
+    "batch_inspect"
+  ],
+  "gsc_insights": [
+    "cannibalization",
+    "brand_split",
+    "ctr_outliers",
+    "search_appearance",
+    "seasonality",
+    "sitemaps"
+  ],
+  "keyword_research": [
+    "metrics",
+    "suggestions",
+    "compare_trends",
+    "trend",
+    "related",
+    "ads_performance"
+  ],
+  "keyword_clusters": [
+    "list"
+  ],
+  "backlink_profile": [
+    "summary",
+    "anchors",
+    "velocity",
+    "referring_domains",
+    "link_prospects"
+  ],
+  "serp_competitors": [
+    "features",
+    "domain_rankings",
+    "domain_overview",
+    "domain_competitors"
+  ],
+  "ai_citations": [
+    "observed_citations",
+    "brand_facts",
+    "scan_results"
+  ],
+  "traffic_analytics": [
+    "overview",
+    "sources",
+    "landing_pages",
+    "top_pages",
+    "ads_account",
+    "ad_campaigns",
+    "ads_search_terms",
+    "ai_pages"
+  ],
+  "local_presence": [
+    "list_locations",
+    "visibility",
+    "reviews"
+  ],
+  "visibility_manage": [
+    "list",
+    "add",
+    "update",
+    "remove",
+    "set_cadence",
+    "set_engines"
+  ],
+  "site_pages": [
+    "score_draft",
+    "analyze",
+    "crawl",
+    "inventory"
+  ],
+  "dataset_library": [
+    "find_page_set_patterns",
+    "list_datasets",
+    "list_page_projects",
+    "dataset_rows",
+    "list_templates",
+    "get_template"
+  ],
+  "strategy_insights": [
+    "snapshot",
+    "strategy",
+    "signal",
+    "content_scores"
+  ],
+  "task_manage": [
+    "list",
+    "get",
+    "create",
+    "decide",
+    "execute",
+    "rollback",
+    "paste_done"
+  ],
+  "campaign_manage": [
+    "list",
+    "manage",
+    "propose_page_scale",
+    "propose_location_pages",
+    "propose_content_sweep",
+    "propose_bulk_edit",
+    "write_articles",
+    "save_article"
+  ],
+  "get_started": [],
+  "get_ai_visibility": [],
+  "run_ai_visibility_scan": [],
+  "site_audit": [],
+  "get_credit_usage": [],
+  "get_referral_link": [],
+  "generate_article": [],
+  "get_article": [],
+  "pay_for_articles": [],
+  "upload_csv": [],
+  "show_connect_card": [],
+  "show_trust_facts_card": [],
+  "confirm_trust_fact": [],
+  "get_trust_facts": [],
+  "import_attachment_as_dataset": [],
+  "get_ai_crawler_activity": [],
+  "get_trust_entities": [],
+  "get_ai_funnel": [],
+  "show_approval_cards": [],
+  "get_task_rollback": [],
+  "resume_page_publishing": [],
+  "get_target_terms": [],
+  "set_target_terms": []
+}

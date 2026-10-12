@@ -7,7 +7,7 @@ Setup is a config entry plus an API key the user must create.
 
 1. Ask the user to get a SEOmatic API key:
    - Sign up or log in at https://app.seomatic.ai (a free account works).
-   - Go to Settings -> API Keys -> Create key.
+   - Go to Settings -> AI Agents -> API Keys -> Create key.
    - Copy the key (it starts with `smk_live_`).
    You cannot do this step for the user; wait for them to paste the key.
 

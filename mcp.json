@@ -1,0 +1,20 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "seomatic": {
+      "type": "streamable-http",
+      "url": "https://app.seomatic.ai/api/mcp",
+      "extensions": {
+        "com.openai": {
+          "auth": {
+            "type": "oauth",
+            "client": {
+              "mode": "dcr"
+            },
+            "registrationUrl": "https://app.seomatic.ai/api/oauth/register"
+          }
+        }
+      }
+    }
+  }
+}

@@ -490,7 +490,7 @@
     },
     {
       "name": "show_approval_cards",
-      "description": "Render inline Approve/Dismiss cards for EXISTING proposed tasks and campaigns (get ids from list_seo_tasks / list_seo_campaigns first). Call this whenever the user wants to see, review, or act on proposals that already exist — the cards appear directly in your reply. NEVER send the user to the dashboard to approve something; this brings the approval to the conversation.",
+      "description": "Render inline Approve/Dismiss cards for EXISTING proposed tasks and campaigns (get ids from list_seo_tasks / list_seo_campaigns first). Call this whenever the user wants to see, review, or act on proposals that already exist: the cards appear directly in your reply. NEVER send the user to the dashboard to approve something; this brings the approval to the conversation.",
       "inputSchema": {
         "type": "object",
         "properties": {

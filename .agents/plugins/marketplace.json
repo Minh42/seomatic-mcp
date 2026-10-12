@@ -1,0 +1,20 @@
+{
+  "name": "seomatic",
+  "interface": {
+    "displayName": "SEOmatic"
+  },
+  "plugins": [
+    {
+      "name": "seomatic",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

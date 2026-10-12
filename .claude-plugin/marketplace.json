@@ -1,0 +1,18 @@
+{
+  "name": "seomatic",
+  "description": "SEOmatic for Claude Code and Cowork: the hosted SEOmatic MCP server plus SEO skills.",
+  "owner": {
+    "name": "SEOmatic",
+    "email": "contact@seomatic.ai"
+  },
+  "plugins": [
+    {
+      "name": "seomatic",
+      "source": "./",
+      "description": "SEO agent for your own site: real Google Search Console answers, site audits, AI visibility and citations, keyword and backlink research, and staged fixes you approve before they go live in WordPress, Shopify, Webflow, Wix and more.",
+      "category": "marketing",
+      "homepage": "https://seomatic.ai/developers/mcp",
+      "keywords": ["seo", "search-console", "ai-visibility", "keyword-research", "mcp"]
+    }
+  ]
+}
