@@ -27,5 +27,8 @@
   ],
   "mcpServers": "./.mcp.json",
   "icon": "./.claude-plugin/icon.png",
-  "privacyPolicyUrl": "https://seomatic.ai/privacy"
+  "privacyPolicyUrl": "https://seomatic.ai/privacy",
+  "termsOfServiceUrl": "https://seomatic.ai/terms",
+  "supportUrl": "https://seomatic.ai/contact",
+  "documentationUrl": "https://seomatic.ai/skills"
 }
