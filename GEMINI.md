@@ -27,5 +27,9 @@ Rules:
 For guided workflows, use the bundled skills: `seomatic-seo-audit`,
 `seomatic-striking-distance`, `seomatic-weekly-brief`,
 `seomatic-ai-visibility-review`, `seomatic-ai-citations`,
-`seomatic-approval-workflow`, and `seomatic` (CLI-based, for terminals with
+`seomatic-approval-workflow`, `seomatic-traffic-drop`, `seomatic-ctr-fix`,
+`seomatic-content-refresh`, `seomatic-cannibalization`, `seomatic-indexing-check`,
+`seomatic-internal-linking`, `seomatic-keyword-research`, `seomatic-content-brief`,
+`seomatic-competitor-gap`, `seomatic-backlink-audit`, `seomatic-local-seo`,
+`seomatic-ai-crawlers`, `seomatic-client-report`, and `seomatic` (CLI-based, for terminals with
 `SEOMATIC_API_KEY`).

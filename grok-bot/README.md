@@ -16,6 +16,10 @@ stages fixes to your CMS for your approval.
 | Routine: traffic-drop watch | [routines/traffic-drop-watch.md](./routines/traffic-drop-watch.md) | Routines (daily 08:30) |
 | Routine: striking-distance sweep | [routines/striking-distance-sweep.md](./routines/striking-distance-sweep.md) | Routines (Thu 10:00) |
 
+More focused templates (Weekly SEO Brief, Traffic Drop Watch, Quick Wins
+Hunter, AI Visibility Watch, Local SEO Desk, Agency Reporter, Content
+Planner, Technical SEO Monitor): see [templates/](./templates/README.md).
+
 ## Build it in your Grok Bot (10 minutes)
 
 1. Create a new Bot. Name: **SEO Teammate**. Description: *Watches your

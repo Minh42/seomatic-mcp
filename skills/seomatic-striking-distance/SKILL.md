@@ -21,7 +21,7 @@ mcp:
       url: https://app.seomatic.ai/api/mcp
       transport: streamable-http
       auth: oauth
-      setup: 'Add the SEOmatic MCP server (OAuth, or a Bearer smk_ API key from https://app.seomatic.ai/dashboard/settings?tab=ai-agents). Free tier covers every read in this skill.'
+      setup: 'Add the SEOmatic MCP server (OAuth, or a Bearer smk_ API key from https://app.seomatic.ai/dashboard/settings?tab=ai-agents). Search Console and page reads are free; SERP and backlink lookups use the free monthly allowance or AI credits.'
 tools:
   - gsc_performance
   - gsc_insights

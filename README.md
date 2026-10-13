@@ -82,12 +82,12 @@ workflows, add the skills under Settings, **Capabilities**, **Skills**,
 
 Cowork reads the same plugin as Claude Code. Open **Customize**, **Plugins**,
 **Add marketplace**, enter `Minh42/seomatic-mcp`, then install **seomatic**.
-It brings the SEOmatic connector (OAuth on first use) and all seven skills.
+It brings the SEOmatic connector (OAuth on first use) and all twenty skills.
 If you only want the connector, add it as in [Claude](#claude-web-and-desktop).
 
 ## Claude Code
 
-As a plugin (MCP server plus seven skills):
+As a plugin (MCP server plus twenty skills):
 
 ```text
 /plugin marketplace add Minh42/seomatic-mcp
@@ -285,7 +285,7 @@ MCP server: OpenClaw runs headless, so use an API key. Settings, **MCP**,
 hermes mcp add seomatic --url https://app.seomatic.ai/api/mcp --auth oauth
 ```
 
-Skills (all seven, kept up to date):
+Skills (all twenty, kept up to date):
 
 ```bash
 hermes skills tap add Minh42/seomatic-mcp
@@ -513,7 +513,7 @@ Code, Cursor, Codex, Gemini CLI, OpenClaw and many more:
 
 ```bash
 npx skills add Minh42/seomatic-mcp                # the seomatic CLI skill
-npx skills add Minh42/seomatic-mcp --full-depth   # all seven skills
+npx skills add Minh42/seomatic-mcp --full-depth   # all twenty skills
 ```
 
 The `seomatic` skill drives the CLI, so it works in any agent that can run
@@ -533,6 +533,19 @@ own computer, or `SEOMATIC_API_KEY` on a server.
 | [`seomatic-ai-visibility-review`](./skills/seomatic-ai-visibility-review/SKILL.md) | MCP server | How AI answers show your brand, tracked prompts |
 | [`seomatic-ai-citations`](./skills/seomatic-ai-citations/SKILL.md) | MCP server | First-party evidence of AI citations and AI referrals |
 | [`seomatic-approval-workflow`](./skills/seomatic-approval-workflow/SKILL.md) | MCP server | Review staged work, approve or dismiss, roll back |
+| [`seomatic-traffic-drop`](./skills/seomatic-traffic-drop/SKILL.md) | MCP server | Why traffic dropped: seasonality, pages, indexing, competitors |
+| [`seomatic-ctr-fix`](./skills/seomatic-ctr-fix/SKILL.md) | MCP server | Pages that rank but lose the click; new titles and metas |
+| [`seomatic-content-refresh`](./skills/seomatic-content-refresh/SKILL.md) | MCP server | Decaying pages and exactly what each needs |
+| [`seomatic-cannibalization`](./skills/seomatic-cannibalization/SKILL.md) | MCP server | Your own pages competing for one query, and which should win |
+| [`seomatic-indexing-check`](./skills/seomatic-indexing-check/SKILL.md) | MCP server | URL Inspection on key pages, each status in plain words |
+| [`seomatic-internal-linking`](./skills/seomatic-internal-linking/SKILL.md) | MCP server | Contextual links from strong pages to pages near page 1 |
+| [`seomatic-keyword-research`](./skills/seomatic-keyword-research/SKILL.md) | MCP server | Keywords from your own Search Console, mapped to pages |
+| [`seomatic-content-brief`](./skills/seomatic-content-brief/SKILL.md) | MCP server | A brief from the live results, and draft scoring before publishing |
+| [`seomatic-competitor-gap`](./skills/seomatic-competitor-gap/SKILL.md) | MCP server | Who really outranks you and the keywords they win |
+| [`seomatic-backlink-audit`](./skills/seomatic-backlink-audit/SKILL.md) | MCP server | Whether authority is your constraint, and real link prospects |
+| [`seomatic-local-seo`](./skills/seomatic-local-seo/SKILL.md) | MCP server | Business Profile, reviews, map pack and location pages |
+| [`seomatic-ai-crawlers`](./skills/seomatic-ai-crawlers/SKILL.md) | MCP server | Which AI bots crawl you, what is blocked, crawl to citation |
+| [`seomatic-client-report`](./skills/seomatic-client-report/SKILL.md) | MCP server | Monthly client or boss report from real data |
 
 Every skill follows the same rules: numbers come from tool results only, date
 ranges are quoted exactly, and nothing goes live until you approve it.
