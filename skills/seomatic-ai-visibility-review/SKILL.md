@@ -32,24 +32,24 @@ tools:
 
 > SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Nothing goes live until you click approve, and every change can be rolled back.
 
-1. `ai_citations` action `scan_results` (FREE - stored scan): per-engine visibility, the
+1. **Read the stored scan**: `ai_citations` action `scan_results` (FREE - stored scan): per-engine visibility, the
    prompts where the brand was MISSED and who won instead, competitors,
    and the sources engines cite.
-2. `visibility_manage` list: the tracked prompts, the plan allowance, and
+2. **Check the tracked prompts**: `visibility_manage` list: the tracked prompts, the plan allowance, and
    cadence. Check the prompts still match the business (stale prompts =
    wasted scan spend).
-3. Tune: add missing money questions with `visibility_manage` add (the
+3. **Tune the prompts**: add missing money questions with `visibility_manage` add (the
    buyer's words, not keywords - "best invoicing software for freelancers").
    Remove or deactivate stale ones (deactivate keeps history). Plan-capped:
    relay the upgrade path on a limit refusal.
-4. Cadence: weekly is the default. Set daily ONLY if the user explicitly
+4. **Set the cadence**: weekly is the default. Set daily ONLY if the user explicitly
    asks AND you have told them it multiplies scan spend ~7x; it is also
    plan-gated.
-5. Fresh scan: `run_ai_visibility_scan` bills AI credits (one
+5. **Run a fresh scan only on request**: `run_ai_visibility_scan` bills AI credits (one
    assistant-triggered scan per hour). Run it ONLY when the user asks for
    fresh numbers after you have named the cost; it returns a scanId and
    results land in a few minutes, then re-read with `ai_citations` action
    `scan_results`.
-6. Report: visibility by engine, the top missed prompts with who won them,
+6. **Report**: visibility by engine, the top missed prompts with who won them,
    and 2-3 content/citation moves. Cited-source gaps are link-target
    ideas, not guaranteed placements - say "worth pitching", never promise.
