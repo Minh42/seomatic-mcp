@@ -12,7 +12,7 @@ approval SEOmatic publishes to WordPress, Shopify, Webflow, Wix and other
 connected CMSs and measures the before and after.
 
 This repository carries every agent's install file in one place: the hosted
-MCP server config, Agent Skills, and plugin manifests for Claude Code, Cowork,
+MCP server config, 20 Agent Skills, Grok Bot templates, and plugin manifests for Claude Code, Cowork,
 Cursor, Codex, Grok Build, Gemini CLI, Kimi Code and DeepSeek Harness.
 
 | What | Where |
@@ -31,9 +31,28 @@ key carries the `agents:act` scope. Acting through the REST API or CLI needs
 the Infrastructure plan. Approving always stays with you: an agent only
 records a decision you made.
 
+## Quick start
+
+Add the 20 SEO skills to any agent that reads Agent Skills (Claude Code,
+Cursor, Codex, Gemini CLI, OpenCode, Kiro and 40+ more):
+
+```bash
+npx skills add Minh42/seomatic-mcp
+```
+
+Then connect the MCP server they use (OAuth, free account, no card):
+
+```bash
+claude mcp add --transport http seomatic https://app.seomatic.ai/api/mcp
+```
+
+Ask: *"Which of my pages are closest to page 1?"* The answer cites your real
+Search Console numbers. Prefer an always-on bot? See the
+[Grok Bot templates](./grok-bot/templates/README.md).
+
 ## Contents
 
-- [What you can ask](#what-you-can-ask)
+- [Quick start](#quick-start) · [What you can ask](#what-you-can-ask)
 - Install: [Claude](#claude-web-and-desktop) ·
   [Claude Cowork](#claude-cowork) · [Claude Code](#claude-code) ·
   [ChatGPT](#chatgpt) · [Codex](#codex) · [Cursor](#cursor) ·
