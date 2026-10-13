@@ -4,6 +4,23 @@ Every Monday, a five-line brief of what changed in your Google Search Console an
 
 Built on [SEOmatic](https://seomatic.ai), the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Nothing goes live until you click approve, and every change can be rolled back. The free plan covers connecting and analysis; staged fixes need a paid plan.
 
+## Fastest path: one paste
+
+Create a new Bot in Grok Bot, then paste this as your first message. The Bot sets itself up:
+
+```
+Set yourself up from this template:
+https://github.com/Minh42/seomatic-mcp/blob/main/grok-bot/templates/weekly-seo-brief.md
+1. Rename yourself to "Weekly SEO Brief" with the description in the file.
+2. Replace your instructions with the Instructions block in the file.
+3. Add the SEOmatic MCP server: https://app.seomatic.ai/api/mcp (Streamable HTTP, OAuth), and open the sign-in for me.
+4. Add the skills listed in the file from https://github.com/Minh42/seomatic-mcp/tree/main/skills.
+5. Create each routine in the file with its schedule and prompt, in my timezone.
+Then list what you set up and run the first routine once so I can see it work.
+```
+
+Prefer to do it by hand? Steps 1 to 5 below.
+
 ## 1. Create the Bot
 
 - **Name:** Weekly SEO Brief
