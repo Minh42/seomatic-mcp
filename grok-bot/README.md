@@ -16,7 +16,7 @@ stages fixes to your CMS for your approval.
 | Routine: traffic-drop watch | [routines/traffic-drop-watch.md](./routines/traffic-drop-watch.md) | Routines (daily 08:30) |
 | Routine: striking-distance sweep | [routines/striking-distance-sweep.md](./routines/striking-distance-sweep.md) | Routines (Thu 10:00) |
 
-More focused templates (Weekly SEO Brief, Traffic Drop Watch, Quick Wins
+The same SEO Teammate as a one-paste template, plus eight focused ones (Weekly SEO Brief, Traffic Drop Watch, Quick Wins
 Hunter, AI Visibility Watch, Local SEO Desk, Agency Reporter, Content
 Planner, Technical SEO Monitor): see [templates/](./templates/README.md).
 

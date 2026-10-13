@@ -4,7 +4,7 @@ Ready-to-build [Grok Bot](https://x.ai/bot) templates on the SEOmatic MCP server
 
 | Template | What it does |
 | --- | --- |
-| [SEO Teammate](../README.md) | The all-round template: weekly review, drop watch, quick wins |
+| [SEO Teammate](./seo-teammate.md) | The all-round SEO bot: a Monday review, a daily traffic-drop watch and a Thursday striking-distance sweep on your Search Console data, with fixes staged for your approval. |
 | [Weekly SEO Brief](./weekly-seo-brief.md) | Every Monday, a five-line brief of what changed in your Google Search Console and what to do this week. |
 | [Traffic Drop Watch](./traffic-drop-watch.md) | Watches your Search Console every morning and only speaks when clicks fall, with the likely cause and what to check. |
 | [Quick Wins Hunter](./quick-wins-hunter.md) | Finds keywords one push from page 1 and pages that rank but lose the click, every week, and stages the fixes for your approval. |
