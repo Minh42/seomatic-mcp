@@ -37,7 +37,7 @@ Add the 20 SEO skills to any agent that reads Agent Skills (Claude Code,
 Cursor, Codex, Gemini CLI, OpenCode, Kiro and 40+ more):
 
 ```bash
-npx skills add Minh42/seomatic-mcp
+npx skills add Minh42/seomatic-mcp --full-depth
 ```
 
 Then connect the MCP server they use (OAuth, free account, no card):
