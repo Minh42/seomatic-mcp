@@ -11,6 +11,21 @@
   "homepage": "https://seomatic.ai/developers/mcp",
   "repository": "https://github.com/Minh42/seomatic-mcp",
   "license": "MIT",
-  "keywords": ["seo", "search-console", "gsc", "keyword-research", "backlinks", "ai-visibility", "geo", "site-audit", "wordpress", "shopify", "webflow", "mcp"],
-  "mcpServers": "./.mcp.json"
+  "keywords": [
+    "seo",
+    "search-console",
+    "gsc",
+    "keyword-research",
+    "backlinks",
+    "ai-visibility",
+    "geo",
+    "site-audit",
+    "wordpress",
+    "shopify",
+    "webflow",
+    "mcp"
+  ],
+  "mcpServers": "./.mcp.json",
+  "icon": "./.claude-plugin/icon.png",
+  "privacyPolicyUrl": "https://seomatic.ai/privacy"
 }
