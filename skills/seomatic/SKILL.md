@@ -4,7 +4,6 @@ description: SEO agent for the user's own website through the SEOmatic CLI. Answ
 version: 1.0.0
 license: MIT
 homepage: https://seomatic.ai/developers/cli
-allowed-tools: Bash(npx -y seomatic:*) Bash(npx seomatic:*) Bash(seomatic:*)
 metadata: {"openclaw":{"emoji":"🔎","primaryEnv":"SEOMATIC_API_KEY","requires":{"anyBins":["seomatic","npx"],"env":["SEOMATIC_API_KEY"]}},"hermes":{"tags":["seo","search-console","ai-visibility","keyword-research"],"category":"marketing","related_skills":["seomatic-seo-audit","seomatic-striking-distance","seomatic-weekly-brief","seomatic-approval-workflow"]},"paperclip":{"requirements":{"env":["SEOMATIC_API_KEY"],"binaries":[]}},"grok-bot":{"secrets":["SEOMATIC_API_KEY"]}}
 required_environment_variables:
   - name: SEOMATIC_API_KEY
