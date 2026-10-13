@@ -4,7 +4,11 @@ Watches your Search Console every morning and only speaks when clicks fall, with
 
 Built on [SEOmatic](https://seomatic.ai), the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Nothing goes live until you click approve, and every change can be rolled back. The free plan covers connecting and analysis; staged fixes need a paid plan.
 
-## Fastest path: one paste
+## Install in one click
+
+**[Open Traffic Drop Watch in Grok Bot](https://x.ai/bot/9pxPIxJf0M10hPq1e4Jt4)**, add it, then connect SEOmatic once (step 3 below): templates carry the name, instructions, skills and routines, but never a login, so you sign in to your own site.
+
+## Or build it yourself: one paste
 
 Create a new Bot in Grok Bot, then paste this as your first message. The Bot sets itself up:
 
@@ -64,7 +68,7 @@ Check SEOmatic for anomalies: any page, folder or query cluster whose clicks or 
 
 ## 6. Share it
 
-Bot settings > **Share as template** > public. Identity, instructions, skills and routines travel; your SEOmatic login does not, so installers connect their own site with step 3.
+The public template: https://x.ai/bot/9pxPIxJf0M10hPq1e4Jt4. To share your own copy: Bot settings > **Share as template** > public. Identity, instructions, skills and routines travel; your SEOmatic login does not, so installers connect their own site with step 3.
 
 ---
 

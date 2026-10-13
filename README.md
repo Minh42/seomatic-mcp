@@ -188,7 +188,12 @@ then **Developer: Reload Window**.
 ## Grok Bot
 
 An always-on SEO teammate on [Grok Bot](https://x.ai/bot) with weekly
-routines. Follow [`grok-bot/`](./grok-bot): paste the instructions, connect
+routines. One click: [install SEO Teammate](https://x.ai/bot/TAd_1q_rpYCcb94h8PXDG),
+then connect SEOmatic once (OAuth). Eight more ready-made bots (traffic-drop
+watch, weekly brief, quick wins, AI visibility, local SEO, agency reports,
+content planner, technical monitor) install from
+[`grok-bot/templates`](./grok-bot/templates/README.md). To build one by hand
+instead: follow [`grok-bot/`](./grok-bot): paste the instructions, connect
 the MCP server per [`grok-bot/SETUP.md`](./grok-bot/SETUP.md) (OAuth), add
 the skills and the three routines. For the CLI skill, add `SEOMATIC_API_KEY`
 as a bot secret.
