@@ -1,6 +1,6 @@
 ---
 name: seomatic-weekly-brief
-description: Write a short weekly SEO brief for the connected site from real Search Console data - what changed in the last 7 days, whether a drop is a ranking loss or a SERP-feature or seasonal effect, and the one thing to do this week. Made to run as a Claude or ChatGPT scheduled task every Monday. Use when the user asks for a weekly brief, a weekly SEO update, or "what changed this week".
+description: 'Write a short weekly SEO brief for the connected site from real Search Console data - what changed in the last 7 days, whether a drop is a ranking loss or a SERP-feature or seasonal effect, and the one thing to do this week. Made to run as a Claude or ChatGPT scheduled task every Monday. Use when the user asks for a weekly brief, a weekly SEO update, or "what changed this week". Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
 version: 1.0.0
 license: MIT
 homepage: https://app.seomatic.ai
@@ -29,6 +29,8 @@ tools:
 ---
 
 # Weekly SEO brief
+
+> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Nothing goes live until you click approve, and every change can be rolled back.
 
 Every read below is Search Console or site data: FREE, and it uses none of the
 free monthly questions.

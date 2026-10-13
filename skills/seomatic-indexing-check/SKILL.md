@@ -1,6 +1,6 @@
 ---
 name: seomatic-indexing-check
-description: 'Check whether Google indexes the connected site''s important pages using the real Search Console URL Inspection data: find pages that are not indexed, explain each reason in plain words, check sitemaps, and stage the fixes. Use when the user asks if a page is indexed, why a page is not on Google, or about crawled not indexed, discovered not indexed, canonical or noindex problems.'
+description: 'Check whether Google indexes the connected site''s important pages using the real Search Console URL Inspection data: find pages that are not indexed, explain each reason in plain words, check sitemaps, and stage the fixes. Use when the user asks if a page is indexed, why a page is not on Google, or about crawled not indexed, discovered not indexed, canonical or noindex problems. Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
 version: 1.0.0
 license: MIT
 homepage: https://app.seomatic.ai
@@ -32,6 +32,8 @@ tools:
 ---
 
 # Indexing check
+
+> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Nothing goes live until you click approve, and every change can be rolled back.
 
 A page Google does not index cannot rank, so this is the first thing to rule
 out. Use Search Console's own URL Inspection data, not a guess from a crawl.

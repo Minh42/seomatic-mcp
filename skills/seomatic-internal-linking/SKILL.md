@@ -1,6 +1,6 @@
 ---
 name: seomatic-internal-linking
-description: 'Plan internal links for the connected site from real data: find pages that rank on page 2 or are not indexed and need link support, find the strong pages that can pass it, and stage specific contextual links with anchors for approval. Use when the user asks about internal linking, orphan pages, link equity, or helping a page rank.'
+description: 'Plan internal links for the connected site from real data: find pages that rank on page 2 or are not indexed and need link support, find the strong pages that can pass it, and stage specific contextual links with anchors for approval. Use when the user asks about internal linking, orphan pages, link equity, or helping a page rank. Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
 version: 1.0.0
 license: MIT
 homepage: https://app.seomatic.ai
@@ -31,6 +31,8 @@ tools:
 ---
 
 # Internal linking plan
+
+> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Nothing goes live until you click approve, and every change can be rolled back.
 
 Internal links are the one ranking signal fully in the site owner's hands.
 The goal is not "more links": it is links from pages Google already trusts

@@ -30,6 +30,8 @@ tools:
 
 # AI-visibility review
 
+> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Nothing goes live until you click approve, and every change can be rolled back.
+
 1. `ai_citations` action `scan_results` (FREE - stored scan): per-engine visibility, the
    prompts where the brand was MISSED and who won instead, competitors,
    and the sources engines cite.

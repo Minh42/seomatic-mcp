@@ -1,6 +1,6 @@
 ---
 name: seomatic-content-brief
-description: 'Write a content brief for one target keyword grounded in real data: search intent, what the current top results cover, SERP features, the queries the connected site already shows for, and the internal links to add, then score the finished draft before publishing. Use when the user asks for a content brief, an article outline, what to include in a post, or to check a draft before it goes live.'
+description: 'Write a content brief for one target keyword grounded in real data: search intent, what the current top results cover, SERP features, the queries the connected site already shows for, and the internal links to add, then score the finished draft before publishing. Use when the user asks for a content brief, an article outline, what to include in a post, or to check a draft before it goes live. Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
 version: 1.0.0
 license: MIT
 homepage: https://app.seomatic.ai
@@ -32,6 +32,8 @@ tools:
 ---
 
 # Content brief
+
+> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Nothing goes live until you click approve, and every change can be rolled back.
 
 A brief is the difference between an article that ranks and one that only
 exists. This one is built from the live results and the site's own data, so a

@@ -1,6 +1,6 @@
 ---
 name: seomatic-competitor-gap
-description: 'Compare the connected site with its real search competitors: who ranks for the same keywords, the keywords they win that the site does not, their SERP features, and the backlink gap, then turn the gap into ranked opportunities. Use when the user asks about competitors, competitor keywords, content gap, or why a competitor outranks them.'
+description: 'Compare the connected site with its real search competitors: who ranks for the same keywords, the keywords they win that the site does not, their SERP features, and the backlink gap, then turn the gap into ranked opportunities. Use when the user asks about competitors, competitor keywords, content gap, or why a competitor outranks them. Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
 version: 1.0.0
 license: MIT
 homepage: https://app.seomatic.ai
@@ -32,6 +32,8 @@ tools:
 ---
 
 # Competitor gap
+
+> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Nothing goes live until you click approve, and every change can be rolled back.
 
 "Our competitors" in a founder's head and "who outranks us in Google" are
 often different lists. Start from the second one.

@@ -1,6 +1,6 @@
 ---
 name: seomatic-striking-distance
-description: Find the connected site's striking-distance queries (page-2 rankings, positions 11-20, where one edit reaches page 1) from real Search Console data, quantify the click upside, and stage the specific fixes for approval. Use when the user wants quick SEO wins, more traffic without new content, or asks what to optimize first.
+description: 'Find the connected site''s striking-distance queries (page-2 rankings, positions 11-20, where one edit reaches page 1) from real Search Console data, quantify the click upside, and stage the specific fixes for approval. Use when the user wants quick SEO wins, more traffic without new content, or asks what to optimize first. Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
 version: 1.0.0
 license: MIT
 homepage: https://app.seomatic.ai
@@ -32,6 +32,8 @@ tools:
 ---
 
 # Striking-distance sprint
+
+> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Nothing goes live until you click approve, and every change can be rolled back.
 
 The cheapest traffic on any site is already ranking. A query sitting at
 position 8 has proven the page can rank and proven people search it; the only

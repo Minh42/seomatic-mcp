@@ -1,6 +1,6 @@
 ---
 name: seomatic-traffic-drop
-description: 'Diagnose why organic traffic dropped on the connected site from real Search Console data: separate seasonality from real loss, find which pages and queries lost the clicks, check indexing and competitors, and rank what to fix first. Use when the user says traffic, clicks or rankings fell, or asks what happened to their SEO.'
+description: 'Diagnose why organic traffic dropped on the connected site from real Search Console data: separate seasonality from real loss, find which pages and queries lost the clicks, check indexing and competitors, and rank what to fix first. Use when the user says traffic, clicks or rankings fell, or asks what happened to their SEO. Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
 version: 1.0.0
 license: MIT
 homepage: https://app.seomatic.ai
@@ -33,6 +33,8 @@ tools:
 ---
 
 # Traffic drop diagnosis
+
+> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Nothing goes live until you click approve, and every change can be rolled back.
 
 "Traffic dropped" has five common causes and they need opposite fixes. This
 skill finds which one it is, with numbers, before anyone touches a page.

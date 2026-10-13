@@ -1,6 +1,6 @@
 ---
 name: seomatic-ctr-fix
-description: Find pages on the connected site that rank on page 1 but lose the click, using the site's own Search Console CTR curve, check the SERP for features that steal clicks, and stage new titles and meta descriptions for approval. Use when the user asks to improve CTR, rewrite titles or meta descriptions, or get more clicks from rankings they already have.
+description: 'Find pages on the connected site that rank on page 1 but lose the click, using the site''s own Search Console CTR curve, check the SERP for features that steal clicks, and stage new titles and meta descriptions for approval. Use when the user asks to improve CTR, rewrite titles or meta descriptions, or get more clicks from rankings they already have. Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
 version: 1.0.0
 license: MIT
 homepage: https://app.seomatic.ai
@@ -31,6 +31,8 @@ tools:
 ---
 
 # CTR fix: titles and meta descriptions
+
+> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Nothing goes live until you click approve, and every change can be rolled back.
 
 The cheapest clicks in SEO: the page already ranks, it just loses the click to
 the result next to it. No new content, no links, one edit.

@@ -1,6 +1,6 @@
 ---
 name: seomatic-ai-crawlers
-description: Check which AI bots crawl the connected site (GPTBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended and more), what they fetch, whether robots.txt blocks them, and how crawls turn into AI citations and assistant referrals. Use when the user asks if ChatGPT or Perplexity can see their site, about AI crawlers, GPTBot, robots.txt for AI, or llms.txt.
+description: 'Check which AI bots crawl the connected site (GPTBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended and more), what they fetch, whether robots.txt blocks them, and how crawls turn into AI citations and assistant referrals. Use when the user asks if ChatGPT or Perplexity can see their site, about AI crawlers, GPTBot, robots.txt for AI, or llms.txt. Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
 version: 1.0.0
 license: MIT
 homepage: https://app.seomatic.ai
@@ -32,6 +32,8 @@ tools:
 ---
 
 # AI crawler check
+
+> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Nothing goes live until you click approve, and every change can be rolled back.
 
 An AI assistant can only cite a page it can fetch. This skill checks which AI
 bots reach the site, what they read, and where the chain from crawl to

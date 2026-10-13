@@ -1,6 +1,6 @@
 ---
 name: seomatic-local-seo
-description: 'Review local SEO for the connected business: Google Business Profile locations and reviews, local pack positions for the keywords that matter, local queries in Search Console, LocalBusiness schema and location pages, then stage the fixes. Use when the user runs a local business, asks about Google Maps, the local pack, reviews, Google Business Profile or city pages.'
+description: 'Review local SEO for the connected business: Google Business Profile locations and reviews, local pack positions for the keywords that matter, local queries in Search Console, LocalBusiness schema and location pages, then stage the fixes. Use when the user runs a local business, asks about Google Maps, the local pack, reviews, Google Business Profile or city pages. Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
 version: 1.0.0
 license: MIT
 homepage: https://app.seomatic.ai
@@ -32,6 +32,8 @@ tools:
 ---
 
 # Local SEO review
+
+> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Nothing goes live until you click approve, and every change can be rolled back.
 
 For a local business, the map pack and the Business Profile often bring more
 customers than the website's organic rankings. This skill checks both, from

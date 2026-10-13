@@ -2,7 +2,7 @@
 
 Watches your Search Console every morning and only speaks when clicks fall, with the likely cause and what to check.
 
-Built on [SEOmatic](https://seomatic.ai): real Google Search Console data, and fixes staged for your approval. Free plan covers connecting and analysis; staged fixes need a paid plan.
+Built on [SEOmatic](https://seomatic.ai), the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Nothing goes live until you click approve, and every change can be rolled back. The free plan covers connecting and analysis; staged fixes need a paid plan.
 
 ## 1. Create the Bot
 

@@ -1,6 +1,6 @@
 ---
 name: seomatic-keyword-research
-description: 'Do keyword research grounded in the connected site: start from the queries it already earns in Search Console, expand with real volume, difficulty, intent and trends data, cluster by intent, and pick which keywords map to which page. Use when the user asks for keyword research, keyword ideas, what to write about, search volume, or a keyword strategy.'
+description: 'Do keyword research grounded in the connected site: start from the queries it already earns in Search Console, expand with real volume, difficulty, intent and trends data, cluster by intent, and pick which keywords map to which page. Use when the user asks for keyword research, keyword ideas, what to write about, search volume, or a keyword strategy. Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
 version: 1.0.0
 license: MIT
 homepage: https://app.seomatic.ai
@@ -33,6 +33,8 @@ tools:
 ---
 
 # Keyword research
+
+> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Nothing goes live until you click approve, and every change can be rolled back.
 
 Generic keyword research starts from a seed and ends with a spreadsheet of
 terms the site has no chance at. This skill starts from what Google already

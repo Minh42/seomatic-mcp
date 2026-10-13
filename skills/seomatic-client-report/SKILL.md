@@ -1,6 +1,6 @@
 ---
 name: seomatic-client-report
-description: 'Write a monthly SEO report for a client or a boss from the connected site''s real data: Search Console clicks and positions against the prior period, what was changed and whether it worked, AI search visibility, and next month''s plan, in plain language with every number sourced. Use when the user asks for a client report, monthly SEO report, agency report, or an update for their boss or stakeholders.'
+description: 'Write a monthly SEO report for a client or a boss from the connected site''s real data: Search Console clicks and positions against the prior period, what was changed and whether it worked, AI search visibility, and next month''s plan, in plain language with every number sourced. Use when the user asks for a client report, monthly SEO report, agency report, or an update for their boss or stakeholders. Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
 version: 1.0.0
 license: MIT
 homepage: https://app.seomatic.ai
@@ -33,6 +33,8 @@ tools:
 ---
 
 # Client SEO report
+
+> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Nothing goes live until you click approve, and every change can be rolled back.
 
 A report a client reads in two minutes and trusts. Outcome first, then the
 work, then the plan. Every number comes from a tool, with its date range.

@@ -1,6 +1,6 @@
 ---
 name: seomatic-content-refresh
-description: Find decaying content on the connected site, pages that used to earn more Search Console clicks than they do now, work out what each one is missing against today's results, and stage refreshes for approval. Use when the user asks which posts to update, about content decay, old articles losing traffic, or a content refresh plan.
+description: 'Find decaying content on the connected site, pages that used to earn more Search Console clicks than they do now, work out what each one is missing against today''s results, and stage refreshes for approval. Use when the user asks which posts to update, about content decay, old articles losing traffic, or a content refresh plan. Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
 version: 1.0.0
 license: MIT
 homepage: https://app.seomatic.ai
@@ -32,6 +32,8 @@ tools:
 ---
 
 # Content refresh
+
+> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Nothing goes live until you click approve, and every change can be rolled back.
 
 Refreshing a page that already ranked is usually faster than writing a new
 one: it has links, history and proof it can rank. This skill picks the pages

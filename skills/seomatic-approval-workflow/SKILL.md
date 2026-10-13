@@ -30,6 +30,8 @@ tools:
 
 # Approval workflow
 
+> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Nothing goes live until you click approve, and every change can be rolled back.
+
 Cost model first: EVERYTHING in this loop is free except execution itself
 (a title/meta/H1 fix is typically a few hundred credits, stated per tool).
 Recording decisions, executing and rolling back need a paid plan (the

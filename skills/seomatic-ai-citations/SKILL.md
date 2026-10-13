@@ -1,6 +1,6 @@
 ---
 name: seomatic-ai-citations
-description: Find out whether AI answers actually cite this site, using first-party evidence - real logged-in AI answers captured by the browser extension, which pages AI answer-crawlers fetch, and which pages AI sends visitors back to. Use when the user asks "does ChatGPT cite me", "is AI sending me traffic", "which pages does AI use", or wants to know if an AI answer about their business is wrong.
+description: 'Find out whether AI answers actually cite this site, using first-party evidence - real logged-in AI answers captured by the browser extension, which pages AI answer-crawlers fetch, and which pages AI sends visitors back to. Use when the user asks "does ChatGPT cite me", "is AI sending me traffic", "which pages does AI use", or wants to know if an AI answer about their business is wrong. Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
 version: 1.0.0
 license: MIT
 homepage: https://app.seomatic.ai
@@ -28,6 +28,8 @@ tools:
 ---
 
 # Are we actually cited by AI?
+
+> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Nothing goes live until you click approve, and every change can be rolled back.
 
 Every read here is FREE and reads stored first-party data. Nothing triggers a
 scan or spends credits. All tools are already scoped to the connected

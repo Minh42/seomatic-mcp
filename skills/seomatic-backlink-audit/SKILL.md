@@ -1,6 +1,6 @@
 ---
 name: seomatic-backlink-audit
-description: 'Audit the connected site''s backlink profile with live data: referring domains, anchor text, link velocity and spam signals, compare with competitors, and find real link prospects (sites linking to competitors but not to you). Use when the user asks about backlinks, link building, domain authority, toxic links, or why competitors outrank them on authority.'
+description: 'Audit the connected site''s backlink profile with live data: referring domains, anchor text, link velocity and spam signals, compare with competitors, and find real link prospects (sites linking to competitors but not to you). Use when the user asks about backlinks, link building, domain authority, toxic links, or why competitors outrank them on authority. Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
 version: 1.0.0
 license: MIT
 homepage: https://app.seomatic.ai
@@ -30,6 +30,8 @@ tools:
 ---
 
 # Backlink audit
+
+> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Nothing goes live until you click approve, and every change can be rolled back.
 
 Links still decide many close rankings. This skill says whether authority is
 actually the constraint for this site, and if so, where the next links can

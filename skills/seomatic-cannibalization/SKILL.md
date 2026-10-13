@@ -1,6 +1,6 @@
 ---
 name: seomatic-cannibalization
-description: 'Find keyword cannibalization on the connected site: queries where two or more of its own pages compete in Google, from real Search Console data, decide which page should win, and stage the consolidation, retarget or redirect for approval. Use when the user asks about cannibalization, duplicate content, pages competing, or rankings that flip between URLs.'
+description: 'Find keyword cannibalization on the connected site: queries where two or more of its own pages compete in Google, from real Search Console data, decide which page should win, and stage the consolidation, retarget or redirect for approval. Use when the user asks about cannibalization, duplicate content, pages competing, or rankings that flip between URLs. Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
 version: 1.0.0
 license: MIT
 homepage: https://app.seomatic.ai
@@ -30,6 +30,8 @@ tools:
 ---
 
 # Keyword cannibalization
+
+> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Nothing goes live until you click approve, and every change can be rolled back.
 
 Two pages splitting one query usually means neither ranks as well as one
 would. But most "cannibalization" reports are noise: a homepage and a product
