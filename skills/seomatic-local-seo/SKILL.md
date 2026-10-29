@@ -1,6 +1,6 @@
 ---
 name: seomatic-local-seo
-description: 'Review local SEO for the connected business: Google Business Profile locations and reviews, local pack positions for the keywords that matter, local queries in Search Console, LocalBusiness schema and location pages, then stage the fixes. Use when the user runs a local business, asks about Google Maps, the local pack, reviews, Google Business Profile or city pages. Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
+description: 'Review local SEO for the connected business: Google Business Profile calls, reviews and profile gaps, daily Rank Tracker positions (Google Maps top 3, page one, AI Overviews) for the searches that matter, local queries in Search Console, LocalBusiness schema and location pages, then stage the fixes. Use when the user runs a local business, asks about Google Maps, the local pack, reviews, Google Business Profile or city pages. Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
 version: 1.0.0
 license: MIT
 homepage: https://app.seomatic.ai
@@ -21,8 +21,12 @@ mcp:
       url: https://app.seomatic.ai/api/mcp
       transport: streamable-http
       auth: oauth
-      setup: 'Add the SEOmatic MCP server (OAuth, or a Bearer smk_ API key from https://app.seomatic.ai/dashboard/settings?tab=ai-agents). Business Profile and Search Console reads are free; local position checks use the free monthly allowance or AI credits.'
+      setup: 'Add the SEOmatic MCP server (OAuth, or a Bearer smk_ API key from https://app.seomatic.ai/dashboard/settings?tab=ai-agents). Business Profile, Rank Tracker and Search Console reads are free; tracking searches, a city grid and drafted replies or updates use AI credits, quoted first.'
 tools:
+  - business_profile
+  - business_profile_manage
+  - rank_tracking_read
+  - rank_tracking
   - local_presence
   - gsc_performance
   - site_pages
@@ -41,25 +45,39 @@ the business's own connected data.
 
 ## Prerequisites
 
-- Google Business Profile: `local_presence` action `list_locations`. If none
-  come back, the profile is not connected; send the user to
-  https://app.seomatic.ai/dashboard/integrations and stop that part.
+- Google Business Profile: `business_profile` action `overview`. If it says
+  the profile is not connected, send the user to
+  https://app.seomatic.ai/dashboard/settings?tab=integrations and stop that
+  part. If it says access is pending, Google has not opened Business Profile
+  access yet: approved changes are held and go live the day it opens.
 - Search Console for the website half: https://app.seomatic.ai/connect/gsc.
 
 ## 1. The profile
 
-For each location, `local_presence` action `reviews`: average rating and
-count. Compare with what the user tells you about competitors, or with the
-businesses in the local results below. Under about 4.2 stars, or a fraction of
-the competitors' review count, is usually the first constraint, and it is
-fixed off-site (asking customers), not on the website. Say so plainly.
+`business_profile` action `overview` (per location when there are several):
+calls, direction requests, website clicks and times shown over 30 days,
+category advice, Ask Maps readiness, the Google Maps top 3 next to you, and
+any possible duplicate listing. Then `business_profile` action `reviews`:
+average rating, count, and the reviews waiting for a reply (each already has a
+drafted reply). Under about 4.2 stars, or a fraction of the competitors'
+review count, is usually the first constraint, and it is fixed off-site
+(asking every customer: `business_profile` action `review_link`), not on the
+website. Say so plainly. `business_profile` action `updates` gives profile
+completeness (hours, holiday hours, service areas, services) and this week's
+update.
 
 ## 2. Local positions
 
-`local_presence` action `visibility` with the 3-5 keywords that bring the
-business customers ("plumber near me" is not useful; "emergency plumber
-Lyon" is). If you do not know them, `gsc_performance` action `top_queries`
-and look for the service + place pattern, or ask the user.
+Rank Tracker first: `rank_tracking_read` action `tracked` returns every
+tracked search with today's place per city and device, the Google Maps top 3,
+page one, AI Overviews, who ranks above, and what moved this week with its
+cause. Nothing tracked yet: `rank_tracking_read` action `suggest`, then offer
+`rank_tracking` action `track` with the 3-5 searches that bring customers
+("plumber near me" is not useful; "emergency plumber Lyon" is). `track`
+without `confirm: true` returns the monthly credits: tell the user the number
+and only call again with `confirm: true` after they agree. For a one-off
+check without tracking, `local_presence` action `visibility` still works
+(billed per check).
 
 ## 3. Local queries on the website
 
@@ -90,6 +108,14 @@ It costs no credits, runs nothing, and always waits for the user's approval.
 On a free key the staging actions are locked and say which plan includes
 them: describe the specific fix instead so the user can pass it on.
 
+Profile fixes are staged with `business_profile_manage`: `propose_edit` for
+hours, holiday hours, services, service areas or the description (the
+business name, address and primary category need `confirm: true` and the
+user's explicit yes, one at a time), `draft_update` for this week's update
+from one line about a recent job, `redraft_reply` for a review reply in a
+different tone. Each comes back as an approval card; nothing is published
+until the user approves it.
+
 Check `task_manage` action `list` first so you do not stage a duplicate.
 Then `task_manage` action `create` with up to 5 tasks: `local_schema` for LocalBusiness markup, `content_create` for a missing service page. For location pages, use `campaign_manage` action `propose_location_pages` (drafts on the site's own layout) instead of single tasks. Each task
 needs `targetKey` (the full page URL, or a topic for content work), a
@@ -106,6 +132,7 @@ numbers behind it. Quote cost from each task's `estimatedCost.label`.
 
 ## What not to do
 
-- Do not suggest fake reviews, review gating, or keyword-stuffing the
-  business name on the profile. All three get profiles suspended.
+- Do not suggest fake reviews, review gating, rewards for reviews, or
+  keyword-stuffing the business name on the profile. They break Google's
+  policy and get profiles suspended.
 - Do not create city pages for places the business does not serve.

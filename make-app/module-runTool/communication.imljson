@@ -1,0 +1,16 @@
+{
+    "url": "/tools/{{encodeURL(parameters.tool)}}",
+    "method": "POST",
+    "headers": {
+        "idempotency-key": "make-{{substring(sha256(ifempty(scenario.id, 'noscenario') + '|' + ifempty(scenario.executionId, '') + '|' + parameters.tool + '|' + ifempty(parameters.arguments, '')), 0, 48)}}"
+    },
+    "type": "json",
+    "body": "{{parameters.arguments}}",
+    "response": {
+        "output": {
+            "tool": "{{body.tool}}",
+            "result": "{{parseJSON(switch(substring(trim(body.result), 0, 1), '{', body.result, '[', body.result, createJSON(body.result)))}}",
+            "raw_result": "{{body.result}}"
+        }
+    }
+}

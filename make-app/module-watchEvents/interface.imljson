@@ -1,0 +1,483 @@
+[
+    {
+        "name": "event",
+        "type": "text",
+        "label": "Event"
+    },
+    {
+        "name": "event_id",
+        "type": "text",
+        "label": "Event ID"
+    },
+    {
+        "name": "workspace_id",
+        "type": "text",
+        "label": "Workspace ID"
+    },
+    {
+        "name": "created_at",
+        "type": "date",
+        "label": "Created At"
+    },
+    {
+        "name": "cursor",
+        "type": "any",
+        "label": "Cursor"
+    },
+    {
+        "name": "data",
+        "type": "collection",
+        "label": "Data",
+        "spec": [
+            {
+                "name": "page_id",
+                "type": "text",
+                "label": "Page ID"
+            },
+            {
+                "name": "project_id",
+                "type": "text",
+                "label": "Page Project ID"
+            },
+            {
+                "name": "url",
+                "type": "text",
+                "label": "URL"
+            },
+            {
+                "name": "cms_item_id",
+                "type": "text",
+                "label": "CMS Item ID"
+            },
+            {
+                "name": "published_at",
+                "type": "date",
+                "label": "Published At"
+            },
+            {
+                "name": "error",
+                "type": "text",
+                "label": "Error"
+            },
+            {
+                "name": "failed_at",
+                "type": "date",
+                "label": "Failed At"
+            },
+            {
+                "name": "task_id",
+                "type": "text",
+                "label": "Task ID"
+            },
+            {
+                "name": "type",
+                "type": "text",
+                "label": "Type"
+            },
+            {
+                "name": "title",
+                "type": "text",
+                "label": "Title"
+            },
+            {
+                "name": "target",
+                "type": "text",
+                "label": "Target"
+            },
+            {
+                "name": "applied",
+                "type": "boolean",
+                "label": "Applied"
+            },
+            {
+                "name": "live",
+                "type": "boolean",
+                "label": "Live"
+            },
+            {
+                "name": "verified_at",
+                "type": "date",
+                "label": "Verified At"
+            },
+            {
+                "name": "approve_in_app",
+                "type": "url",
+                "label": "Approve in App"
+            },
+            {
+                "name": "decision",
+                "type": "text",
+                "label": "Decision"
+            },
+            {
+                "name": "decided_by",
+                "type": "text",
+                "label": "Decided By"
+            },
+            {
+                "name": "decided_at",
+                "type": "date",
+                "label": "Decided At"
+            },
+            {
+                "name": "campaign_id",
+                "type": "text",
+                "label": "Campaign ID"
+            },
+            {
+                "name": "tasks_total",
+                "type": "number",
+                "label": "Tasks Total"
+            },
+            {
+                "name": "tasks_succeeded",
+                "type": "number",
+                "label": "Tasks Succeeded"
+            },
+            {
+                "name": "tasks_live",
+                "type": "number",
+                "label": "Tasks Live"
+            },
+            {
+                "name": "completed_at",
+                "type": "date",
+                "label": "Completed At"
+            },
+            {
+                "name": "scan_id",
+                "type": "text",
+                "label": "Scan ID"
+            },
+            {
+                "name": "brand",
+                "type": "any",
+                "label": "Brand"
+            },
+            {
+                "name": "per_engine",
+                "type": "any",
+                "label": "Per Engine"
+            },
+            {
+                "name": "credits_charged",
+                "type": "number",
+                "label": "Credits Charged"
+            },
+            {
+                "name": "lost_answers",
+                "type": "array",
+                "label": "Lost Answers",
+                "spec": [
+                    {
+                        "name": "prompt",
+                        "type": "text",
+                        "label": "Prompt"
+                    },
+                    {
+                        "name": "engineId",
+                        "type": "text",
+                        "label": "Engine"
+                    },
+                    {
+                        "name": "competitors",
+                        "type": "array",
+                        "label": "Competitors",
+                        "spec": {
+                            "type": "text"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "gained_answers",
+                "type": "array",
+                "label": "Gained Answers",
+                "spec": [
+                    {
+                        "name": "prompt",
+                        "type": "text",
+                        "label": "Prompt"
+                    },
+                    {
+                        "name": "engineId",
+                        "type": "text",
+                        "label": "Engine"
+                    },
+                    {
+                        "name": "competitors",
+                        "type": "array",
+                        "label": "Competitors",
+                        "spec": {
+                            "type": "text"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "run_id",
+                "type": "text",
+                "label": "Audit Run ID"
+            },
+            {
+                "name": "host",
+                "type": "text",
+                "label": "Host"
+            },
+            {
+                "name": "score",
+                "type": "number",
+                "label": "Health Score"
+            },
+            {
+                "name": "pages_crawled",
+                "type": "number",
+                "label": "Pages Crawled"
+            },
+            {
+                "name": "by_severity",
+                "type": "collection",
+                "label": "Issues by Severity",
+                "spec": [
+                    {
+                        "name": "error",
+                        "type": "number",
+                        "label": "Errors"
+                    },
+                    {
+                        "name": "warning",
+                        "type": "number",
+                        "label": "Warnings"
+                    },
+                    {
+                        "name": "info",
+                        "type": "number",
+                        "label": "Info"
+                    }
+                ]
+            },
+            {
+                "name": "new_issues",
+                "type": "any",
+                "label": "New Issues"
+            },
+            {
+                "name": "fixed_issues",
+                "type": "any",
+                "label": "Fixed Issues"
+            },
+            {
+                "name": "truncated",
+                "type": "boolean",
+                "label": "Truncated"
+            },
+            {
+                "name": "query",
+                "type": "text",
+                "label": "Search Query"
+            },
+            {
+                "name": "page",
+                "type": "text",
+                "label": "Page"
+            },
+            {
+                "name": "prior_position",
+                "type": "number",
+                "label": "Prior Position"
+            },
+            {
+                "name": "recent_position",
+                "type": "number",
+                "label": "Recent Position"
+            },
+            {
+                "name": "positions_lost",
+                "type": "number",
+                "label": "Positions Lost"
+            },
+            {
+                "name": "recent_impressions",
+                "type": "number",
+                "label": "Recent Impressions"
+            },
+            {
+                "name": "recent_clicks",
+                "type": "number",
+                "label": "Recent Clicks"
+            },
+            {
+                "name": "click_share",
+                "type": "number",
+                "label": "Click Share"
+            },
+            {
+                "name": "passed_by",
+                "type": "collection",
+                "label": "Passed By",
+                "spec": [
+                    {
+                        "name": "domain",
+                        "type": "text",
+                        "label": "Domain"
+                    },
+                    {
+                        "name": "url",
+                        "type": "text",
+                        "label": "URL"
+                    },
+                    {
+                        "name": "position",
+                        "type": "number",
+                        "label": "Position"
+                    }
+                ]
+            },
+            {
+                "name": "defense_task_id",
+                "type": "text",
+                "label": "Defense Task ID"
+            },
+            {
+                "name": "fleet_volatile",
+                "type": "boolean",
+                "label": "Many Sites Moved"
+            },
+            {
+                "name": "window",
+                "type": "text",
+                "label": "Window"
+            },
+            {
+                "name": "source",
+                "type": "text",
+                "label": "Source"
+            },
+            {
+                "name": "kind",
+                "type": "text",
+                "label": "Kind"
+            },
+            {
+                "name": "city",
+                "type": "text",
+                "label": "City"
+            },
+            {
+                "name": "device",
+                "type": "text",
+                "label": "Device"
+            },
+            {
+                "name": "from_page",
+                "type": "text",
+                "label": "From Page"
+            },
+            {
+                "name": "to_page",
+                "type": "text",
+                "label": "To Page"
+            },
+            {
+                "name": "fix_task_id",
+                "type": "text",
+                "label": "Fix Task ID"
+            },
+            {
+                "name": "day",
+                "type": "text",
+                "label": "Day"
+            },
+            {
+                "name": "location",
+                "type": "text",
+                "label": "Listing"
+            },
+            {
+                "name": "business",
+                "type": "text",
+                "label": "Business"
+            },
+            {
+                "name": "stars",
+                "type": "number",
+                "label": "Stars"
+            },
+            {
+                "name": "reviewer",
+                "type": "text",
+                "label": "Reviewer"
+            },
+            {
+                "name": "comment",
+                "type": "text",
+                "label": "Comment"
+            },
+            {
+                "name": "drafted_reply",
+                "type": "text",
+                "label": "Drafted Reply"
+            },
+            {
+                "name": "reply_task_id",
+                "type": "text",
+                "label": "Reply Task ID"
+            },
+            {
+                "name": "auto_send",
+                "type": "boolean",
+                "label": "Reply Sends Automatically"
+            },
+            {
+                "name": "week_ending",
+                "type": "text",
+                "label": "Week Ending"
+            },
+            {
+                "name": "calls",
+                "type": "number",
+                "label": "Calls"
+            },
+            {
+                "name": "calls_week_before",
+                "type": "number",
+                "label": "Calls Week Before"
+            },
+            {
+                "name": "direction_requests",
+                "type": "number",
+                "label": "Direction Requests"
+            },
+            {
+                "name": "website_clicks",
+                "type": "number",
+                "label": "Website Clicks"
+            },
+            {
+                "name": "note",
+                "type": "text",
+                "label": "Note"
+            },
+            {
+                "name": "message",
+                "type": "text",
+                "label": "Message"
+            },
+            {
+                "name": "duplicate_title",
+                "type": "text",
+                "label": "Duplicate Listing Name"
+            },
+            {
+                "name": "duplicate_address",
+                "type": "text",
+                "label": "Duplicate Listing Address"
+            },
+            {
+                "name": "advice",
+                "type": "text",
+                "label": "Advice"
+            }
+        ]
+    }
+]

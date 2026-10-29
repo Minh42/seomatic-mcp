@@ -8,7 +8,7 @@
   "plugins": [
     {
       "name": "seomatic",
-      "description": "SEO agent for your own site: real Google Search Console answers, site audits, AI visibility and citations, keyword and backlink research, and staged fixes you approve before they go live in WordPress, Shopify, Webflow, Wix and more.",
+      "description": "SEO agent for your own site: real Google Search Console answers, site audits, AI visibility and citations, keyword and backlink research, local rank tracking and Google Business Profile, and staged fixes you approve before they go live in WordPress, Shopify, Webflow, Wix and more.",
       "category": "marketing",
       "source": { "type": "local", "path": "./" },
       "homepage": "https://seomatic.ai/developers/mcp",

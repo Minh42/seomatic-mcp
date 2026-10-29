@@ -1,0 +1,9 @@
+[
+    {
+        "name": "limit",
+        "type": "uinteger",
+        "label": "Limit",
+        "default": 200,
+        "help": "Maximum number of results to return and work with during one execution cycle."
+    }
+]

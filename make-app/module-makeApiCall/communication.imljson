@@ -1,0 +1,28 @@
+{
+    "url": "https://app.seomatic.ai/api{{parameters.url}}",
+    "method": "{{parameters.method}}",
+    "qs": {
+        "{{...}}": "{{toCollection(parameters.qs, 'key', 'value')}}"
+    },
+    "headers": {
+        "content-type": "application/json",
+        "{{...}}": "{{toCollection(parameters.headers, 'key', 'value')}}",
+        "x-seomatic-client": "make",
+        "authorization": "Bearer {{connection.apiKey}}"
+    },
+    "body": "{{parameters.body}}",
+    "type": "text",
+    "response": {
+        "output": {
+            "body": "{{body}}",
+            "headers": "{{headers}}",
+            "statusCode": "{{statusCode}}"
+        }
+    },
+    "log": {
+        "sanitize": [
+            "request.headers.authorization",
+            "response.body.crawler_ingest_url"
+        ]
+    }
+}

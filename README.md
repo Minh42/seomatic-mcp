@@ -12,7 +12,7 @@ approval SEOmatic publishes to WordPress, Shopify, Webflow, Wix and other
 connected CMSs and measures the before and after.
 
 This repository carries every agent's install file in one place: the hosted
-MCP server config, 20 Agent Skills, Grok Bot templates, and plugin manifests for Claude Code, Cowork,
+MCP server config, 21 Agent Skills, Grok Bot templates, and plugin manifests for Claude Code, Cowork,
 Cursor, Codex, Grok Build, Gemini CLI, Kimi Code and DeepSeek Harness.
 
 | What | Where |
@@ -33,7 +33,7 @@ records a decision you made.
 
 ## Quick start
 
-Add the 20 SEO skills to any agent that reads Agent Skills (Claude Code,
+Add the 21 SEO skills to any agent that reads Agent Skills (Claude Code,
 Cursor, Codex, Gemini CLI, OpenCode, Kiro and 40+ more):
 
 ```bash
@@ -80,6 +80,7 @@ Search Console numbers. Prefer an always-on bot? See the
 - Does ChatGPT mention my site when people ask about my topic?
 - What backlinks did I gain this month? Who links to my competitors but not me?
 - Write me a weekly SEO brief every Monday.
+- How did my local searches move this week, and which reviews need a reply?
 
 Tools are scoped to the workspace you signed in to, so you never pass a
 domain.
@@ -101,12 +102,12 @@ workflows, add the skills under Settings, **Capabilities**, **Skills**,
 
 Cowork reads the same plugin as Claude Code. Open **Customize**, **Plugins**,
 **Add marketplace**, enter `Minh42/seomatic-mcp`, then install **seomatic**.
-It brings the SEOmatic connector (OAuth on first use) and all twenty skills.
+It brings the SEOmatic connector (OAuth on first use) and all twenty-one skills.
 If you only want the connector, add it as in [Claude](#claude-web-and-desktop).
 
 ## Claude Code
 
-As a plugin (MCP server plus twenty skills):
+As a plugin (MCP server plus twenty-one skills):
 
 ```text
 /plugin marketplace add Minh42/seomatic-mcp
@@ -309,7 +310,7 @@ MCP server: OpenClaw runs headless, so use an API key. Settings, **MCP**,
 hermes mcp add seomatic --url https://app.seomatic.ai/api/mcp --auth oauth
 ```
 
-Skills (all twenty, kept up to date):
+Skills (all twenty-one, kept up to date):
 
 ```bash
 hermes skills tap add Minh42/seomatic-mcp
@@ -537,7 +538,7 @@ Code, Cursor, Codex, Gemini CLI, OpenClaw and many more:
 
 ```bash
 npx skills add Minh42/seomatic-mcp                # the seomatic CLI skill
-npx skills add Minh42/seomatic-mcp --full-depth   # all twenty skills
+npx skills add Minh42/seomatic-mcp --full-depth   # all twenty-one skills
 ```
 
 The `seomatic` skill drives the CLI, so it works in any agent that can run
@@ -567,7 +568,8 @@ own computer, or `SEOMATIC_API_KEY` on a server.
 | [`seomatic-content-brief`](./skills/seomatic-content-brief/SKILL.md) | MCP server | A brief from the live results, and draft scoring before publishing |
 | [`seomatic-competitor-gap`](./skills/seomatic-competitor-gap/SKILL.md) | MCP server | Who really outranks you and the keywords they win |
 | [`seomatic-backlink-audit`](./skills/seomatic-backlink-audit/SKILL.md) | MCP server | Whether authority is your constraint, and real link prospects |
-| [`seomatic-local-seo`](./skills/seomatic-local-seo/SKILL.md) | MCP server | Business Profile, reviews, map pack and location pages |
+| [`seomatic-local-seo`](./skills/seomatic-local-seo/SKILL.md) | MCP server | Business Profile calls and reviews, Rank Tracker, map pack and location pages |
+| [`seomatic-local-seo-weekly`](./skills/seomatic-local-seo-weekly/SKILL.md) | MCP server | Monday pass for a local business: rank moves, reviews to reply to, the weekly update, calls |
 | [`seomatic-ai-crawlers`](./skills/seomatic-ai-crawlers/SKILL.md) | MCP server | Which AI bots crawl you, what is blocked, crawl to citation |
 | [`seomatic-client-report`](./skills/seomatic-client-report/SKILL.md) | MCP server | Monthly client or boss report from real data |
 
@@ -576,13 +578,14 @@ ranges are quoted exactly, and nothing goes live until you approve it.
 
 ## Tools
 
-16 tools, each annotated read-only or staging and scoped to the connected
-workspace: `gsc_performance`, `gsc_insights`, `gsc_indexing`,
+Each tool is annotated read-only or staging and scoped to the connected
+workspace. The main ones: `gsc_performance`, `gsc_insights`, `gsc_indexing`,
 `keyword_research`, `keyword_clusters`, `backlink_profile`,
 `serp_competitors`, `site_pages`, `ai_citations`, `visibility_manage`,
-`traffic_analytics`, `local_presence`, `dataset_library`,
-`strategy_insights`, `task_manage`, `campaign_manage`. What you see depends
-on your plan and connected data sources. Reference:
+`traffic_analytics`, `rank_tracking_read`, `rank_tracking`,
+`business_profile`, `business_profile_manage`, `local_presence`,
+`dataset_library`, `strategy_insights`, `task_manage`, `campaign_manage`.
+What you see depends on your plan and connected data sources. Reference:
 https://seomatic.ai/developers/mcp
 
 ## Repository layout
@@ -601,11 +604,11 @@ https://seomatic.ai/developers/mcp
 | `plugins/dsh-seomatic/` | DeepSeek Harness bundle (npm `dsh-seomatic`) |
 | `server.json` | Copy of the Official MCP Registry entry (published from the app repo) |
 | `nanoclaw/add-seomatic-tool.md` | NanoClaw skill (copy to `.claude/skills/add-seomatic-tool/SKILL.md`) |
-| `grok-bot/`, `make-app/` | Grok Bot template, Make custom app |
+| `grok-bot/`, `make-app/` | Grok Bot template; Make custom app source (Watch Events trigger with 15 events, Infrastructure plan), copied from the app repo's `integrations/make` |
 
 ## Syncing skills from the app
 
-The six MCP skills are maintained in the SEOmatic app repository. To refresh
+Seven MCP skills (approval workflow, AI citations, AI visibility review, local SEO weekly, SEO audit, striking distance, weekly brief) are maintained in the SEOmatic app repository. To refresh
 them here:
 
 ```bash
@@ -616,7 +619,9 @@ git diff --stat
 The script copies `skills/seomatic-*/SKILL.md`, adds the Paperclip
 requirements block where the app copy has none, and refreshes the root
 `SKILL.md` from `skills/seomatic/SKILL.md`. A GitHub Action cannot do this
-without a cross-repo token, so run it by hand before a release.
+without a cross-repo token, so run it by hand before a release. The script
+overwrites those seven with the app copy, so make kit-only edits to them in the
+app repo first.
 
 ## License
 

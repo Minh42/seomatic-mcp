@@ -1,0 +1,15 @@
+{
+    "url": "/triggers/subscribe",
+    "method": "POST",
+    "type": "json",
+    "body": {
+        "targetUrl": "{{webhook.url}}",
+        "event": "{{parameters.event}}"
+    },
+    "response": {
+        "data": {
+            "externalHookId": "{{body.id}}",
+            "event": "{{parameters.event}}"
+        }
+    }
+}

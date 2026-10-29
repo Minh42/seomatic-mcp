@@ -1,0 +1,45 @@
+{
+    "baseUrl": "https://app.seomatic.ai/api/v1",
+    "headers": {
+        "authorization": "Bearer {{connection.apiKey}}",
+        "x-seomatic-client": "make"
+    },
+    "timeout": "{{common.timeout}}",
+    "response": {
+        "error": {
+            "400": {
+                "message": "[400] {{ifempty(body.error, 'Invalid request.')}}{{if(body.details, ': ' + body.details, '')}}{{if(body.code, ' (error code: ' + body.code + ')', '')}}",
+                "type": "DataError"
+            },
+            "401": {
+                "message": "[401] {{ifempty(body.error, 'Invalid or revoked API key')}}. Create a new key in SEOmatic under Settings > AI Agents > API Keys, then update this connection. Make turns a scenario off after 3 failed runs in a row: once this is fixed, turn the scenario back on.",
+                "type": "ConnectionError"
+            },
+            "402": {
+                "message": "[402] {{ifempty(body.error, 'Your SEOmatic plan does not include this action.')}}{{if(body.upgrade_url, ' Upgrade: ' + body.upgrade_url, '')}}{{if(body.billing_url, ' Billing: ' + body.billing_url, '')}}{{if(body.code, ' (error code: ' + body.code + ')', '')}}. Make turns a scenario off after 3 failed runs in a row: once this is fixed, turn the scenario back on.",
+                "type": "InvalidConfigurationError"
+            },
+            "403": {
+                "message": "[403] {{ifempty(body.error, 'This API key or plan does not allow this action.')}}{{if(body.upgrade_url, ' Upgrade: ' + body.upgrade_url, '')}}{{if(body.code, ' (error code: ' + body.code + ')', '')}}. Make turns a scenario off after 3 failed runs in a row: once this is fixed, turn the scenario back on.",
+                "type": "InvalidConfigurationError"
+            },
+            "404": {
+                "message": "[404] {{ifempty(body.error, 'Not found.')}}{{if(body.code == 'UNKNOWN_TOOL', ' Pick a tool from the list, or use an API key that is allowed to run this tool.', '')}}"
+            },
+            "429": {
+                "message": "[429] {{ifempty(body.message, 'SEOmatic rate limit exceeded.')}}{{if(headers.`retry-after`, ' Retry after ' + headers.`retry-after` + ' seconds.', '')}}",
+                "type": "RateLimitError"
+            },
+            "502": {
+                "message": "[502] {{ifempty(body.error, 'An SEOmatic tool failed.')}}{{if(body.details, ': ' + body.details, '')}}"
+            },
+            "message": "[{{statusCode}}] {{ifempty(body.error, 'SEOmatic returned an error.')}}{{if(body.code, ' (error code: ' + body.code + ')', '')}}"
+        }
+    },
+    "log": {
+        "sanitize": [
+            "request.headers.authorization",
+            "response.body.crawler_ingest_url"
+        ]
+    }
+}

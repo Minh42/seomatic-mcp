@@ -11,8 +11,8 @@
     {
       "name": "seomatic",
       "source": "./",
-      "version": "1.1.0",
-      "description": "SEO agent for your own site: real Google Search Console answers, site audits, AI visibility and citations, keyword and backlink research, and staged fixes you approve before they go live in WordPress, Shopify, Webflow, Wix and more.",
+      "version": "1.2.0",
+      "description": "SEO agent for your own site: real Google Search Console answers, site audits, AI visibility and citations, keyword and backlink research, local rank tracking and Google Business Profile, and staged fixes you approve before they go live in WordPress, Shopify, Webflow, Wix and more.",
       "author": {
         "name": "SEOmatic",
         "email": "contact@seomatic.ai"

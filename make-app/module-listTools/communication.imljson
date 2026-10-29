@@ -2,10 +2,8 @@
     "url": "/tools",
     "method": "GET",
     "response": {
+        "limit": "{{parameters.limit}}",
         "iterate": "{{body.tools}}",
-        "output": {
-            "label": "{{item.name}}",
-            "value": "{{item.name}}"
-        }
+        "output": "{{item}}"
     }
 }

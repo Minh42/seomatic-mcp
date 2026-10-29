@@ -1,0 +1,8 @@
+{
+    "url": "/triggers/unsubscribe",
+    "method": "POST",
+    "type": "json",
+    "body": {
+        "id": "{{webhook.externalHookId}}"
+    }
+}

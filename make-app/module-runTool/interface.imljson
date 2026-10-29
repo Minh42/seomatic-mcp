@@ -1,0 +1,17 @@
+[
+    {
+        "name": "tool",
+        "type": "text",
+        "label": "Tool"
+    },
+    {
+        "name": "result",
+        "type": "any",
+        "label": "Result"
+    },
+    {
+        "name": "raw_result",
+        "type": "text",
+        "label": "Raw result"
+    }
+]

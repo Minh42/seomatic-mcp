@@ -1,0 +1,71 @@
+[
+    {
+        "name": "event",
+        "type": "select",
+        "label": "Event",
+        "required": true,
+        "help": "The SEOmatic event that starts this scenario. Make subscribes to it in SEOmatic when you save the webhook and unsubscribes when you delete it. To listen to several events, add one webhook per event.",
+        "options": [
+            {
+                "label": "Page Published",
+                "value": "page.published"
+            },
+            {
+                "label": "Page Publish Failed",
+                "value": "page.publish_failed"
+            },
+            {
+                "label": "Task Awaiting Approval",
+                "value": "task.awaiting_approval"
+            },
+            {
+                "label": "Task Approved or Dismissed",
+                "value": "task.decided"
+            },
+            {
+                "label": "Task Completed",
+                "value": "task.completed"
+            },
+            {
+                "label": "Change Live on Your Site",
+                "value": "task.live"
+            },
+            {
+                "label": "Campaign Completed",
+                "value": "campaign.completed"
+            },
+            {
+                "label": "AI Visibility Scan Completed",
+                "value": "ai_visibility.scan_completed"
+            },
+            {
+                "label": "Site Audit Completed",
+                "value": "site_audit.completed"
+            },
+            {
+                "label": "Ranking Dropped",
+                "value": "ranking.dropped"
+            },
+            {
+                "label": "Ranking Page Changed",
+                "value": "ranking.page_changed"
+            },
+            {
+                "label": "New Google Review",
+                "value": "review.received"
+            },
+            {
+                "label": "Weekly Business Profile Calls",
+                "value": "business_profile.calls_report"
+            },
+            {
+                "label": "Business Profile Update Due",
+                "value": "business_profile.update_due"
+            },
+            {
+                "label": "Possible Duplicate Listing",
+                "value": "business_profile.duplicate_found"
+            }
+        ]
+    }
+]

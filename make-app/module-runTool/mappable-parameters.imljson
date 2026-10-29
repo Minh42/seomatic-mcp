@@ -1,0 +1,20 @@
+[
+    {
+        "name": "tool",
+        "type": "select",
+        "label": "Tool",
+        "required": true,
+        "sort": "text",
+        "options": "rpc://listToolOptions",
+        "help": "The SEOmatic tool to run. The list shows only the tools your API key can use. Tools marked (makes changes) stage edits to your site for your approval in SEOmatic; they need an API key allowed to make changes and the Infrastructure plan.",
+        "mappable": {
+            "help": "Enter the tool name, for example `get_search_queries`. Tool names use lowercase letters, digits and underscores."
+        }
+    },
+    {
+        "name": "arguments",
+        "type": "json",
+        "label": "Arguments",
+        "help": "The tool's arguments as a JSON object, for example `{\"days\": 28, \"limit\": 50}`. Leave empty to use the tool's defaults. To see the arguments each tool accepts, run the **List tools** module or see the [SEOmatic REST API documentation](https://seomatic.ai/developers/rest-api)."
+    }
+]

@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "seomatic",
-  "version": "1.1.0",
-  "description": "SEO agent for your own site: real Google Search Console answers, site audits, AI visibility and citations, keyword and backlink research, and staged fixes you approve before they go live in WordPress, Shopify, Webflow, Wix and more.",
+  "version": "1.2.0",
+  "description": "SEO agent for your own site: real Google Search Console answers, site audits, AI visibility and citations, keyword and backlink research, local rank tracking and Google Business Profile, and staged fixes you approve before they go live in WordPress, Shopify, Webflow, Wix and more.",
   "author": {
     "name": "SEOmatic",
     "email": "contact@seomatic.ai",
@@ -11,13 +11,13 @@
   "homepage": "https://seomatic.ai/developers/mcp",
   "repository": "https://github.com/Minh42/seomatic-mcp",
   "license": "MIT",
-  "keywords": ["seo", "search-console", "keyword-research", "backlinks", "ai-visibility", "mcp"],
+  "keywords": ["seo", "search-console", "keyword-research", "backlinks", "ai-visibility", "rank-tracker", "google-business-profile", "local-seo", "mcp"],
   "extensions": {
     "com.openai": {
       "interface": {
         "displayName": "SEOmatic",
         "shortDescription": "Your Search Console, audits and AI visibility, with fixes you approve",
-        "longDescription": "Ask about your own site's SEO with real data: Google Search Console queries and pages, striking-distance keywords, traffic drops, backlinks, SERP competitors, and how ChatGPT, Claude, Perplexity and Google AI Overviews describe you. SEOmatic can stage fixes for your pages; nothing goes live until you approve it in SEOmatic.",
+        "longDescription": "Ask about your own site's SEO with real data: Google Search Console queries and pages, striking-distance keywords, traffic drops, backlinks, SERP competitors, how ChatGPT, Claude, Perplexity and Google AI Overviews describe you, daily local rankings (Google Maps top 3), and your Google Business Profile calls and reviews. SEOmatic can stage fixes, review replies and profile updates for your pages; nothing goes live until you approve it in SEOmatic.",
         "developerName": "SEOmatic",
         "category": "Productivity",
         "capabilities": ["Read", "Write"],

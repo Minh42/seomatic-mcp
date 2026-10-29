@@ -1,0 +1,82 @@
+[
+    {
+        "name": "url",
+        "type": "text",
+        "label": "URL",
+        "required": true,
+        "help": "Enter the part of the URL that comes after `https://app.seomatic.ai/api`. For example, `/v1/me`. Put query parameters in **Query string**, not in the URL. For the list of endpoints, see the [SEOmatic REST API documentation](https://seomatic.ai/developers/rest-api).",
+        "validate": {
+            "pattern": "^/v[0-9]+/(?!.*\\.\\.)[^?#\\s\\\\]*$"
+        }
+    },
+    {
+        "name": "method",
+        "type": "select",
+        "label": "Method",
+        "required": true,
+        "default": "GET",
+        "options": [
+            {
+                "label": "GET",
+                "value": "GET"
+            },
+            {
+                "label": "POST",
+                "value": "POST"
+            },
+            {
+                "label": "PUT",
+                "value": "PUT"
+            },
+            {
+                "label": "PATCH",
+                "value": "PATCH"
+            },
+            {
+                "label": "DELETE",
+                "value": "DELETE"
+            }
+        ]
+    },
+    {
+        "name": "headers",
+        "type": "array",
+        "label": "Headers",
+        "help": "You don't have to add authorization headers; we already did that for you.",
+        "spec": [
+            {
+                "name": "key",
+                "type": "text",
+                "label": "Key"
+            },
+            {
+                "name": "value",
+                "type": "text",
+                "label": "Value"
+            }
+        ]
+    },
+    {
+        "name": "qs",
+        "type": "array",
+        "label": "Query string",
+        "spec": [
+            {
+                "name": "key",
+                "type": "text",
+                "label": "Key"
+            },
+            {
+                "name": "value",
+                "type": "text",
+                "label": "Value"
+            }
+        ]
+    },
+    {
+        "name": "body",
+        "type": "any",
+        "label": "Body",
+        "help": "The request body as JSON text, for example `{\"days\": 28}`. Used with POST, PUT and PATCH. Tip: build it with the **JSON > Create JSON** module."
+    }
+]

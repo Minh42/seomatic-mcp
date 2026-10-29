@@ -1,7 +1,7 @@
 {
   "name": "seomatic",
-  "version": "1.1.0",
-  "description": "SEO agent for your own site: real Google Search Console answers, site audits, AI visibility and citations, keyword and backlink research, and staged fixes you approve before they go live in WordPress, Shopify, Webflow, Wix and more. Bundles the SEOmatic skills and the hosted SEOmatic MCP server (OAuth).",
+  "version": "1.2.0",
+  "description": "SEO agent for your own site: real Google Search Console answers, site audits, AI visibility and citations, keyword and backlink research, local rank tracking and Google Business Profile, and staged fixes you approve before they go live in WordPress, Shopify, Webflow, Wix and more. Bundles the SEOmatic skills and the hosted SEOmatic MCP server (OAuth).",
   "contextFileName": "GEMINI.md",
   "mcpServers": {
     "seomatic": {

@@ -1,0 +1,12 @@
+{
+    "url": "/tools",
+    "method": "GET",
+    "response": {
+        "limit": 500,
+        "iterate": "{{body.tools}}",
+        "output": {
+            "label": "{{item.name}}{{if(item.acts, ' (makes changes)', '')}}",
+            "value": "{{item.name}}"
+        }
+    }
+}

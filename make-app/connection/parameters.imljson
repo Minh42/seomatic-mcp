@@ -1,0 +1,10 @@
+[
+    {
+        "name": "apiKey",
+        "type": "password",
+        "label": "API key",
+        "required": true,
+        "editable": true,
+        "help": "Your SEOmatic API key. It starts with `smk_`. To create one, open SEOmatic and go to **Settings > AI Agents > API Keys** ([open settings](https://app.seomatic.ai/dashboard/settings?tab=ai-agents)). New keys are read-only: they read your data and run analysis tools. Tick **Allow this key to make changes** only if this connection must run tools that change your site; the SEOmatic Make app needs the Infrastructure plan. For details, see the [SEOmatic REST API documentation](https://seomatic.ai/developers/rest-api)."
+    }
+]

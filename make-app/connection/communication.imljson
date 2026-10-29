@@ -1,0 +1,36 @@
+{
+    "url": "https://app.seomatic.ai/api/v1/me",
+    "method": "GET",
+    "headers": {
+        "authorization": "Bearer {{parameters.apiKey}}",
+        "x-seomatic-client": "make"
+    },
+    "response": {
+        "valid": {
+            "condition": "{{body.workspace.id}}",
+            "message": "SEOmatic did not return a workspace for this API key. Check the key and try again."
+        },
+        "error": {
+            "message": "[{{statusCode}}] {{ifempty(body.error, 'Could not verify the SEOmatic API key.')}}",
+            "401": {
+                "message": "[401] Invalid or revoked API key. Create a key in SEOmatic under Settings > AI Agents > API Keys and paste it here."
+            },
+            "429": {
+                "message": "[429] {{ifempty(body.message, 'SEOmatic rate limit exceeded.')}} Try again in a minute."
+            },
+            "402": {
+                "message": "[402] {{ifempty(body.error, 'Your SEOmatic plan does not include the Make integration.')}} Upgrade: {{ifempty(body.upgrade_url, 'https://seomatic.ai/pricing')}}"
+            }
+        },
+        "metadata": {
+            "type": "text",
+            "value": "{{body.workspace.name}}{{if(contains(ifempty(body.key.scopes, emptyarray), 'agents:act'), ' (can make changes)', ' (read-only)')}}"
+        }
+    },
+    "log": {
+        "sanitize": [
+            "request.headers.authorization",
+            "response.body.crawler_ingest_url"
+        ]
+    }
+}

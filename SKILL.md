@@ -106,7 +106,8 @@ Search Console property is connected (check `me`) or the window is inside the
 
 The full product (keyword research, backlinks, SERP competitors, Search
 Console insights, indexing, AI visibility, AI citations, analytics, site
-pages, tasks, campaigns) is exposed as tools. The list depends on the key's
+pages, tasks, campaigns, the Rank Tracker and the Google Business Profile)
+is exposed as tools. The list depends on the key's
 scopes, the plan and the connected data sources, so always discover it:
 
 ```bash
@@ -123,6 +124,13 @@ npx -y seomatic tools call <name> --data '<json>' --json
   `--data @file.json`.
 - With `--json`, `tools call` prints `{ "tool", "result" }` where `result` is
   the tool's answer as a string; parse it as JSON when it is JSON.
+- Local businesses: `get_tracked_rankings` (daily positions per city, the
+  Google Maps top 3, what moved and why), `suggest_tracked_searches`, and
+  `track_searches` (returns the monthly credits first; call again with
+  `confirm: true` only after the user agrees). Business Profile reads:
+  `get_business_profile_overview` (calls, category advice, Maps top 3),
+  `get_business_profile_reviews` (reviews with drafted replies),
+  `get_business_profile_updates` and `get_review_link`.
 - Calls are idempotent. If a call exits 2 with `TOOL_STILL_RUNNING`, run the
   same command again with `--idempotency-key <key from the error>` to collect
   the answer instead of starting the work twice.
