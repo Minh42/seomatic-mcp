@@ -33,7 +33,7 @@ tools:
 
 # Striking-distance sprint
 
-> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Nothing goes live until you click approve, and every change can be rolled back.
+> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Fixes you ask for here wait for your approval. By default SEOmatic's own agent also ships small, undoable fixes by itself. Every change can be rolled back.
 
 The cheapest traffic on any site is already ranking. A query sitting at
 position 8 has proven the page can rank and proven people search it; the only

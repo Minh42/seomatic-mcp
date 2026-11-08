@@ -20,7 +20,7 @@ tools:
 
 # Keyword cannibalization
 
-> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Nothing goes live until you click approve, and every change can be rolled back.
+> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Fixes you ask for here wait for your approval. By default SEOmatic's own agent also ships small, undoable fixes by itself. Every change can be rolled back.
 
 Two pages splitting one query usually means neither ranks as well as one
 would. But most "cannibalization" reports are noise: a homepage and a product

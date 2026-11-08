@@ -22,7 +22,7 @@ tools:
 
 # AI crawler check
 
-> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Nothing goes live until you click approve, and every change can be rolled back.
+> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Fixes you ask for here wait for your approval. By default SEOmatic's own agent also ships small, undoable fixes by itself. Every change can be rolled back.
 
 An AI assistant can only cite a page it can fetch. This skill checks which AI
 bots reach the site, what they read, and where the chain from crawl to

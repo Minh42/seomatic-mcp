@@ -21,7 +21,7 @@ tools:
 
 # CTR fix: titles and meta descriptions
 
-> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Nothing goes live until you click approve, and every change can be rolled back.
+> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Fixes you ask for here wait for your approval. By default SEOmatic's own agent also ships small, undoable fixes by itself. Every change can be rolled back.
 
 The cheapest clicks in SEO: the page already ranks, it just loses the click to
 the result next to it. No new content, no links, one edit.

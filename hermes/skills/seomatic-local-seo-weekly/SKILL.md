@@ -21,7 +21,7 @@ tools:
 
 # Local SEO weekly
 
-> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Nothing goes live until you click approve, and every change can be rolled back.
+> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Fixes you ask for here wait for your approval. By default SEOmatic's own agent also ships small, undoable fixes by itself. Every change can be rolled back.
 
 One pass, every Monday, for a business that wins customers nearby. Reads are
 FREE. Anything that changes the website or the Google Business Profile is

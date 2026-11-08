@@ -22,7 +22,7 @@ tools:
 
 # Content refresh
 
-> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Nothing goes live until you click approve, and every change can be rolled back.
+> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Fixes you ask for here wait for your approval. By default SEOmatic's own agent also ships small, undoable fixes by itself. Every change can be rolled back.
 
 Refreshing a page that already ranked is usually faster than writing a new
 one: it has links, history and proof it can rank. This skill picks the pages

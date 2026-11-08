@@ -24,7 +24,7 @@ tools:
 
 # SEOmatic SEO audit
 
-> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Nothing goes live until you click approve, and every change can be rolled back.
+> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Fixes you ask for here wait for your approval. By default SEOmatic's own agent also ships small, undoable fixes by itself. Every change can be rolled back.
 
 All reads below are FREE (each tool's description confirms). Never ask the
 user for their domain - every tool is already scoped to the connected

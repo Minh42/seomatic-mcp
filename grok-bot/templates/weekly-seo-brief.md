@@ -2,7 +2,7 @@
 
 Every Monday, a five-line brief of what changed in your Google Search Console and what to do this week.
 
-Built on [SEOmatic](https://seomatic.ai), the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Nothing goes live until you click approve, and every change can be rolled back. The free plan covers connecting and analysis; staged fixes need a paid plan.
+Built on [SEOmatic](https://seomatic.ai), the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Fixes you ask for here wait for your approval. By default SEOmatic's own agent also ships small, undoable fixes by itself. Every change can be rolled back. The free plan covers connecting and analysis; staged fixes need a paid plan.
 
 ## Install in one click
 
