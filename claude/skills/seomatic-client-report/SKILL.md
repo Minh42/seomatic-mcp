@@ -1,35 +1,7 @@
 ---
 name: seomatic-client-report
 description: 'Write a monthly SEO report for a client or a boss from the connected site''s real data: Search Console clicks and positions against the prior period, what was changed and whether it worked, AI search visibility, and next month''s plan, in plain language with every number sourced. Use when the user asks for a client report, monthly SEO report, agency report, or an update for their boss or stakeholders. Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
-version: 1.0.0
 license: MIT
-homepage: https://app.seomatic.ai
-metadata:
-  paperclip:
-    requirements:
-      env: []
-      binaries: []
-      mcp: [seomatic]
-  openclaw:
-    requires:
-      mcp: [seomatic]
-  hermes:
-    requires_mcp_servers: [seomatic]
-mcp:
-  servers:
-    seomatic:
-      url: https://app.seomatic.ai/api/mcp
-      transport: streamable-http
-      auth: oauth
-      setup: 'Add the SEOmatic MCP server (OAuth, or a Bearer smk_ API key from https://app.seomatic.ai/dashboard/settings?tab=ai-agents). Every read in this skill is free.'
-tools:
-  - gsc_performance
-  - gsc_insights
-  - traffic_analytics
-  - task_manage
-  - get_ai_visibility
-  - ai_citations
-  - strategy_insights
 ---
 
 # Client SEO report

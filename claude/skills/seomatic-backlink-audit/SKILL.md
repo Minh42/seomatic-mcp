@@ -1,32 +1,7 @@
 ---
 name: seomatic-backlink-audit
 description: 'Audit the connected site''s backlink profile with live data: referring domains, anchor text, link velocity and spam signals, compare with competitors, and find real link prospects (sites linking to competitors but not to you). Use when the user asks about backlinks, link building, domain authority, toxic links, or why competitors outrank them on authority. Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
-version: 1.0.0
 license: MIT
-homepage: https://app.seomatic.ai
-metadata:
-  paperclip:
-    requirements:
-      env: []
-      binaries: []
-      mcp: [seomatic]
-  openclaw:
-    requires:
-      mcp: [seomatic]
-  hermes:
-    requires_mcp_servers: [seomatic]
-mcp:
-  servers:
-    seomatic:
-      url: https://app.seomatic.ai/api/mcp
-      transport: streamable-http
-      auth: oauth
-      setup: 'Add the SEOmatic MCP server (OAuth, or a Bearer smk_ API key from https://app.seomatic.ai/dashboard/settings?tab=ai-agents). Backlink and SERP lookups use the free monthly allowance or AI credits; Search Console reads are free.'
-tools:
-  - backlink_profile
-  - serp_competitors
-  - gsc_performance
-  - task_manage
 ---
 
 # Backlink audit

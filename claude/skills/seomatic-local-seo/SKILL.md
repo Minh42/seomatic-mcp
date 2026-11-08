@@ -1,38 +1,7 @@
 ---
 name: seomatic-local-seo
 description: 'Review local SEO for the connected business: Google Business Profile calls, reviews and profile gaps, daily Rank Tracker positions (Google Maps top 3, page one, AI Overviews) for the searches that matter, local queries in Search Console, LocalBusiness schema and location pages, then stage the fixes. Use when the user runs a local business, asks about Google Maps, the local pack, reviews, Google Business Profile or city pages. Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
-version: 1.0.0
 license: MIT
-homepage: https://app.seomatic.ai
-metadata:
-  paperclip:
-    requirements:
-      env: []
-      binaries: []
-      mcp: [seomatic]
-  openclaw:
-    requires:
-      mcp: [seomatic]
-  hermes:
-    requires_mcp_servers: [seomatic]
-mcp:
-  servers:
-    seomatic:
-      url: https://app.seomatic.ai/api/mcp
-      transport: streamable-http
-      auth: oauth
-      setup: 'Add the SEOmatic MCP server (OAuth, or a Bearer smk_ API key from https://app.seomatic.ai/dashboard/settings?tab=ai-agents). Business Profile, Rank Tracker and Search Console reads are free; tracking searches, a city grid and drafted replies or updates use AI credits, quoted first.'
-tools:
-  - business_profile
-  - business_profile_manage
-  - rank_tracking_read
-  - rank_tracking
-  - local_presence
-  - gsc_performance
-  - site_pages
-  - keyword_research
-  - campaign_manage
-  - task_manage
 ---
 
 # Local SEO review

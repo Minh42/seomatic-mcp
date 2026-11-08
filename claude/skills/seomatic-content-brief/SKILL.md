@@ -1,34 +1,7 @@
 ---
 name: seomatic-content-brief
 description: 'Write a content brief for one target keyword grounded in real data: search intent, what the current top results cover, SERP features, the queries the connected site already shows for, and the internal links to add, then score the finished draft before publishing. Use when the user asks for a content brief, an article outline, what to include in a post, or to check a draft before it goes live. Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
-version: 1.0.0
 license: MIT
-homepage: https://app.seomatic.ai
-metadata:
-  paperclip:
-    requirements:
-      env: []
-      binaries: []
-      mcp: [seomatic]
-  openclaw:
-    requires:
-      mcp: [seomatic]
-  hermes:
-    requires_mcp_servers: [seomatic]
-mcp:
-  servers:
-    seomatic:
-      url: https://app.seomatic.ai/api/mcp
-      transport: streamable-http
-      auth: oauth
-      setup: 'Add the SEOmatic MCP server (OAuth, or a Bearer smk_ API key from https://app.seomatic.ai/dashboard/settings?tab=ai-agents). Search Console reads and draft scoring are free; keyword and SERP lookups use the free monthly allowance or AI credits.'
-tools:
-  - keyword_research
-  - serp_competitors
-  - gsc_performance
-  - site_pages
-  - task_manage
-  - generate_article
 ---
 
 # Content brief

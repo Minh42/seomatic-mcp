@@ -1,34 +1,7 @@
 ---
 name: seomatic-ai-crawlers
 description: 'Check which AI bots crawl the connected site (GPTBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended and more), what they fetch, whether robots.txt blocks them, and how crawls turn into AI citations and assistant referrals. Use when the user asks if ChatGPT or Perplexity can see their site, about AI crawlers, GPTBot, robots.txt for AI, or llms.txt. Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
-version: 1.0.0
 license: MIT
-homepage: https://app.seomatic.ai
-metadata:
-  paperclip:
-    requirements:
-      env: []
-      binaries: []
-      mcp: [seomatic]
-  openclaw:
-    requires:
-      mcp: [seomatic]
-  hermes:
-    requires_mcp_servers: [seomatic]
-mcp:
-  servers:
-    seomatic:
-      url: https://app.seomatic.ai/api/mcp
-      transport: streamable-http
-      auth: oauth
-      setup: 'Add the SEOmatic MCP server (OAuth, or a Bearer smk_ API key from https://app.seomatic.ai/dashboard/settings?tab=ai-agents). Every read in this skill is free.'
-tools:
-  - get_ai_crawler_activity
-  - get_ai_funnel
-  - ai_citations
-  - site_audit
-  - site_pages
-  - task_manage
 ---
 
 # AI crawler check

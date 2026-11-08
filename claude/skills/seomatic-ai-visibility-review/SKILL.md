@@ -1,31 +1,7 @@
 ---
 name: seomatic-ai-visibility-review
 description: "Review how the connected brand shows up inside AI answers (ChatGPT, Claude, Perplexity, Gemini, Grok, AI Overviews) using SEOmatic's stored scans, tune the tracked prompts, and only then consider a fresh scan. Use for \"are we visible in AI search\", GEO reviews, or managing tracked prompts."
-version: 1.0.0
 license: MIT
-homepage: https://app.seomatic.ai
-metadata:
-  paperclip:
-    requirements:
-      env: []
-      binaries: []
-      mcp: [seomatic]
-  openclaw:
-    requires:
-      mcp: [seomatic]
-  hermes:
-    requires_mcp_servers: [seomatic]
-mcp:
-  servers:
-    seomatic:
-      url: https://app.seomatic.ai/api/mcp
-      transport: streamable-http
-      auth: oauth
-      setup: 'Add the SEOmatic MCP server (OAuth, or a Bearer smk_ API key from https://app.seomatic.ai/dashboard/settings?tab=ai-agents). Free tier covers every read in this skill.'
-tools:
-  - ai_citations
-  - visibility_manage
-  - run_ai_visibility_scan
 ---
 
 # AI-visibility review

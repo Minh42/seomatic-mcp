@@ -1,34 +1,7 @@
 ---
 name: seomatic-striking-distance
 description: 'Find the connected site''s striking-distance queries (page-2 rankings, positions 11-20, where one edit reaches page 1) from real Search Console data, quantify the click upside, and stage the specific fixes for approval. Use when the user wants quick SEO wins, more traffic without new content, or asks what to optimize first. Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
-version: 1.0.0
 license: MIT
-homepage: https://app.seomatic.ai
-metadata:
-  paperclip:
-    requirements:
-      env: []
-      binaries: []
-      mcp: [seomatic]
-  openclaw:
-    requires:
-      mcp: [seomatic]
-  hermes:
-    requires_mcp_servers: [seomatic]
-mcp:
-  servers:
-    seomatic:
-      url: https://app.seomatic.ai/api/mcp
-      transport: streamable-http
-      auth: oauth
-      setup: 'Add the SEOmatic MCP server (OAuth, or a Bearer smk_ API key from https://app.seomatic.ai/dashboard/settings?tab=ai-agents). Search Console and page reads are free; SERP and backlink lookups use the free monthly allowance or AI credits.'
-tools:
-  - gsc_performance
-  - gsc_insights
-  - serp_competitors
-  - site_pages
-  - backlink_profile
-  - task_manage
 ---
 
 # Striking-distance sprint

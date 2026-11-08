@@ -1,30 +1,7 @@
 ---
 name: seomatic-ai-citations
 description: 'Find out whether AI answers actually cite this site, using first-party evidence - real logged-in AI answers captured by the browser extension, which pages AI answer-crawlers fetch, and which pages AI sends visitors back to. Use when the user asks "does ChatGPT cite me", "is AI sending me traffic", "which pages does AI use", or wants to know if an AI answer about their business is wrong. Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
-version: 1.0.0
 license: MIT
-homepage: https://app.seomatic.ai
-metadata:
-  paperclip:
-    requirements:
-      env: []
-      binaries: []
-      mcp: [seomatic]
-  openclaw:
-    requires:
-      mcp: [seomatic]
-  hermes:
-    requires_mcp_servers: [seomatic]
-mcp:
-  servers:
-    seomatic:
-      url: https://app.seomatic.ai/api/mcp
-      transport: streamable-http
-      auth: oauth
-      setup: 'Add the SEOmatic MCP server (OAuth, or a Bearer smk_ API key from https://app.seomatic.ai/dashboard/settings?tab=ai-agents). Free tier covers every read in this skill.'
-tools:
-  - ai_citations
-  - traffic_analytics
 ---
 
 # Are we actually cited by AI?

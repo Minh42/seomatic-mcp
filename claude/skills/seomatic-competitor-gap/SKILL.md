@@ -1,34 +1,7 @@
 ---
 name: seomatic-competitor-gap
 description: 'Compare the connected site with its real search competitors: who ranks for the same keywords, the keywords they win that the site does not, their SERP features, and the backlink gap, then turn the gap into ranked opportunities. Use when the user asks about competitors, competitor keywords, content gap, or why a competitor outranks them. Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
-version: 1.0.0
 license: MIT
-homepage: https://app.seomatic.ai
-metadata:
-  paperclip:
-    requirements:
-      env: []
-      binaries: []
-      mcp: [seomatic]
-  openclaw:
-    requires:
-      mcp: [seomatic]
-  hermes:
-    requires_mcp_servers: [seomatic]
-mcp:
-  servers:
-    seomatic:
-      url: https://app.seomatic.ai/api/mcp
-      transport: streamable-http
-      auth: oauth
-      setup: 'Add the SEOmatic MCP server (OAuth, or a Bearer smk_ API key from https://app.seomatic.ai/dashboard/settings?tab=ai-agents). Search Console and page reads are free; SERP, keyword and backlink lookups use the free monthly allowance or AI credits.'
-tools:
-  - serp_competitors
-  - gsc_performance
-  - keyword_research
-  - backlink_profile
-  - site_pages
-  - task_manage
 ---
 
 # Competitor gap

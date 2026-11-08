@@ -1,33 +1,7 @@
 ---
 name: seomatic-internal-linking
 description: 'Plan internal links for the connected site from real data: find pages that rank on page 2 or are not indexed and need link support, find the strong pages that can pass it, and stage specific contextual links with anchors for approval. Use when the user asks about internal linking, orphan pages, link equity, or helping a page rank. Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
-version: 1.0.0
 license: MIT
-homepage: https://app.seomatic.ai
-metadata:
-  paperclip:
-    requirements:
-      env: []
-      binaries: []
-      mcp: [seomatic]
-  openclaw:
-    requires:
-      mcp: [seomatic]
-  hermes:
-    requires_mcp_servers: [seomatic]
-mcp:
-  servers:
-    seomatic:
-      url: https://app.seomatic.ai/api/mcp
-      transport: streamable-http
-      auth: oauth
-      setup: 'Add the SEOmatic MCP server (OAuth, or a Bearer smk_ API key from https://app.seomatic.ai/dashboard/settings?tab=ai-agents). Free tier covers every read in this skill.'
-tools:
-  - gsc_performance
-  - gsc_indexing
-  - site_pages
-  - site_audit
-  - task_manage
 ---
 
 # Internal linking plan

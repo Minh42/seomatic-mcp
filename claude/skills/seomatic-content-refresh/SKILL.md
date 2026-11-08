@@ -1,34 +1,7 @@
 ---
 name: seomatic-content-refresh
 description: 'Find decaying content on the connected site, pages that used to earn more Search Console clicks than they do now, work out what each one is missing against today''s results, and stage refreshes for approval. Use when the user asks which posts to update, about content decay, old articles losing traffic, or a content refresh plan. Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
-version: 1.0.0
 license: MIT
-homepage: https://app.seomatic.ai
-metadata:
-  paperclip:
-    requirements:
-      env: []
-      binaries: []
-      mcp: [seomatic]
-  openclaw:
-    requires:
-      mcp: [seomatic]
-  hermes:
-    requires_mcp_servers: [seomatic]
-mcp:
-  servers:
-    seomatic:
-      url: https://app.seomatic.ai/api/mcp
-      transport: streamable-http
-      auth: oauth
-      setup: 'Add the SEOmatic MCP server (OAuth, or a Bearer smk_ API key from https://app.seomatic.ai/dashboard/settings?tab=ai-agents). Search Console and page reads are free; SERP and keyword lookups use the free monthly allowance or AI credits.'
-tools:
-  - gsc_performance
-  - gsc_insights
-  - serp_competitors
-  - site_pages
-  - keyword_research
-  - task_manage
 ---
 
 # Content refresh

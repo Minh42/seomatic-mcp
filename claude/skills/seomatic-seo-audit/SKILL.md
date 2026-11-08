@@ -1,36 +1,7 @@
 ---
 name: seomatic-seo-audit
 description: "Run a complete, zero-cost SEO audit of the connected site through the SEOmatic connector - real Search Console data, technical crawl, on-page issues, and AI-search visibility - ending with a prioritized fix list the agent can stage for approval. Use when the user asks for an SEO audit, \"how is my site doing\", or a health check."
-version: 1.0.0
 license: MIT
-homepage: https://app.seomatic.ai
-metadata:
-  paperclip:
-    requirements:
-      env: []
-      binaries: []
-      mcp: [seomatic]
-  openclaw:
-    requires:
-      mcp: [seomatic]
-  hermes:
-    requires_mcp_servers: [seomatic]
-mcp:
-  servers:
-    seomatic:
-      url: https://app.seomatic.ai/api/mcp
-      transport: streamable-http
-      auth: oauth
-      setup: 'Add the SEOmatic MCP server (OAuth, or a Bearer smk_ API key from https://app.seomatic.ai/dashboard/settings?tab=ai-agents). Free tier covers every read in this skill.'
-tools:
-  - gsc_performance
-  - gsc_insights
-  - site_pages
-  - ai_citations
-  - task_manage
-  - gsc_indexing
-  - site_audit
-  - run_ai_visibility_scan
 ---
 
 # SEOmatic SEO audit

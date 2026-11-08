@@ -1,34 +1,7 @@
 ---
 name: seomatic-indexing-check
 description: 'Check whether Google indexes the connected site''s important pages using the real Search Console URL Inspection data: find pages that are not indexed, explain each reason in plain words, check sitemaps, and stage the fixes. Use when the user asks if a page is indexed, why a page is not on Google, or about crawled not indexed, discovered not indexed, canonical or noindex problems. Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
-version: 1.0.0
 license: MIT
-homepage: https://app.seomatic.ai
-metadata:
-  paperclip:
-    requirements:
-      env: []
-      binaries: []
-      mcp: [seomatic]
-  openclaw:
-    requires:
-      mcp: [seomatic]
-  hermes:
-    requires_mcp_servers: [seomatic]
-mcp:
-  servers:
-    seomatic:
-      url: https://app.seomatic.ai/api/mcp
-      transport: streamable-http
-      auth: oauth
-      setup: 'Add the SEOmatic MCP server (OAuth, or a Bearer smk_ API key from https://app.seomatic.ai/dashboard/settings?tab=ai-agents). Free tier covers every read in this skill.'
-tools:
-  - gsc_indexing
-  - gsc_insights
-  - gsc_performance
-  - site_pages
-  - site_audit
-  - task_manage
 ---
 
 # Indexing check

@@ -1,31 +1,7 @@
 ---
 name: seomatic-approval-workflow
 description: "Operate SEOmatic's human-gated execution loop from chat - inspect staged proposals with full evidence, record the user's approve/dismiss decisions, watch execution, and undo with rollback if needed. Use when the user wants to review pending SEO work, approve tasks, check what the agent did, or revert a change."
-version: 1.0.0
 license: MIT
-homepage: https://app.seomatic.ai
-metadata:
-  paperclip:
-    requirements:
-      env: []
-      binaries: []
-      mcp: [seomatic]
-  openclaw:
-    requires:
-      mcp: [seomatic]
-  hermes:
-    requires_mcp_servers: [seomatic]
-mcp:
-  servers:
-    seomatic:
-      url: https://app.seomatic.ai/api/mcp
-      transport: streamable-http
-      auth: oauth
-      setup: 'Add the SEOmatic MCP server (OAuth, or a Bearer smk_ API key from https://app.seomatic.ai/dashboard/settings?tab=ai-agents). Free tier covers every read in this skill.'
-tools:
-  - task_manage
-  - campaign_manage
-  - get_task_rollback
 ---
 
 # Approval workflow

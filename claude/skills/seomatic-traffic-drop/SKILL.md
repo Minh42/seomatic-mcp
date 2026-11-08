@@ -1,35 +1,7 @@
 ---
 name: seomatic-traffic-drop
 description: 'Diagnose why organic traffic dropped on the connected site from real Search Console data: separate seasonality from real loss, find which pages and queries lost the clicks, check indexing and competitors, and rank what to fix first. Use when the user says traffic, clicks or rankings fell, or asks what happened to their SEO. Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
-version: 1.0.0
 license: MIT
-homepage: https://app.seomatic.ai
-metadata:
-  paperclip:
-    requirements:
-      env: []
-      binaries: []
-      mcp: [seomatic]
-  openclaw:
-    requires:
-      mcp: [seomatic]
-  hermes:
-    requires_mcp_servers: [seomatic]
-mcp:
-  servers:
-    seomatic:
-      url: https://app.seomatic.ai/api/mcp
-      transport: streamable-http
-      auth: oauth
-      setup: 'Add the SEOmatic MCP server (OAuth, or a Bearer smk_ API key from https://app.seomatic.ai/dashboard/settings?tab=ai-agents). Search Console and page reads are free; SERP and backlink lookups use the free monthly allowance or AI credits.'
-tools:
-  - gsc_performance
-  - gsc_insights
-  - gsc_indexing
-  - serp_competitors
-  - traffic_analytics
-  - site_pages
-  - task_manage
 ---
 
 # Traffic drop diagnosis

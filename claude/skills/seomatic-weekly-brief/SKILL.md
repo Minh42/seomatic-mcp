@@ -1,31 +1,7 @@
 ---
 name: seomatic-weekly-brief
 description: 'Write a short weekly SEO brief for the connected site from real Search Console data - what changed in the last 7 days, whether a drop is a ranking loss or a SERP-feature or seasonal effect, and the one thing to do this week. Made to run as a Claude or ChatGPT scheduled task every Monday. Use when the user asks for a weekly brief, a weekly SEO update, or "what changed this week". Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
-version: 1.0.0
 license: MIT
-homepage: https://app.seomatic.ai
-metadata:
-  paperclip:
-    requirements:
-      env: []
-      binaries: []
-      mcp: [seomatic]
-  openclaw:
-    requires:
-      mcp: [seomatic]
-  hermes:
-    requires_mcp_servers: [seomatic]
-mcp:
-  servers:
-    seomatic:
-      url: https://app.seomatic.ai/api/mcp
-      transport: streamable-http
-      auth: oauth
-      setup: 'Add the SEOmatic MCP server (OAuth, or a Bearer smk_ API key from https://app.seomatic.ai/dashboard/settings?tab=ai-agents). Every read in this skill is free and uses no free questions.'
-tools:
-  - gsc_performance
-  - gsc_insights
-  - get_started
 ---
 
 # Weekly SEO brief

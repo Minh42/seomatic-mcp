@@ -1,33 +1,7 @@
 ---
 name: seomatic-local-seo-weekly
 description: 'Run a local business''s weekly SEO in one pass - what moved in its tracked searches (daily positions per city, the Google Maps top 3, AI Overviews), reviews waiting for a reply, this week''s Google Business Profile update, and calls from the profile - then stage every fix for approval. Made to run as a Claude, ChatGPT or Cursor scheduled task every Monday. Use when a plumber, clinic, salon, shop or the agency behind them asks "how did my local SEO do this week" or "what do I need to approve". Runs on SEOmatic, the SEO agent that works from the site''s real Google Search Console data; nothing goes live until the user approves it.'
-version: 1.0.0
 license: MIT
-homepage: https://app.seomatic.ai
-metadata:
-  paperclip:
-    requirements:
-      env: []
-      binaries: []
-      mcp: [seomatic]
-  openclaw:
-    requires:
-      mcp: [seomatic]
-  hermes:
-    requires_mcp_servers: [seomatic]
-mcp:
-  servers:
-    seomatic:
-      url: https://app.seomatic.ai/api/mcp
-      transport: streamable-http
-      auth: oauth
-      setup: 'Add the SEOmatic MCP server (OAuth, or a Bearer smk_ API key from https://app.seomatic.ai/dashboard/settings?tab=ai-agents). Reads are free; tracking searches and drafting replies or updates use credits, quoted first.'
-tools:
-  - rank_tracking_read
-  - rank_tracking
-  - business_profile
-  - business_profile_manage
-  - task_manage
 ---
 
 # Local SEO weekly
