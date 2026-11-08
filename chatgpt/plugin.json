@@ -1,6 +1,6 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
-  "name": "seomatic",
+  "name": "app-6a96b5cd819c8191ac1c77960a6621ca",
   "version": "2.1.0",
   "description": "SEO agent for your own site: real Google Search Console answers, site audits, AI visibility and citations, keyword and backlink research, local rank tracking and Google Business Profile, and fixes staged for your approval in WordPress, Shopify, Webflow, Wix and more.",
   "author": {
