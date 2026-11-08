@@ -1,15 +1,9 @@
 ---
 name: seomatic
-description: SEO agent for the user's own website through the SEOmatic CLI. Answers Google Search Console questions (top queries, top pages, clicks, impressions, CTR, position, period comparisons), audits any URL for classic SEO and AI-search readiness, reviews AI visibility and AI citations, researches keywords, backlinks and SERP competitors, and stages fixes the user approves before they go live in WordPress, Shopify, Webflow, Wix and other connected CMSs. Use when the user asks about their SEO, rankings, Search Console data, traffic drops, keywords close to page 1, whether ChatGPT or Google AI Overviews mention them, or what to fix first on their site.
+description: "SEO agent for the user's own website through the SEOmatic CLI. Answers Google Search Console questions (top queries, top pages, clicks, impressions, CTR, position, period comparisons), audits any URL for classic SEO and AI-search readiness, reviews AI visibility and AI citations, researches keywords, backlinks and SERP competitors, and stages fixes the user approves before they go live in WordPress, Shopify, Webflow, Wix and other connected CMSs. Use when the user asks about their SEO, rankings, Search Console data, traffic drops, keywords close to page 1, whether ChatGPT or Google AI Overviews mention them, or what to fix first on their site."
 version: 1.0.0
 license: MIT
 homepage: https://seomatic.ai/developers/cli
-metadata: {"openclaw":{"emoji":"🔎","primaryEnv":"SEOMATIC_API_KEY","requires":{"anyBins":["seomatic","npx"],"env":["SEOMATIC_API_KEY"]}},"hermes":{"tags":["seo","search-console","ai-visibility","keyword-research"],"category":"marketing","related_skills":["seomatic-seo-audit","seomatic-striking-distance","seomatic-weekly-brief","seomatic-approval-workflow"]},"paperclip":{"requirements":{"env":["SEOMATIC_API_KEY"],"binaries":[]}},"grok-bot":{"secrets":["SEOMATIC_API_KEY"]}}
-required_environment_variables:
-  - name: SEOMATIC_API_KEY
-    prompt: SEOmatic API key (starts with smk_live_)
-    help: Create one at https://app.seomatic.ai/dashboard/settings?tab=ai-agents (Settings, AI Agents, API Keys). Needs the admin role on the workspace.
-    required_for: every command except audit and logs
 ---
 
 # SEOmatic

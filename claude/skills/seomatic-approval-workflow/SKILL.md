@@ -1,6 +1,6 @@
 ---
 name: seomatic-approval-workflow
-description: Operate SEOmatic's human-gated execution loop from chat - inspect staged proposals with full evidence, record the user's approve/dismiss decisions, watch execution, and undo with rollback if needed. Use when the user wants to review pending SEO work, approve tasks, check what the agent did, or revert a change.
+description: "Operate SEOmatic's human-gated execution loop from chat - inspect staged proposals with full evidence, record the user's approve/dismiss decisions, watch execution, and undo with rollback if needed. Use when the user wants to review pending SEO work, approve tasks, check what the agent did, or revert a change."
 version: 1.0.0
 license: MIT
 homepage: https://app.seomatic.ai

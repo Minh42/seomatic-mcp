@@ -1,6 +1,6 @@
 ---
 name: seomatic-ai-visibility-review
-description: Review how the connected brand shows up inside AI answers (ChatGPT, Claude, Perplexity, Gemini, Grok, AI Overviews) using SEOmatic's stored scans, tune the tracked prompts, and only then consider a fresh scan. Use for "are we visible in AI search", GEO reviews, or managing tracked prompts.
+description: "Review how the connected brand shows up inside AI answers (ChatGPT, Claude, Perplexity, Gemini, Grok, AI Overviews) using SEOmatic's stored scans, tune the tracked prompts, and only then consider a fresh scan. Use for \"are we visible in AI search\", GEO reviews, or managing tracked prompts."
 version: 1.0.0
 license: MIT
 homepage: https://app.seomatic.ai
