@@ -1,55 +1,24 @@
 ---
 name: seomatic-ai-visibility-review
-description: "Review how the connected brand shows up inside AI answers (ChatGPT, Claude, Perplexity, Gemini, Grok, AI Overviews) using SEOmatic's stored scans, tune the tracked prompts, and only then consider a fresh scan. Use for \"are we visible in AI search\", GEO reviews, or managing tracked prompts."
-version: 1.0.0
-license: MIT
-homepage: https://app.seomatic.ai
-metadata:
-  paperclip:
-    requirements:
-      env: []
-      binaries: []
-      mcp: [seomatic]
-  openclaw:
-    requires:
-      mcp: [seomatic]
-  hermes:
-    requires_mcp_servers: [seomatic]
-mcp:
-  servers:
-    seomatic:
-      url: https://app.seomatic.ai/api/mcp
-      transport: streamable-http
-      auth: oauth
-      setup: 'Add the SEOmatic MCP server (OAuth, or a Bearer smk_ API key from https://app.seomatic.ai/dashboard/settings?tab=ai-agents). Free tier covers every read in this skill.'
-tools:
-  - ai_citations
-  - visibility_manage
-  - run_ai_visibility_scan
+description: "Report how the user's brand shows up in AI answer engines using SEOmatic's latest stored AI-visibility scan: which engines mention or cite the site, the prompts where it was missed, the competitors named instead and the sources cited, with what to do next. Use when the user asks whether AI assistants or AI search mention or recommend their business."
 ---
 
-# AI-visibility review
+# AI-answer visibility
 
-> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Fixes you ask for here wait for your approval. By default SEOmatic's own agent also ships small, undoable fixes by itself. Every change can be rolled back.
+1. Call `get_ai_visibility`. It reads the latest completed scan; it does not
+   run a new one.
+2. If there is no scan yet, say so plainly and explain that a scan runs from
+   the SEOmatic app. Do not guess what the engines would say.
 
-1. **Read the stored scan**: `ai_citations` action `scan_results` (FREE - stored scan): per-engine visibility, the
-   prompts where the brand was MISSED and who won instead, competitors,
-   and the sources engines cite.
-2. **Check the tracked prompts**: `visibility_manage` list: the tracked prompts, the plan allowance, and
-   cadence. Check the prompts still match the business (stale prompts =
-   wasted scan spend).
-3. **Tune the prompts**: add missing money questions with `visibility_manage` add (the
-   buyer's words, not keywords - "best invoicing software for freelancers").
-   Remove or deactivate stale ones (deactivate keeps history). Plan-capped:
-   relay the upgrade path on a limit refusal.
-4. **Set the cadence**: weekly is the default. Set daily ONLY if the user explicitly
-   asks AND you have told them it multiplies scan spend ~7x; it is also
-   plan-gated.
-5. **Run a fresh scan only on request**: `run_ai_visibility_scan` bills AI credits (one
-   assistant-triggered scan per hour). Run it ONLY when the user asks for
-   fresh numbers after you have named the cost; it returns a scanId and
-   results land in a few minutes, then re-read with `ai_citations` action
-   `scan_results`.
-6. **Report**: visibility by engine, the top missed prompts with who won them,
-   and 2-3 content/citation moves. Cited-source gaps are link-target
-   ideas, not guaranteed placements - say "worth pitching", never promise.
+## Answer
+
+- Per engine: mentioned or not, cited or not, share of tracked prompts.
+- The prompts where the brand was missed, with who was named instead.
+- The sources the engines cited most, and whether the user's own pages are
+  among them.
+- Up to 3 actions (a page that answers a missed prompt directly, facts the
+  engines get wrong, sources worth being listed on). After the user agrees,
+  stage them with `create_seo_tasks` and show them with `show_approval_cards`.
+
+Report what the scan observed; do not claim a change will make an engine cite
+the site.

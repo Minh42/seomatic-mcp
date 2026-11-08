@@ -27,8 +27,3 @@ done
 cp "$HERE/.claude-plugin/icon.png" "$HERE/claude/.claude-plugin/icon.png"
 echo "built $count Claude plugin skills in claude/skills"
 
-# The ChatGPT package (chatgpt/) carries the same skills minus the CLI skill.
-rm -rf "$HERE/chatgpt/skills"
-cp -R "$OUT" "$HERE/chatgpt/skills"
-rm -rf "$HERE/chatgpt/skills/seomatic"
-echo "copied $((count - 1)) skills to chatgpt/skills"

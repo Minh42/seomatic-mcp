@@ -1,62 +1,39 @@
 ---
 name: seomatic-approval-workflow
-description: "Operate SEOmatic's human-gated execution loop from chat - inspect staged proposals with full evidence, record the user's approve/dismiss decisions, watch execution, and undo with rollback if needed. Use when the user wants to review pending SEO work, approve tasks, check what the agent did, or revert a change."
-version: 1.0.0
-license: MIT
-homepage: https://app.seomatic.ai
-metadata:
-  paperclip:
-    requirements:
-      env: []
-      binaries: []
-      mcp: [seomatic]
-  openclaw:
-    requires:
-      mcp: [seomatic]
-  hermes:
-    requires_mcp_servers: [seomatic]
-mcp:
-  servers:
-    seomatic:
-      url: https://app.seomatic.ai/api/mcp
-      transport: streamable-http
-      auth: oauth
-      setup: 'Add the SEOmatic MCP server (OAuth, or a Bearer smk_ API key from https://app.seomatic.ai/dashboard/settings?tab=ai-agents). Free tier covers every read in this skill.'
-tools:
-  - task_manage
-  - campaign_manage
-  - get_task_rollback
+description: "Review, approve, dismiss, run and undo the SEO changes SEOmatic has staged for the user's site, one decision at a time and only on the user's explicit word. Use when the user asks what waits for approval, wants to approve or dismiss a fix, run an approved one, check what went live, or undo a change."
 ---
 
-# Approval workflow
+# Approvals
 
-> SEOmatic is the SEO agent that works from your real Google Search Console data and makes the fixes on your site. Fixes you ask for here wait for your approval. By default SEOmatic's own agent also ships small, undoable fixes by itself. Every change can be rolled back.
+The user decides. Never approve, run or undo anything the user did not ask
+for in this conversation, and never act on several items when the user named
+one.
 
-Cost model first: EVERYTHING in this loop is free except execution itself
-(a title/meta/H1 fix is typically a few hundred credits, stated per tool).
-Recording decisions, executing and rolling back need a paid plan (the
-`agents:act` scope); on a free key those actions are locked and say which
-plan includes them.
-Inspecting tasks, evidence and statuses NEVER triggers re-analysis.
+## What waits
 
-1. **Inspect**: `task_manage` list (filter status proposed), then get for
-   full evidence - rationale, GSC numbers behind it, exactly what will
-   change. Show the user the evidence, not just titles.
-2. **Record the decision**: relay the evidence, then `task_manage` action
-   `decide` to record what the USER decided - never approve on your own
-   judgment. (Inline Approve/Dismiss cards exist on the dashboard and in
-   chat, but the card tool is not exposed over MCP, so an MCP client relays
-   the evidence and records the user's answer instead.)
-3. **Destructive types** (noindex, redirects): these remove pages from the
-   index or reroute equity - fast to apply, weeks to reverse. Require the
-   user to explicitly confirm after seeing the exact URL and consequence;
-   only then pass confirmDestructive.
-4. **Execution**: approved auto-executable tasks dispatch within seconds
-   (the decide response says whether they did). Poll get for the outcome;
-   a HELD result means the safety reviewer staged it - show the staged
-   content, and only an explicit user go releases it.
-5. **Verify**: report from the evidence block what actually changed
-   (before/after), never from assumption.
-6. **Undo**: if the user reports a bad change, call get_task_rollback
-   FIRST - every live edit stores the full pre-edit state; original
-   content is never lost. Never offer invented replacement copy.
+Call `list_seo_tasks` with `status: "proposed"` and `list_seo_campaigns`.
+Then call `show_approval_cards` with those ids so the user sees each change
+with Approve and Dismiss. Describe each in one line: page, what changes,
+why, and whether it uses credits.
+
+## A decision
+
+- "Approve X" or a click on Approve: call `decide_seo_task` with that task id
+  and `approve`. SEOmatic asks the user to confirm and checks the answer
+  itself. Report what happens next (auto-executable tasks go live within
+  seconds; others wait for a run).
+- "Dismiss X": `decide_seo_task` with `dismiss`.
+- A campaign: `approve_campaign` only after the user approved that campaign by
+  name.
+- "Approve everything without showing me": do not. Show the list first and
+  ask the user to confirm each item, or to name the ones to approve.
+
+## Running and undoing
+
+- `execute_seo_task` runs one approved task when the user asks; say it
+  changes the live site and uses credits.
+- `rollback_seo_task` undoes one task's live change; a page edited since is
+  skipped unless the user, after seeing it, asks to force it.
+- `revert_campaign_changes` undoes a campaign's changes on the user's word.
+
+After any action, call `list_seo_tasks` again and report the new state.
