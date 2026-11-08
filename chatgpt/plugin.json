@@ -1,0 +1,112 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "seomatic",
+  "version": "2.1.0",
+  "description": "SEO agent for your own site: real Google Search Console answers, site audits, AI visibility and citations, keyword and backlink research, local rank tracking and Google Business Profile, and fixes staged for your approval in WordPress, Shopify, Webflow, Wix and more.",
+  "author": {
+    "name": "SEOmatic",
+    "email": "contact@seomatic.ai",
+    "url": "https://seomatic.ai"
+  },
+  "homepage": "https://seomatic.ai/developers/mcp",
+  "repository": "https://github.com/Minh42/seomatic-mcp",
+  "license": "MIT",
+  "keywords": ["seo", "search-console", "keyword-research", "backlinks", "ai-visibility", "rank-tracker", "google-business-profile", "local-seo", "mcp"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "SEOmatic",
+        "shortDescription": "Your SEO answers and fixes",
+        "longDescription": "SEOmatic connects ChatGPT to your own website's SEO data and to an SEO agent that can fix what it finds.\n\nAsk in plain words and get answers from your real data: Google Search Console queries and pages, keywords closest to page 1, why traffic changed, indexing problems, a full site audit, backlinks and SERP competitors, how ChatGPT, Claude, Perplexity, Gemini and Google AI Overviews describe your brand, daily local rankings and your Google Business Profile calls and reviews.\n\nWhen something needs fixing, SEOmatic stages the change (a title, a meta description, internal links, schema, a content refresh, a review reply) and shows it to you. Fixes you ask for in ChatGPT wait for your explicit approval before anything changes on your site, and every change can be rolled back. Approved changes publish to WordPress, Shopify, Webflow, Wix and more.\n\nWho it is for: founders, marketers, small businesses and agencies who want SEO answers and fixes without learning an SEO tool.\n\nWhat you need: a SEOmatic account (free to start, sign in from ChatGPT) and a connected Google Search Console property for Search Console answers. Reading your own data is free. Live market data, fresh AI visibility scans and applied fixes use SEOmatic credits; each tool says so before it runs.\n\nLimitations: SEOmatic only reads Search Console data for properties you have connected and verified. It does not buy ads, send payments or edit sites you have not connected.",
+        "developerName": "SEOmatic",
+        "category": "Productivity",
+        "capabilities": [
+          "Search Console analysis",
+          "SEO site audit",
+          "Keyword research",
+          "Backlink analysis",
+          "AI search visibility",
+          "Local rank tracking",
+          "Google Business Profile",
+          "Fixes staged for approval",
+          "Rollback"
+        ],
+        "websiteURL": "https://seomatic.ai",
+        "supportURL": "https://seomatic.ai/contact",
+        "privacyPolicyURL": "https://seomatic.ai/privacy",
+        "termsOfServiceURL": "https://seomatic.ai/terms",
+        "defaultPrompt": [
+          "Find my keywords closest to page 1 of Google.",
+          "Why did my search traffic change this month?",
+          "Run a full SEO audit of my site."
+        ],
+        "brandColor": "#603CED",
+        "brandColorDark": "#9F87FF",
+        "composerIcon": "./assets/logo.png",
+        "logo": "./assets/logo.png"
+      },
+      "onboardingSkill": "./skills/seomatic-seo-audit/SKILL.md",
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Striking-distance keywords from real Search Console data",
+              "prompt": "Use SEOmatic to find my keywords closest to page 1 of Google.",
+              "tools_triggered": "workspaces, gsc_performance",
+              "expected_behavior": "Reads the connected Search Console property (seomatic.ai in the test workspace) and lists queries ranking around positions 4 to 15 with their clicks, impressions, CTR and average position, plus the page that ranks for each and a suggested next step. No credits are used."
+            },
+            {
+              "description": "Explain a change in search traffic",
+              "prompt": "Why did my search traffic change over the last 28 days compared to the 28 days before?",
+              "tools_triggered": "gsc_performance, gsc_insights",
+              "expected_behavior": "Compares the two periods from Search Console, names the queries and pages that gained or lost the most clicks, and gives the likely cause for each (ranking moves, CTR change, seasonality) with the numbers. Read only."
+            },
+            {
+              "description": "Full SEO audit with a prioritized fix list",
+              "prompt": "Run a full SEO audit of my site and tell me what to fix first.",
+              "tools_triggered": "site_pages, gsc_indexing, strategy_insights, site_audit_deep",
+              "expected_behavior": "Returns a verdict on the site's SEO health, then ranked actions (indexing issues, title and meta mismatches, decaying pages, quick wins) each backed by a number from the data. Before running the deep crawl it states that it uses credits; reading stored results is free."
+            },
+            {
+              "description": "AI search visibility review",
+              "prompt": "How does my brand show up in ChatGPT, Perplexity and Google AI Overviews answers?",
+              "tools_triggered": "visibility_manage, ai_citations",
+              "expected_behavior": "Reads the stored AI visibility scan for the test workspace and reports, per engine, whether the brand is mentioned or cited, for which tracked prompts, which competitors appear instead, and which pages are cited. It does not start a new paid scan unless the user asks and confirms."
+            },
+            {
+              "description": "Review staged fixes and approve one after the user confirms",
+              "prompt": "Show me the SEO fixes waiting for my approval.",
+              "tools_triggered": "task_manage",
+              "expected_behavior": "Lists the fixes staged in the test workspace with what each would change (before and after), the page, the reason and the credit cost. Nothing is approved in this turn. If the reviewer then says \"Approve the first one\", the assistant confirms which fix and approves only that one; the change can be undone with rollback."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Search Console data for a site the user has not connected",
+              "prompt": "Show me the Search Console clicks and top queries for nytimes.com."
+            },
+            {
+              "description": "Approve and publish everything without showing the user",
+              "prompt": "Just approve and publish every pending SEO change on my site right now, don't show me anything."
+            },
+            {
+              "description": "Request unrelated to SEO",
+              "prompt": "Book me a table for two at an Italian restaurant tonight."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "The plugin does not sell products or take payments in ChatGPT. Some tools use credits from the user's existing SEOmatic plan and say so before they run."
+      },
+      "publication": {
+        "release_notes": "2.1.0: published under the verified business SEOmatic (the 2.0.1 review could not match the brand to the verified owner). OAuth 2.1 sign-in with dynamic client registration declared in mcp.json. 20 SEO skills: site audit, striking distance, traffic drop, AI visibility and citations, AI crawlers, keyword research, competitor gap, backlink audit, cannibalization, content brief and refresh, CTR fix, indexing check, internal linking, local SEO and weekly local report, weekly brief, client report, approval workflow.",
+        "translations": {
+          "fr-FR": {
+            "subtitle": "Le SEO de votre site, ici",
+            "description": "SEOmatic relie ChatGPT aux données SEO de votre propre site et à un agent SEO qui corrige ce qu'il trouve : Search Console, mots-clés proches de la première page, baisses de trafic, audit complet, backlinks, visibilité dans les réponses des IA, classement local et fiche Google Business Profile. Les corrections demandées dans ChatGPT attendent votre accord avant toute modification, et chaque changement peut être annulé."
+          }
+        }
+      }
+    }
+  }
+}
