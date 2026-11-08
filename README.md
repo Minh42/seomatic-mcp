@@ -59,7 +59,7 @@ Search Console numbers. Prefer an always-on bot? See the
   [Grok Bot](#grok-bot) · [Grok Build](#grok-build) ·
   [Gemini CLI and Gemini](#gemini-cli-and-gemini) ·
   [Google Antigravity](#google-antigravity) · [Kimi Code](#kimi-code) ·
-  [OpenClaw](#openclaw) · [Hermes Agent](#hermes-agent) ·
+  [OpenClaw](#openclaw) · [Hermes Agent](#install-in-hermes-agent) ·
   [NanoClaw](#nanoclaw) · [Paperclip](#paperclip) ·
   [DeepSeek Harness](#deepseek-harness-dsh) ·
   [Manus and Cue](#manus-and-cue) ·
@@ -304,13 +304,61 @@ MCP server: OpenClaw runs headless, so use an API key. Settings, **MCP**,
 }
 ```
 
-## Hermes Agent
+## Install in Hermes Agent
+
+The [`hermes/`](./hermes) folder is a Hermes plugin package (Agent Plugins
+v1, configuration only): the SEOmatic MCP server plus the twenty MCP skills.
+
+```bash
+hermes plugins install seomatic --enable
+```
+
+Or straight from this repository, at a commit you choose:
+
+```bash
+hermes plugins install Minh42/seomatic-mcp/hermes --ref <40-character-commit-sha> --enable
+```
+
+Needs Hermes Agent 0.21.6 or newer and Node.js 20.18.1 or newer with `npx`.
+The package runs the pinned `mcp-remote@0.15.2` through `npx`: on first use
+it registers an OAuth client named "Hermes Agent (SEOmatic)", opens your
+browser on the SEOmatic sign-in and a local callback port, and stores the
+tokens under `~/.mcp-auth`. The server is marked `untrusted`, so Hermes asks
+before every tool the server does not mark read-only and refuses those in
+unattended runs.
+
+Before you install, know that:
+
+- every tool call goes to `app.seomatic.ai` and acts on your own SEOmatic
+  workspace; the tool list comes from the server at runtime;
+- Search Console, stored data and the site audit are free; live market data
+  (keyword metrics and suggestions, backlinks, SERP competitors, local SERP
+  visibility), fresh AI visibility scans and approved fixes bill AI credits,
+  and content generation quotes its estimate before it runs;
+- fixes proposed through the tools are staged in SEOmatic; approving,
+  publishing, undoing and rolling back change your live site and need your
+  explicit confirmation. SEOmatic's own background agents follow the
+  workspace's autonomy mode (Settings, AI Agents): in Assisted, the default,
+  reversible changes go live on their own with a one-click undo; in Approval
+  every change waits for your yes.
+
+Prefer Hermes's own OAuth client (longer sign-in window) or an API key on a
+headless machine? Either replaces the package's server and keeps its skills:
 
 ```bash
 hermes mcp add seomatic --url https://app.seomatic.ai/api/mcp --auth oauth
 ```
 
-Skills (all twenty-one, kept up to date):
+```yaml
+# ~/.hermes/config.yaml
+mcp_servers:
+  seomatic:
+    url: "https://app.seomatic.ai/api/mcp"
+    headers:
+      Authorization: "Bearer smk_live_..."
+```
+
+Skills only, without the plugin (all twenty-one, including the CLI skill):
 
 ```bash
 hermes skills tap add Minh42/seomatic-mcp
@@ -601,6 +649,7 @@ https://seomatic.ai/developers/mcp
 | `kimi.plugin.json` | Kimi Code plugin |
 | `lhm.plugin.json` | LobeHub |
 | `SKILL.md`, `skills/` | Agent Skills (root `SKILL.md` = `skills/seomatic/SKILL.md`) |
+| `hermes/` | Hermes Agent plugin package (plugin catalog entry `seomatic`); `hermes/skills/` is built by `scripts/build-hermes-skills.sh` |
 | `plugins/dsh-seomatic/` | DeepSeek Harness bundle (npm `dsh-seomatic`) |
 | `server.json` | Copy of the Official MCP Registry entry (published from the app repo) |
 | `nanoclaw/add-seomatic-tool.md` | NanoClaw skill (copy to `.claude/skills/add-seomatic-tool/SKILL.md`) |
@@ -621,7 +670,9 @@ requirements block where the app copy has none, and refreshes the root
 `SKILL.md` from `skills/seomatic/SKILL.md`. A GitHub Action cannot do this
 without a cross-repo token, so run it by hand before a release. The script
 overwrites those seven with the app copy, so make kit-only edits to them in the
-app repo first.
+app repo first. It ends by running `scripts/build-hermes-skills.sh`, which
+rebuilds `hermes/skills/` from `skills/`; run that by hand after editing any
+other skill.
 
 ## License
 

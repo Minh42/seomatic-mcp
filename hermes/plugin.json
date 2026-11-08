@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "seomatic",
+  "version": "1.2.0",
+  "description": "SEO agent for your own site in Hermes: real Google Search Console answers, site audits, AI visibility and citations, keyword and backlink research, local rank tracking and Google Business Profile, and site fixes staged in SEOmatic for WordPress, Shopify, Webflow, Wix and more.",
+  "author": {
+    "name": "SEOmatic",
+    "email": "contact@seomatic.ai",
+    "url": "https://seomatic.ai"
+  },
+  "homepage": "https://seomatic.ai/developers/mcp",
+  "repository": "https://github.com/Minh42/seomatic-mcp",
+  "license": "MIT",
+  "keywords": [
+    "seo",
+    "search-console",
+    "keyword-research",
+    "backlinks",
+    "ai-visibility",
+    "rank-tracker",
+    "google-business-profile",
+    "local-seo",
+    "mcp"
+  ],
+  "extensions": {
+    "com.nousresearch.hermes": {
+      "servers": {
+        "seomatic": {
+          "trust": "untrusted"
+        }
+      }
+    }
+  }
+}

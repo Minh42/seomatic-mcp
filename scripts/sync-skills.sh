@@ -36,3 +36,6 @@ done
 cp "$HERE/skills/seomatic/SKILL.md" "$HERE/SKILL.md"
 echo "synced $count MCP skills; root SKILL.md refreshed from skills/seomatic"
 echo "review with: git -C \"$HERE\" diff --stat"
+
+# The Hermes Agent package (hermes/) carries its own copy of the MCP skills.
+"$HERE/scripts/build-hermes-skills.sh"

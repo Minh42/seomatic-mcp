@@ -109,7 +109,7 @@ numbers behind it. Quote cost from each task's `estimatedCost.label`.
 
 ## What not to do
 
-- Do not tell the user llms.txt is required. No major engine has said it
+- Do not present llms.txt as required. No major engine has said it
   uses it; it is cheap to add, not a fix.
 - Do not recommend blocking or allowing training bots as a ranking tactic.
   It is a licensing choice; present it as one.
