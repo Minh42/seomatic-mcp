@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "seomatic",
   "version": "2.1.0",
-  "description": "SEO agent for your own site: Google Search Console answers, site audits, AI search visibility and citations, keyword and backlink research, local rank tracking and Google Business Profile, and fixes staged for your approval on WordPress, Shopify, Webflow, Wix and more.",
+  "description": "SEO agent for your own site: Google Search Console answers, an SEO health check, indexing checks, keyword ideas, AI-answer visibility, and fixes staged for your approval on WordPress, Shopify, Webflow, Wix and more, with rollback.",
   "author": {
     "name": "SEOmatic",
     "email": "contact@seomatic.ai",
@@ -27,17 +27,15 @@
       "interface": {
         "displayName": "SEOmatic",
         "shortDescription": "Your SEO answers and fixes",
-        "longDescription": "SEOmatic connects your website's own SEO data to an SEO agent that can fix what it finds.\n\nAsk in plain words and get answers from your real data: Google Search Console queries and pages, keywords closest to page 1, why traffic changed, indexing problems, a full site audit, backlinks and search competitors, how AI answer engines describe and cite your brand, daily local rankings and your Google Business Profile calls and reviews.\n\nWhen something needs fixing, SEOmatic stages the change (a title, a meta description, internal links, schema, a content refresh, a review reply) and shows it to you. Fixes you ask for here wait for your explicit approval before anything changes on your site, and every change can be rolled back. Approved changes publish to WordPress, Shopify, Webflow, Wix and other site builders.\n\nWho it is for: founders, marketers, small businesses and agencies who want clear SEO answers and safe fixes without learning an SEO tool.\n\nWhat you need: a SEOmatic account (sign in when you first connect) and a connected Google Search Console property for Search Console answers. Tools that call live market data or apply a fix say so before they run.\n\nLimitations: SEOmatic only reads Search Console data for properties you have connected and verified. It does not buy ads, send payments or edit sites you have not connected.",
+        "longDescription": "SEOmatic connects your website's own SEO data to an SEO agent that can fix what it finds.\n\nAsk in plain words and get answers from your real data: the Google searches that bring you clicks, your top pages, keywords closest to page 1, why traffic changed, whether a page is indexed and why not, keyword ideas with search volume and difficulty, and how AI answer engines mention and cite your brand.\n\nWhen something needs fixing, SEOmatic stages the change (a title, a meta description, internal links, a content update) and shows it to you as an approval card. Fixes you ask for here wait for your explicit approval before anything changes on your site, and every change can be rolled back. Approved changes publish to WordPress, Shopify, Webflow, Wix and other site builders.\n\nWho it is for: founders, marketers, small businesses and agencies who want clear SEO answers and safe fixes without learning an SEO tool.\n\nWhat you need: a SEOmatic account (sign in when you first connect) and a connected Google Search Console property for Search Console answers. Tools that call live market data or apply a fix say so before they run.\n\nLimitations: SEOmatic only reads Search Console data for properties you have connected and verified. AI-answer visibility shows the latest scan run from the SEOmatic app. It does not buy ads, send payments or edit sites you have not connected.",
         "developerName": "SEOmatic",
         "category": "Data & Analytics",
         "capabilities": [
           "Search Console analysis",
-          "SEO site audit",
+          "SEO health check",
+          "URL indexing check",
           "Keyword research",
-          "Backlink analysis",
-          "AI search visibility",
-          "Local rank tracking",
-          "Google Business Profile",
+          "AI answer visibility",
           "Fixes staged for approval",
           "Rollback"
         ],
@@ -113,7 +111,7 @@
         "translations": {
           "fr-FR": {
             "subtitle": "Le SEO de votre site, ici",
-            "description": "SEOmatic relie les données SEO de votre propre site à un agent SEO qui corrige ce qu'il trouve : Search Console, mots-clés proches de la première page, baisses de trafic, audit complet, backlinks, visibilité dans les moteurs de réponse IA, classement local et fiche Google Business Profile. Les corrections demandées ici attendent votre accord avant toute modification, et chaque changement peut être annulé."
+            "description": "SEOmatic relie les données SEO de votre propre site à un agent SEO qui corrige ce qu'il trouve : requêtes et pages Search Console, mots-clés proches de la première page, baisses de trafic, indexation, idées de mots-clés et visibilité dans les moteurs de réponse IA. Les corrections demandées ici attendent votre accord avant toute modification, et chaque changement peut être annulé."
           }
         }
       }
