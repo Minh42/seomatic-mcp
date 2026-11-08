@@ -1,6 +1,6 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
-  "name": "app-6a96b5cd819c8191ac1c77960a6621ca",
+  "name": "seomatic",
   "version": "2.1.0",
   "description": "SEO agent for your own site: real Google Search Console answers, site audits, AI visibility and citations, keyword and backlink research, local rank tracking and Google Business Profile, and fixes staged for your approval in WordPress, Shopify, Webflow, Wix and more.",
   "author": {
@@ -11,7 +11,17 @@
   "homepage": "https://seomatic.ai/developers/mcp",
   "repository": "https://github.com/Minh42/seomatic-mcp",
   "license": "MIT",
-  "keywords": ["seo", "search-console", "keyword-research", "backlinks", "ai-visibility", "rank-tracker", "google-business-profile", "local-seo", "mcp"],
+  "keywords": [
+    "seo",
+    "search-console",
+    "keyword-research",
+    "backlinks",
+    "ai-visibility",
+    "rank-tracker",
+    "google-business-profile",
+    "local-seo",
+    "mcp"
+  ],
   "extensions": {
     "com.openai": {
       "interface": {
@@ -99,7 +109,7 @@
         "commerce_description": "The plugin does not sell products or take payments in ChatGPT. Some tools use credits from the user's existing SEOmatic plan and say so before they run."
       },
       "publication": {
-        "release_notes": "2.1.0: published under the verified business SEOmatic (the 2.0.1 review could not match the brand to the verified owner). OAuth 2.1 sign-in with dynamic client registration declared in mcp.json. 20 SEO skills: site audit, striking distance, traffic drop, AI visibility and citations, AI crawlers, keyword research, competitor gap, backlink audit, cannibalization, content brief and refresh, CTR fix, indexing check, internal linking, local SEO and weekly local report, weekly brief, client report, approval workflow.",
+        "release_notes": "2.1.0: first release under the verified business SEOmatic. Hosted MCP server with OAuth 2.1 sign-in and dynamic client registration. 20 SEO skills: site audit, striking distance, traffic drop, AI visibility and citations, AI crawlers, keyword research, competitor gap, backlink audit, cannibalization, content brief and refresh, CTR fix, indexing check, internal linking, local SEO and weekly local report, weekly brief, client report, approval workflow.",
         "translations": {
           "fr-FR": {
             "subtitle": "Le SEO de votre site, ici",

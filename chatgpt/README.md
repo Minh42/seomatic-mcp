@@ -6,8 +6,7 @@ format): `plugin.json`, `mcp.json` (the hosted server
 registration), `assets/logo.png` and the 20 SEOmatic MCP skills (the CLI skill
 is left out: ChatGPT has no shell).
 
-`name` is the plugin ID OpenAI assigned in 09 (`app-6a96...`); the upload
-is refused with any other name. Build the upload ZIP from inside this folder so `plugin.json` sits at the
+Build the upload ZIP from inside this folder so `plugin.json` sits at the
 archive root:
 
     cd chatgpt && zip -r ../seomatic-chatgpt.zip . -x '.*'
