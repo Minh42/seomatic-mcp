@@ -650,6 +650,7 @@ https://seomatic.ai/developers/mcp
 | `lhm.plugin.json` | LobeHub |
 | `SKILL.md`, `skills/` | Agent Skills (root `SKILL.md` = `skills/seomatic/SKILL.md`) |
 | `hermes/` | Hermes Agent plugin package (plugin catalog entry `seomatic`); `hermes/skills/` is built by `scripts/build-hermes-skills.sh` |
+| `claude/` | Claude plugin package (Claude Code, Cowork, plugin directory); the marketplace in `.claude-plugin/marketplace.json` points here; `claude/skills/` is built by `scripts/build-claude-plugin.sh` |
 | `plugins/dsh-seomatic/` | DeepSeek Harness bundle (npm `dsh-seomatic`) |
 | `server.json` | Copy of the Official MCP Registry entry (published from the app repo) |
 | `nanoclaw/add-seomatic-tool.md` | NanoClaw skill (copy to `.claude/skills/add-seomatic-tool/SKILL.md`) |

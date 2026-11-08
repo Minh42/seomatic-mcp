@@ -39,3 +39,6 @@ echo "review with: git -C \"$HERE\" diff --stat"
 
 # The Hermes Agent package (hermes/) carries its own copy of the MCP skills.
 "$HERE/scripts/build-hermes-skills.sh"
+
+# The Claude plugin package (claude/) carries its own copy of the skills.
+"$HERE/scripts/build-claude-plugin.sh"
