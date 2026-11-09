@@ -12,18 +12,16 @@ one.
 ## What waits
 
 Call `list_seo_tasks` with `status: "proposed"` and `list_seo_campaigns`.
-Then call `show_approval_cards` with those ids: it returns a one-time
-approve link per task (approveUrl). Describe each in one line: page, what
-changes, why, and whether it uses credits, and give its approve link as it
-is.
+Then call `show_approval_cards` with those ids so the user sees each change
+with Approve and Dismiss. Describe each in one line: page, what changes,
+why, and whether it uses credits.
 
 ## A decision
 
-- "Approve X": the user approves it with that task's approve link (it opens
-  SEOmatic; single use, 15 minutes). You cannot approve for them: if you call
-  `decide_seo_task` with `approve`, SEOmatic refuses and returns the link to
-  give them. Afterwards, report what happens next (auto-executable tasks go
-  live within seconds; others wait for a run).
+- "Approve X" or a click on Approve: call `decide_seo_task` with that task id
+  and `approve`. SEOmatic asks the user to confirm and checks the answer
+  itself. Report what happens next (auto-executable tasks go live within
+  seconds; others wait for a run).
 - "Dismiss X": `decide_seo_task` with `dismiss`.
 - A campaign: `approve_campaign` only after the user approved that campaign by
   name.
