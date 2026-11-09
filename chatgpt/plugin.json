@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "seomatic",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "SEO agent for your own site: Google Search Console answers, an SEO health check, indexing checks, keyword ideas, AI-answer visibility, and fixes staged for your approval on WordPress, Shopify, Webflow, Wix and more, with rollback.",
   "author": {
     "name": "SEOmatic",
@@ -107,7 +107,7 @@
         "commerce_description": "The plugin does not sell products or take payments in ChatGPT. Some tools use credits from the user's existing SEOmatic plan and say so before they run."
       },
       "publication": {
-        "release_notes": "2.1.0: first release under the verified business SEOmatic. Hosted MCP server with OAuth 2.1 sign-in and dynamic client registration; 19 tools in ChatGPT (Search Console queries, pages, comparisons and breakdowns, URL indexing, keyword ideas, AI-answer visibility, the approval loop with approval cards, rollback, credit usage). 7 skills written for these tools: SEO audit, keywords closest to page 1, traffic change, AI-answer visibility, approvals, keyword research, weekly brief.",
+        "release_notes": "2.1.1 (logo fixed; same tools and skills as 2.1.0): first release under the verified business SEOmatic. Hosted MCP server with OAuth 2.1 sign-in and dynamic client registration; 19 tools in ChatGPT (Search Console queries, pages, comparisons and breakdowns, URL indexing, keyword ideas, AI-answer visibility, the approval loop with approval cards, rollback, credit usage). 7 skills written for these tools: SEO audit, keywords closest to page 1, traffic change, AI-answer visibility, approvals, keyword research, weekly brief.",
         "translations": {
           "fr-FR": {
             "subtitle": "Le SEO de votre site, ici",
