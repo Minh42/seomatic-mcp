@@ -459,20 +459,25 @@ In `opencode.json` (project) or `~/.config/opencode/opencode.json`:
 {
   "$schema": "https://opencode.ai/config.json",
   "mcp": {
-    "seomatic": {
-      "type": "remote",
-      "url": "https://app.seomatic.ai/api/mcp",
-      "headers": { "Authorization": "Bearer smk_live_YOUR_KEY" }
+    "servers": {
+      "seomatic": {
+        "type": "remote",
+        "url": "https://app.seomatic.ai/api/mcp",
+        "protocol": "auto",
+        "headers": { "Authorization": "Bearer smk_live_YOUR_KEY" }
+      }
     }
   }
 }
 ```
 
-Leave out `headers` to sign in with OAuth instead (`opencode mcp auth seomatic`).
+OpenCode V2 reads servers under `mcp.servers`; a server placed straight under
+`mcp` is ignored. Leave out `headers` to sign in with OAuth instead
+(`opencode mcp auth seomatic`).
 
 ## Kilo Code
 
-`kilo.jsonc` takes the same block as OpenCode:
+`kilo.jsonc` keeps the older shape, with the server straight under `mcp`:
 
 ```jsonc
 {
