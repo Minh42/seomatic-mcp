@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "seomatic",
+  "version": "1.2.0",
+  "description": "SEO agent for your own site: real Google Search Console answers, site audits, AI visibility and citations, keyword and backlink research, local rank tracking and Google Business Profile, and staged fixes you approve before they go live in WordPress, Shopify, Webflow, Wix and more.",
+  "author": {
+    "name": "SEOmatic",
+    "email": "contact@seomatic.ai",
+    "url": "https://seomatic.ai"
+  },
+  "keywords": [
+    "seo",
+    "search console",
+    "google search console",
+    "gsc",
+    "rankings",
+    "keywords",
+    "keyword research",
+    "backlinks",
+    "site audit",
+    "seo audit",
+    "traffic drop",
+    "meta description",
+    "ai visibility",
+    "ai overviews",
+    "google business profile",
+    "local seo",
+    "seomatic"
+  ],
+  "homepage": "https://seomatic.ai/developers/mcp",
+  "repository": "https://github.com/Minh42/seomatic-mcp",
+  "license": "MIT"
+}

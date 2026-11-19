@@ -42,3 +42,6 @@ echo "review with: git -C \"$HERE\" diff --stat"
 
 # The Claude plugin package (claude/) carries its own copy of the skills.
 "$HERE/scripts/build-claude-plugin.sh"
+
+# The Kiro Power package (kiro-power/) carries its own copy of the skills.
+"$HERE/scripts/build-kiro-power.sh"
