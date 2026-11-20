@@ -70,7 +70,7 @@ Search Console numbers. Prefer an always-on bot? See the
   [Cline and other MCP clients](#cline-and-other-mcp-clients) ·
   [Any agent: skills only](#any-agent-skills-only)
 - [Skills](#skills) · [Tools](#tools) · [Repository layout](#repository-layout) ·
-  [Syncing skills](#syncing-skills-from-the-app)
+  [Syncing skills](#syncing-skills-from-the-app) · [Verify a release](#verify-a-release)
 
 ## What you can ask
 
@@ -217,6 +217,9 @@ The repo is a Gemini CLI extension (`gemini-extension.json` plus
 ```bash
 gemini extensions install https://github.com/Minh42/seomatic-mcp
 ```
+
+To pin a checked release instead of following the latest, add
+`--ref <tag>` (for example `--ref v1.2.0`; see [Verify a release](#verify-a-release)).
 
 It installs the hosted MCP server and the skills. Gemini CLI opens a browser
 to sign in on first use; run `/mcp auth seomatic` to sign in again.
@@ -680,6 +683,29 @@ overwrites those seven with the app copy, so make kit-only edits to them in the
 app repo first. It ends by running `scripts/build-hermes-skills.sh`, which
 rebuilds `hermes/skills/` from `skills/`; run that by hand after editing any
 other skill.
+
+## Verify a release
+
+Releases from v1.3.0 are signed twice: the git tag is signed (GitHub shows
+it as Verified), and the release's `SHA256SUMS` is signed with
+[Sigstore](https://www.sigstore.dev/) by contact@seomatic.ai, logged
+publicly. `scripts/release.sh vX.Y.Z` makes both. With
+[cosign](https://docs.sigstore.dev/cosign/system_config/installation/):
+
+```bash
+T=v1.3.0
+gh release download $T --repo Minh42/seomatic-mcp
+cosign verify-blob --bundle SHA256SUMS.sigstore.json \
+  --certificate-identity contact@seomatic.ai \
+  --certificate-oidc-issuer https://accounts.google.com SHA256SUMS
+shasum -a 256 -c SHA256SUMS   # seomatic-mcp-1.3.0.tar.gz: OK
+```
+
+Then install from that tag, not `main`: Gemini CLI `--ref $T`, Kiro
+`https://github.com/Minh42/seomatic-mcp/tree/$T/kiro-power`, Hermes
+`--ref <commit>` (`git rev-parse $T^{commit}`). The `seomatic` CLI's signed
+files are on the `cli-v<version>` releases here; how to check them is in
+its README on npm.
 
 ## License
 
