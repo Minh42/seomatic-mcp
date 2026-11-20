@@ -690,11 +690,12 @@ Releases from v1.3.0 are signed twice: the git tag is signed (GitHub shows
 it as Verified), and the release's `SHA256SUMS` is signed with
 [Sigstore](https://www.sigstore.dev/) by contact@seomatic.ai, logged
 publicly. `scripts/release.sh vX.Y.Z` makes both. With
-[cosign](https://docs.sigstore.dev/cosign/system_config/installation/):
+[cosign](https://docs.sigstore.dev/cosign/system_config/installation/) v2.4 or later:
 
 ```bash
 T=v1.3.0
-gh release download $T --repo Minh42/seomatic-mcp
+R=https://github.com/Minh42/seomatic-mcp/releases/download/$T
+curl -fLO $R/seomatic-mcp-${T#v}.tar.gz -fLO $R/SHA256SUMS -fLO $R/SHA256SUMS.sigstore.json
 cosign verify-blob --bundle SHA256SUMS.sigstore.json \
   --certificate-identity contact@seomatic.ai \
   --certificate-oidc-issuer https://accounts.google.com SHA256SUMS

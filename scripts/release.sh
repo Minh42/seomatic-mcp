@@ -69,5 +69,6 @@ run git push origin "$TAG"
 trap - EXIT
 run gh release create "$TAG" --verify-tag --title "SEOmatic MCP kit $VERSION" \
   --notes "Signed release. Verify: see \"Verify a release\" in the README." \
-  "$OUT/$NAME.tar.gz" "$OUT/SHA256SUMS" "$OUT/SHA256SUMS.sigstore.json"
+  "$OUT/$NAME.tar.gz" "$OUT/SHA256SUMS" "$OUT/SHA256SUMS.sigstore.json" ||
+  die "tag $TAG is pushed but the GitHub release failed; create it by hand: gh release create $TAG --verify-tag $OUT/$NAME.tar.gz $OUT/SHA256SUMS $OUT/SHA256SUMS.sigstore.json"
 echo "done: $TAG signed by $SIGNER ($OUT)"
