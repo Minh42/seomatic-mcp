@@ -2,7 +2,7 @@
   <img src="logo.png" alt="SEOmatic" width="96" height="96">
 </p>
 
-# SEOmatic for AI agents
+# SEOmatic MCP Server (Search Console + Site Fixes)
 
 SEO agent for your own website, in the AI agent you already use. Ask about
 your real Google Search Console data, audit your pages, check how ChatGPT,
