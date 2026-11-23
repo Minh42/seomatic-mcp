@@ -1,11 +1,12 @@
 {
   "name": "seomatic",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "SEO agent for your own site: real Google Search Console answers, site audits, AI visibility and citations, keyword and backlink research, local rank tracking and Google Business Profile, and staged fixes you approve before they go live in WordPress, Shopify, Webflow, Wix and more. Bundles the SEOmatic skills and the hosted SEOmatic MCP server (OAuth).",
   "contextFileName": "GEMINI.md",
   "mcpServers": {
     "seomatic": {
-      "httpUrl": "https://app.seomatic.ai/api/mcp",
+      "type": "http",
+      "url": "https://app.seomatic.ai/api/mcp",
       "oauth": {
         "enabled": true
       },
