@@ -7,7 +7,7 @@ Screenshots for the Slack Marketplace review of the SEOmatic app (App ID `A0C480
 | Step | Screenshot |
 | --- | --- |
 | The install page, [seomatic.ai/integrations/slack](https://seomatic.ai/integrations/slack), with **Add to Slack**. Only the owner of the SEOmatic organization can finish the install. | [01-install-page.jpg](01-install-page.jpg) |
-| Slack's consent screen. **Add to Slack** goes through our Direct Install URL, `https://app.seomatic.ai/api/integrations/slack/install`. It requests the 14 bot scopes listed in the submission, and the user picks the channel for decision cards. | [02-slack-consent.png](02-slack-consent.png) |
+| Slack's consent screen (Slack's standard OAuth page). It names the app, the workspace and the 14 bot scopes requested (`chat:write`, `chat:write.public`, `incoming-webhook`, `users:read`, `users:read.email`, `commands`, `links:read`, `links:write`, `channels:read`, `groups:read`, `app_mentions:read`, `im:history`, `assistant:write`, `files:read`), and asks for the channel where SEOmatic posts. To see it yourself, click **Add to Slack** on the install page; it goes through our Direct Install URL `https://app.seomatic.ai/api/integrations/slack/install`. | (no screenshot) |
 
 After **Allow**, Slack redirects to `https://app.seomatic.ai/api/integrations/slack/callback`. SEOmatic saves the connection, and from then on posts decision cards to the chosen channel.
 
