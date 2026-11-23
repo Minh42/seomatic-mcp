@@ -5,7 +5,8 @@
   "contextFileName": "GEMINI.md",
   "mcpServers": {
     "seomatic": {
-      "httpUrl": "https://app.seomatic.ai/api/mcp",
+      "type": "http",
+      "url": "https://app.seomatic.ai/api/mcp",
       "oauth": {
         "enabled": true
       },
