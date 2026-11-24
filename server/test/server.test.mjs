@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
+import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { createServer, normalizeUrl, apiBase, AUDIT_TOOL } from '../lib/server.mjs';
 
@@ -218,7 +219,8 @@ test('stdio: initialize, tools/list, a batch and a parse error over a real proce
   const lines = out.trim().split('\n').map(l => JSON.parse(l));
   const byId = Object.fromEntries(lines.filter(l => !Array.isArray(l)).map(l => [l.id, l]));
   assert.equal(byId[1].result.serverInfo.name, 'seomatic');
-  assert.equal(byId[1].result.serverInfo.version, '1.0.0');
+  const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'));
+  assert.equal(byId[1].result.serverInfo.version, pkg.version);
   assert.deepEqual(byId[2].result.tools.map(t => t.name), ['audit_page', 'check_indexability', 'check_crawler_access', 'check_sitemap']);
   assert.equal(byId[null].error.code, -32700);
   const batch = lines.find(Array.isArray);

@@ -705,7 +705,7 @@ https://seomatic.ai/developers/mcp
 | `claude/` | Claude plugin package (Claude Code, Cowork, plugin directory); the marketplace in `.claude-plugin/marketplace.json` points here; `claude/skills/` is built by `scripts/build-claude-plugin.sh` |
 | `chatgpt/` | ChatGPT plugin package (plugin directory ZIP upload): `plugin.json` with listing, review test cases and release notes, `mcp.json` with OAuth DCR, 7 skills written for the 19 one-action tools ChatGPT is served |
 | `plugins/dsh-seomatic/` | DeepSeek Harness bundle (npm `dsh-seomatic`) |
-| `server/` | Local stdio MCP server (`node server/index.mjs`): `audit_page` with no account, plus the key's SEOmatic tools over the REST API; `server/lib/checks.mjs` is copied from the app's `cli/lib/checks.mjs` |
+| `server/` | Local stdio MCP server (`node server/index.mjs`): `audit_page`, `check_indexability`, `check_crawler_access` and `check_sitemap` with no account, plus the key's SEOmatic tools over the REST API; `server/lib/checks.mjs` is copied from the app's `cli/lib/checks.mjs` |
 | `server.json` | Copy of the Official MCP Registry entry (published from the app repo) |
 | `nanoclaw/add-seomatic-tool.md` | NanoClaw skill (copy to `.claude/skills/add-seomatic-tool/SKILL.md`) |
 | `grok-bot/`, `make-app/` | Grok Bot template; Make custom app source (Watch Events trigger with 15 events, Infrastructure plan), copied from the app repo's `integrations/make` |
