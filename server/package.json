@@ -1,0 +1,18 @@
+{
+  "name": "seomatic-mcp-local",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SEOmatic MCP server over stdio: a local SEO and AI-search page audit with no account, plus your SEOmatic tools (Search Console, audits, AI visibility) with an API key.",
+  "type": "module",
+  "bin": {
+    "seomatic-mcp": "index.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node index.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "license": "MIT"
+}
