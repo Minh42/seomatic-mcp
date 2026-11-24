@@ -23,6 +23,8 @@ Cursor, Codex, Grok Build, Gemini CLI, Kimi Code and DeepSeek Harness.
 | CLI | [`seomatic`](https://www.npmjs.com/package/seomatic) on npm (`npx -y seomatic`) |
 | API keys | [Settings, AI Agents, API Keys](https://app.seomatic.ai/dashboard/settings?tab=ai-agents) (admin role) |
 | Docs | https://seomatic.ai/developers/mcp |
+| Privacy | https://seomatic.ai/privacy |
+| Support | contact@seomatic.ai, https://seomatic.ai/contact |
 
 A free SEOmatic account (OAuth or API key) can read everything: diagnosis,
 Search Console, site audits and AI visibility results. Staging fixes over MCP
@@ -529,7 +531,10 @@ extensions:
 
 ## Kiro
 
-In `~/.kiro/settings/mcp.json` (or `.kiro/settings/mcp.json` in a project).
+[![Add to Kiro](https://kiro.dev/images/add-to-kiro.svg)](https://kiro.dev/launch/mcp/add?name=seomatic&config=%7B%22url%22%3A%22https%3A%2F%2Fapp.seomatic.ai%2Fapi%2Fmcp%22%2C%22disabled%22%3Afalse%2C%22autoApprove%22%3A%5B%5D%7D)
+
+One click adds the hosted server; Kiro signs you in with OAuth. Or add it by hand
+in `~/.kiro/settings/mcp.json` (or `.kiro/settings/mcp.json` in a project).
 The `Authorization` header is the recommended route:
 
 ```json
@@ -755,4 +760,4 @@ its README on npm.
 
 ## License
 
-MIT. Support: https://seomatic.ai/contact
+MIT. Support: contact@seomatic.ai or https://seomatic.ai/contact. Privacy: https://seomatic.ai/privacy
