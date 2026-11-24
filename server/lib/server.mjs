@@ -47,7 +47,9 @@ export const AUDIT_TOOL = {
     'Scored checks: reachable (HTTP status and time), title, meta_description, canonical, h1, json_ld (structured data), ' +
     'robots_txt, ai_bots_allowed (fails only when an AI search crawler such as OAI-SearchBot, Claude-SearchBot or PerplexityBot ' +
     'is blocked; blocked training crawlers are noted, not failed) and sitemap. llms_txt and security_txt are shown but not scored. ' +
-    'Use it for a quick first look at a site; for real Search Console clicks, rankings and indexing, use the SEOmatic tools ' +
+    'Pass any public page; the site files come from its origin. Each fetch times out after 15 seconds. ' +
+    'Use it for a quick first look at a site; for why one URL is not in Google use check_indexability; for crawler-by-crawler ' +
+    'robots.txt access use check_crawler_access; for real Search Console clicks, rankings and indexing, use the SEOmatic tools ' +
     '(set SEOMATIC_API_KEY).',
   inputSchema: {
     type: 'object',

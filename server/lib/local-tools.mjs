@@ -21,8 +21,10 @@ export const INDEXABILITY_TOOL = {
     'chain hop by hop (up to 10), then checks the final URL for: HTTP status, an X-Robots-Tag noindex header, a meta robots or ' +
     'googlebot noindex tag, a robots.txt rule blocking Googlebot from that path, and a canonical pointing to a different URL ' +
     '(a hint, not a block). Use it when a page is missing from Google, after a migration, or before asking Search Console why. ' +
-    'It sees the HTML the server sends; content added later by JavaScript is not read. For the overall page basics use audit_page; ' +
-    'for other crawlers use check_crawler_access.',
+    'It sees the HTML the server sends; content added later by JavaScript is not read. Pass the exact URL you care about, ' +
+    'path and query included (a bare domain checks the home page); the answer is about where its redirects end. Each fetch ' +
+    'times out after 15 seconds. For the overall page basics use audit_page; for crawlers other than Googlebot use ' +
+    'check_crawler_access; for every page in the sitemap use check_sitemap.',
   inputSchema: {
     type: 'object',
     properties: {
@@ -67,7 +69,10 @@ export const CRAWLER_TOOL = {
     'agents (OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot, Perplexity-User) and AI training ' +
     'crawlers (GPTBot, ClaudeBot, Google-Extended, Applebot-Extended, CCBot), each labelled by kind. Blocking a training ' +
     'crawler does not remove a site from AI search answers; blocking an AI search crawler does. It reads robots.txt only: a ' +
-    'firewall or CDN bot rule can still block a crawler robots.txt allows. Use check_indexability for the full Google picture.',
+    'firewall or CDN bot rule can still block a crawler robots.txt allows. Only the path and query of url matter (a bare domain checks /). ' +
+    'Pass bots to check other crawlers, e.g. ["Bytespider"]. Returns one row per crawler (allowed, deciding rule, group used) ' +
+    'plus the robots.txt status: a 4xx robots.txt allows everything; a 5xx or unreachable one blocks everything. One fetch, ' +
+    '15-second timeout. Use check_indexability for the full Google picture.',
   inputSchema: {
     type: 'object',
     properties: {
@@ -117,8 +122,11 @@ export const SITEMAP_TOOL = {
     'Finds and reads a site\'s XML sitemap (the Sitemap: lines in robots.txt, else /sitemap.xml), follows a sitemap index into ' +
     'up to 5 child sitemaps, and reports how many URLs it lists, the newest lastmod date, and URLs on another host. Then it ' +
     'fetches a sample of the listed URLs and flags any that do not answer 200 (redirects, 404s, errors): a sitemap should only ' +
-    'list live, canonical pages. Runs locally with no account. Use it after a launch or migration, or when Search Console ' +
-    'reports sitemap or "discovered, not indexed" problems.',
+    'list live, canonical pages. Runs locally with no account. url is a site (sitemaps found as above) or a sitemap URL ' +
+    '(read as given). sample sets how many listed URLs to fetch, spread evenly over the list (0 skips them; at most 20, fetched ' +
+    'in parallel). At most 10 sitemap files are read; .gz sitemaps are skipped; each fetch times out after 15 seconds. ' +
+    'Use it after a launch or migration, or when Search Console reports sitemap or "discovered, not indexed" problems. To ' +
+    'find out why one listed URL is not indexed use check_indexability; to check a robots.txt rule use check_crawler_access.',
   inputSchema: {
     type: 'object',
     properties: {
