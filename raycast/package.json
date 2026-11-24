@@ -4,7 +4,7 @@
   "title": "SEOmatic",
   "description": "Ask SEOmatic about your site's SEO, check any page for AI answerability, review fixes waiting for approval, and search your Search Console pages and keywords.",
   "icon": "icon.png",
-  "author": "TODO_RAYCAST_USERNAME",
+  "author": "seomatic",
   "platforms": [
     "macOS",
     "Windows"
