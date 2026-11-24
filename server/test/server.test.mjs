@@ -33,7 +33,7 @@ test('without a key, only audit_page is listed and remote names are refused', as
   let fetched = 0;
   const s = createServer({ env: {}, fetchImpl: async () => (fetched++, json(200, {})) });
   const r = await call(s, 'tools/list');
-  assert.deepEqual(r.result.tools.map(t => t.name), ['audit_page']);
+  assert.deepEqual(r.result.tools.map(t => t.name), ['audit_page', 'check_indexability', 'check_crawler_access', 'check_sitemap']);
   assert.equal(fetched, 0);
   const c = await call(s, 'tools/call', { name: 'gsc_query', arguments: {} });
   assert.equal(c.error.code, -32602);
@@ -53,11 +53,13 @@ test('with a key, REST tools are mapped with readOnlyHint from acts', async () =
   };
   const s = createServer({ env: { SEOMATIC_API_KEY: 'smk_live_x' }, fetchImpl });
   const tools = (await call(s, 'tools/list')).result.tools;
-  assert.deepEqual(tools.map(t => t.name), ['audit_page', 'gsc_query', 'publish_fix']);
-  assert.equal(tools[1].inputSchema.type, 'object');
-  assert.equal(tools[1].annotations.readOnlyHint, true);
-  assert.equal(tools[2].annotations.readOnlyHint, false);
-  assert.deepEqual(tools[2].inputSchema, { type: 'object' });
+  assert.deepEqual(tools.map(t => t.name), ['audit_page', 'check_indexability', 'check_crawler_access', 'check_sitemap', 'gsc_query', 'publish_fix']);
+  const gsc = tools.find(t => t.name === 'gsc_query');
+  const pub = tools.find(t => t.name === 'publish_fix');
+  assert.equal(gsc.inputSchema.type, 'object');
+  assert.equal(gsc.annotations.readOnlyHint, true);
+  assert.equal(pub.annotations.readOnlyHint, false);
+  assert.deepEqual(pub.inputSchema, { type: 'object' });
   assert.equal(seen[0].url, 'https://app.seomatic.ai/api/v1/tools');
   assert.equal(seen[0].init.headers.authorization, 'Bearer smk_live_x');
   assert.equal(seen[0].init.redirect, 'error');
@@ -71,7 +73,7 @@ test('a failing tool list still offers audit_page and logs to stderr only', asyn
     log: l => logs.push(l),
   });
   const tools = (await call(s, 'tools/list')).result.tools;
-  assert.deepEqual(tools.map(t => t.name), ['audit_page']);
+  assert.deepEqual(tools.map(t => t.name), ['audit_page', 'check_indexability', 'check_crawler_access', 'check_sitemap']);
   assert.match(logs[0], /Invalid API key/);
 });
 
@@ -217,7 +219,7 @@ test('stdio: initialize, tools/list, a batch and a parse error over a real proce
   const byId = Object.fromEntries(lines.filter(l => !Array.isArray(l)).map(l => [l.id, l]));
   assert.equal(byId[1].result.serverInfo.name, 'seomatic');
   assert.equal(byId[1].result.serverInfo.version, '1.0.0');
-  assert.deepEqual(byId[2].result.tools.map(t => t.name), ['audit_page']);
+  assert.deepEqual(byId[2].result.tools.map(t => t.name), ['audit_page', 'check_indexability', 'check_crawler_access', 'check_sitemap']);
   assert.equal(byId[null].error.code, -32700);
   const batch = lines.find(Array.isArray);
   assert.deepEqual(batch.map(b => b.id).sort(), [3, 4]);

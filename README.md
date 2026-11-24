@@ -606,11 +606,20 @@ dependencies (Node 18 or later):
 }
 ```
 
-- Without a key it offers one tool, `audit_page`. It runs on your computer:
-  it fetches the page plus `robots.txt`, `sitemap.xml`, `llms.txt` and
-  `security.txt`, and scores title, description, canonical, H1, structured
-  data, robots.txt, AI search crawler access and sitemap. Nothing is sent to
-  SEOmatic.
+- Without a key it offers four tools that run on your computer. Nothing is
+  sent to SEOmatic.
+  - `audit_page`: fetches the page plus `robots.txt`, `sitemap.xml`,
+    `llms.txt` and `security.txt`, and scores title, description, canonical,
+    H1, structured data, robots.txt, AI search crawler access and sitemap.
+  - `check_indexability`: can Google index this URL, and if not, why. It
+    follows redirects hop by hop and checks the status, `X-Robots-Tag`, meta
+    robots, the robots.txt rule for Googlebot and the canonical.
+  - `check_crawler_access`: which search, AI search and AI training crawlers
+    (Googlebot, OAI-SearchBot, Claude-SearchBot, PerplexityBot, GPTBot,
+    ClaudeBot, Google-Extended and more) robots.txt lets read a path, and the
+    rule that decides, per RFC 9309.
+  - `check_sitemap`: finds the sitemap, follows an index, counts URLs, finds
+    the newest `lastmod`, and checks a sample of listed URLs answer 200.
 - With `SEOMATIC_API_KEY` it also lists every SEOmatic tool your key may use,
   through the REST API (`GET /api/v1/tools`, `POST /api/v1/tools/{name}`).
   Each call carries an `Idempotency-Key`, so a retry never runs a tool twice,

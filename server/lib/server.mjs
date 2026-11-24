@@ -2,7 +2,8 @@
  * SEOmatic local MCP server (stdio), zero dependencies.
  *
  * Two kinds of tools:
- *  - audit_page runs HERE, on this machine: it fetches the page, robots.txt,
+ *  - audit_page, check_indexability, check_crawler_access and check_sitemap
+ *    (local-tools.mjs) run locally with no key. audit_page runs HERE, on this machine: it fetches the page, robots.txt,
  *    sitemap.xml, llms.txt and security.txt and scores them. No key, no
  *    SEOmatic account, nothing sent to SEOmatic.
  *  - With SEOMATIC_API_KEY set, every tool the key may use on SEOmatic's REST
@@ -17,6 +18,7 @@
 
 import { randomUUID } from 'node:crypto';
 import { buildReport } from './checks.mjs';
+import { LOCAL_TOOLS, makeLocalTools, readCapped } from './local-tools.mjs';
 
 export const PROTOCOL_VERSIONS = ['2025-11-25', '2025-06-18', '2025-03-26', '2024-11-05'];
 const API_DEFAULT = 'https://app.seomatic.ai/api/v1';
@@ -27,7 +29,9 @@ const DEFAULT_WAIT_S = 300;
 
 const INSTRUCTIONS =
   'SEOmatic: SEO and AI-search answers about the user\'s own website. ' +
-  'audit_page checks any public URL locally (no account). ' +
+  'These run locally with no account: audit_page (a page\'s SEO and AI-search basics, scored), check_indexability ' +
+  '(can Google index this URL, and why not), check_crawler_access (which search and AI crawlers robots.txt lets in) and ' +
+  'check_sitemap (is the sitemap valid and are its URLs live). ' +
   'With SEOMATIC_API_KEY set, the SEOmatic tools for that key are listed too: real Google Search Console data, ' +
   'site audits, AI visibility, keyword and backlink research, and staged fixes. ' +
   'Numbers in answers must come from tool results. Nothing goes live on the user\'s site until they approve it. ' +
@@ -138,21 +142,8 @@ export function createServer({
   const ua = `seomatic-mcp-local/${version} (+https://seomatic.ai)`;
   const key = () => (env.SEOMATIC_API_KEY || '').trim();
   let remoteNames = new Set();
-
-  async function readCapped(res, maxBytes) {
-    if (!res.body) return '';
-    const reader = res.body.getReader();
-    const chunks = [];
-    let size = 0;
-    while (size < maxBytes) {
-      const { done, value } = await reader.read();
-      if (done) break;
-      chunks.push(Buffer.from(value));
-      size += value.byteLength;
-    }
-    reader.cancel().catch(() => {});
-    return Buffer.concat(chunks).subarray(0, maxBytes).toString('utf8');
-  }
+  const callLocal = makeLocalTools({ fetchImpl, ua, normalizeUrl });
+  const LOCAL_NAMES = new Set([AUDIT_TOOL.name, ...LOCAL_TOOLS.map(t => t.name)]);
 
   async function probe(url, asText) {
     const started = Date.now();
@@ -241,7 +232,7 @@ export function createServer({
     }
     const tools = Array.isArray(r.body.tools) ? r.body.tools : [];
     const mapped = tools
-      .filter(t => t && typeof t.name === 'string' && t.name !== AUDIT_TOOL.name)
+      .filter(t => t && typeof t.name === 'string' && !LOCAL_NAMES.has(t.name))
       .map(t => ({
         name: t.name,
         description: t.description || '',
@@ -327,7 +318,7 @@ export function createServer({
       case 'ping':
         return {};
       case 'tools/list':
-        return { tools: [AUDIT_TOOL, ...(await remoteTools())] };
+        return { tools: [AUDIT_TOOL, ...LOCAL_TOOLS, ...(await remoteTools())] };
       case 'tools/call': {
         const name = params?.name;
         if (typeof name !== 'string' || !name) throw new RpcError(-32602, 'tools/call needs a tool name');
@@ -336,8 +327,10 @@ export function createServer({
           throw new RpcError(-32602, 'arguments must be an object');
         }
         if (name === AUDIT_TOOL.name) return auditPage(args);
+        const local = await callLocal(name, args);
+        if (local) return local;
         if (!key()) {
-          throw new RpcError(-32602, `Unknown tool: ${name}. Without SEOMATIC_API_KEY only audit_page is available.`);
+          throw new RpcError(-32602, `Unknown tool: ${name}. Without SEOMATIC_API_KEY only the local tools are available: ${[...LOCAL_NAMES].join(', ')}.`);
         }
         if (remoteNames.size === 0) await remoteTools();
         if (remoteNames.size > 0 && !remoteNames.has(name)) {
